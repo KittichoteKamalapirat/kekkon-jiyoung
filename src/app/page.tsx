@@ -23,10 +23,11 @@ export default function Home() {
       <InviteSection />
       {/* <VideoSection /> */}
       <MapSection />
-      <SeatMapSection />
+
       <DateTimeSection />
       <ImagesSection />
       <DressCodeSection />
+      <SeatMapSection />
 
       {/* <FormSection /> */}
       <FooterSection />

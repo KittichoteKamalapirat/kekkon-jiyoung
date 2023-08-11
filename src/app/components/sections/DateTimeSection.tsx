@@ -20,10 +20,11 @@ const DateTimeSection = ({}: Props) => {
             <p className="col-span-1 font-[Montserrat]">21:00 ~</p>
           </li>
           <li className="ml-4">
-            <p className="col-span-2">Wedding Reception 🥂</p>
             <p className="col-span-2 font-[SukhumvitSet]">
               Engagement Ceremony 💍
             </p>
+            <p className="col-span-2">Wedding Reception 🥂</p>
+
             <div className="col-span-2 font-[Montserrat]">
               <p>After Party 🎉</p>
             </div>
