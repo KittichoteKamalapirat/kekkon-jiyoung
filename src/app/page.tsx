@@ -6,6 +6,7 @@ import ImagesSection from "./components/sections/ImagesSection";
 import InviteSection from "./components/sections/InviteSection";
 import MapSection from "./components/sections/MapSection";
 import SeatMapSection from "./components/sections/SeatMapSection";
+import SharePhotosSection from "./components/sections/SharePhotosSection";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
 
       {/* <FormSection /> */}
       <FooterSection />
+      <SharePhotosSection />
     </main>
   );
 }
