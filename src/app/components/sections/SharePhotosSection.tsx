@@ -16,7 +16,7 @@ const SharePhotosSection = ({}: Props) => {
           href="https://www.flickr.com/gp/168220958@N08/C65hr714Le"
           target="_blank"
         >
-          📷 From Shane's Camera
+          📷 From Shane&#39;s Camera
         </a>
       </div>
     </SectionWrapper>
