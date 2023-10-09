@@ -1,22 +1,24 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Navbar from "../components/Navbar";
+import DateTimeSection from "../components/sections/DateTimeSection";
+import DressCodeSection from "../components/sections/DressCodeSectionSection";
+import FooterSection from "../components/sections/FooterSection";
+import HeaderSection from "../components/sections/HeaderSection";
+import ImagesSection from "../components/sections/ImagesSection";
+import InviteSection from "../components/sections/InviteSection";
+import MapSection from "../components/sections/MapSection";
+import SeatMapSection from "../components/sections/SeatMapSection";
 import LocaleLayout from "./layout";
-import Navbar from "./components/Navbar";
-import DateTimeSection from "./components/sections/DateTimeSection";
-import DressCodeSection from "./components/sections/DressCodeSectionSection";
-import FooterSection from "./components/sections/FooterSection";
-import HeaderSection from "./components/sections/HeaderSection";
-import ImagesSection from "./components/sections/ImagesSection";
-import InviteSection from "./components/sections/InviteSection";
-import MapSection from "./components/sections/MapSection";
-import SeatMapSection from "./components/sections/SeatMapSection";
 
 export default function Home() {
-  // const t = useTranslations("Index");
+  const t = useTranslations("Index");
+
+  console.log("title", t("title"));
 
   return (
-    <div>
+    <LocaleLayout params={{ locale: "en" }}>
       <main className="flex min-h-screen flex-col items-center justify-between">
         <Navbar />
         {/* added below so overflow absolute don't cause scrollable */}
@@ -43,6 +45,6 @@ export default function Home() {
         {/* <FormSection /> */}
         <FooterSection />
       </main>
-    </div>
+    </LocaleLayout>
   );
 }
