@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Link from "next/link";
+import Link from "next-intl/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
@@ -22,11 +22,35 @@ const Navbar = ({}: Props) => {
       {/* content */}
       <div className="max-w-7xl mx-auto ">
         <ul className="flex gap-8 justify-end">
-          <li className={clsx("text-lg", isActive("/after") && "font-bold")}>
-            <Link href="/after">Photos</Link>
+          <li
+            className={clsx(
+              "text-md hover:font-semibold",
+              isActive("/") && "font-bold pointer-events-none"
+            )}
+          >
+            <Link href="/" locale="en">
+              EN
+            </Link>
           </li>
-          <li className={clsx("text-lg", isActive("/before") && "font-bold")}>
-            <Link href="/before">Invitation</Link>
+          <li
+            className={clsx(
+              "text-md hover:font-semibold",
+              isActive("/ja") && "font-bold pointer-events-none"
+            )}
+          >
+            <Link href="/" locale="ja">
+              日本語
+            </Link>
+          </li>
+          <li
+            className={clsx(
+              "text-md hover:font-semibold",
+              isActive("/es") && "font-bold pointer-events-none"
+            )}
+          >
+            <Link href="/" locale="es">
+              ES
+            </Link>
           </li>
         </ul>
       </div>
