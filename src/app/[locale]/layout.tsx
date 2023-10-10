@@ -6,6 +6,8 @@ export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "es" }, { locale: "ja" }];
 }
 
+export const revalidate = 0;
+
 interface Props {
   children: ReactNode;
   params: { locale: string };

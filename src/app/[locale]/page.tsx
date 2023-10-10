@@ -5,10 +5,10 @@ import Navbar from "../components/Navbar";
 import DateTimeSection from "../components/sections/DateTimeSection";
 import DressCodeSection from "../components/sections/DressCodeSectionSection";
 import FooterSection from "../components/sections/FooterSection";
-import HeaderSection from "../components/sections/HeaderSection";
 import ImagesSection from "../components/sections/ImagesSection";
 import InviteSection from "../components/sections/InviteSection";
 import MapSection from "../components/sections/MapSection";
+import RsvpSection from "../components/sections/RsvpSection";
 import SeatMapSection from "../components/sections/SeatMapSection";
 import LocaleLayout from "./layout";
 
@@ -16,11 +16,14 @@ export default function Home() {
   const t = useTranslations("Index");
 
   console.log("title", t("title"));
+  console.log("env", process.env.NEXT_PUBLIC_APP_SCRIPT_URL);
 
   return (
     <LocaleLayout params={{ locale: "en" }}>
       <main className="flex min-h-screen flex-col items-center justify-between">
         <Navbar />
+        <RsvpSection />
+
         {/* added below so overflow absolute don't cause scrollable */}
         {/* https://stackoverflow.com/questions/64344836/absolutely-positioned-elements-adding-scroll-on-mobile */}
         <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
@@ -31,9 +34,10 @@ export default function Home() {
         Find my seat 🪑
       </a> */}
 
-        <HeaderSection />
+        {/* <HeaderSection /> */}
 
         <InviteSection />
+
         {/* <VideoSection /> */}
         <MapSection />
 
