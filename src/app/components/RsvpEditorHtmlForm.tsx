@@ -1,4 +1,7 @@
 import clsx from "clsx";
+import MyText from "./MyText";
+import TextField from "./TextField/TextField";
+import { Input } from "./Input";
 
 interface Props {
   className?: string;
@@ -11,21 +14,11 @@ const RsvpEditorHtmlForm = ({ className }: Props) => {
       action={process.env.NEXT_PUBLIC_APP_SCRIPT_URL}
       className={clsx("w-full", className)}
     >
-      <p>Register</p>
+      <MyText>Register</MyText>
 
       <div className="mt-4 flex flex-col gap-4">
-        <input
-          type="text"
-          name="firstName"
-          placeholder="First Name"
-          className="border-black border-2"
-        />
-        <input
-          type="text"
-          name="lastName"
-          placeholder="Last Name"
-          className="border-black border-2"
-        />
+        <Input type="text" name="firstName" placeholder="First Name" />
+        <Input type="text" name="lastName" placeholder="Last Name" />
 
         <input value="Submit" type="submit" />
       </div>

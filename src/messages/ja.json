@@ -1,5 +1,97 @@
 {
-  "Index": {
-    "title": "こんにちは、世界さん!"
+  "Index": "Japanese",
+  "common": {
+    "brideName": "ジヨン",
+    "groomName": "ロドリゴ",
+    "date": "2024年04月27日"
+  },
+  "hero": {
+    "brideName": "ジヨン",
+    "groomName": "ロドリゴ"
+  },
+  "greeting": {
+    "sectionLabel": "ご挨拶",
+    "groomName": "ロドリゴ ロテラ",
+    "brideName": "芝英 朴",
+    "between": "",
+    "p1": "謹啓",
+    "p2": "皆様におかれまして􏰀 ご清祥􏰁こととお慶び申し上げます",
+    "p3": "このたび 私たち􏰀結婚式を挙げることになりましweたdding. つきまして􏰀日頃お世話になっている 皆様にお集まりいただき 小宴を催したいと存じます",
+    "p4": "ご多用中 誠に恐縮で􏰀ございますが ご来臨􏰁栄を賜りたく 謹んでご案内申し上げます",
+    "p5": "謹白"
+  },
+  "intro": {
+    "sectionLabel": "Stare",
+    "groomName": "ロドリゴ ロテラ",
+    "groomBirthday": "1989年11月16日",
+    "groomHometown": "Asunción, パラグアイ",
+    "brideName": "芝英 朴",
+    "brideBirthday": "1996年10月8日",
+    "brideHometown": "Gimcheon, 韓国"
+  },
+  "date": {
+    "sectionLabel": "当日の詳細",
+    "ceremonyLabel": "挙式",
+    "ceremonyTime": "11:30",
+    "receptionLabel": "披露宴",
+    "receptionTime": "14:00"
+  },
+  "location": {
+    "sectionLabel": "場所",
+
+    "ceremonyLabel": "挙式",
+    "ceremonyLocation": "GIMCHEON SAMYEONGDAESA PARK",
+
+    "receptionLabel": "披露宴",
+    "receptionLocation": "GIMCHEON PARK HOTEL",
+
+    "shuttleBusSection": "当日􏰀貸切バスで移動をお願いいたします",
+
+    "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
+    "shuttleBusTimeValue": "TBD",
+
+    "shuttleBusLocationLabel": "SHUTTLE BUS PICK UP LOCATION",
+    "shuttleBusLocationValue": "TBD",
+
+    "shuttleBusDeparturePointLabel": "DEPARTURE POINT",
+    "shuttleBusDeparturePointValue": "TBD"
+  },
+
+  "sightseeing": {
+    "hotelLabel": "TBD",
+    "restaurnatsLabel": "TBD",
+    "sightseeingLabel": "TBD"
+  },
+  "rsvp": {
+    "firstNameLabel": "名",
+    "lastNameLabel": "性",
+    "emailLabel": "メール",
+
+    "relationshipLabel": "関係",
+    "relationship1Label": "嫁の親戚",
+    "relationship1Value": "bride_relative",
+    "relationship2Label": "嫁の友達",
+    "relationship2Value": "bride_friend",
+    "relationship3Label": "嫁の同僚",
+    "relationship3Value": "bride_coworker",
+    "relationship4Label": "Groom's relative",
+    "relationship4Value": "groom_relative",
+    "relationship5Label": "Groom's friend",
+    "relationship5Value": "groom_friend",
+    "relationship6Label": "Groom's coworker",
+    "relationship6Value": "groom_coworker",
+    "relationship7Label": "Others",
+    "relationship7Value": "others",
+
+    "ceremonyParticipationQuestion": "挙式への参加",
+    "ceremonyParticipationAnswer1Label": "参加する",
+    "ceremonyParticipationAnswer2Label": "参加しない",
+
+    "pickupQuestion": "ピックアップサービス",
+    "pickupAnswer1Label": "使用する",
+    "pickupAnswer2Label": "使用しない",
+
+    "ctaLabel": "登録",
+    "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 10時 30分迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます"
   }
 }

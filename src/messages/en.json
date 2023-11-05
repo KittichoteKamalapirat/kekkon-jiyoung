@@ -1,5 +1,98 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "Index": "English",
+  "common": {
+    "brideName": "Jiyoung",
+    "groomName": "Rodrigo",
+    "date": "April 27 2024"
+  },
+  "hero": {
+    "brideName": "Jiyoung",
+    "groomName": "Rodrigo"
+  },
+  "greeting": {
+    "sectionLabel": "Greeting",
+    "groomName": "Rodrigo Daniel Rotela Ramirez",
+    "brideName": "Jiyoung Park",
+    "between": "between",
+    "p1": "With joyful hearts, we would like to request the pleasure of your presence at our wedding",
+    "p2": "",
+    "p3": "",
+    "p4": "",
+    "p5": ""
+  },
+  "intro": {
+    "sectionLabel": "Stare",
+    "groomName": "Rodrigo Daniel Rotela Ramirez",
+    "groomBirthday": "Nov 16, 1989",
+    "groomHometown": "Asunción, Paraguay",
+    "brideName": "Jiyoung Park",
+    "brideBirthday": "Oct 8, 1996",
+    "brideHometown": "Gimcheon, South Korea"
+  },
+  "date": {
+    "sectionLabel": "Details of our special day",
+    "ceremonyLabel": "Ceremony",
+    "ceremonyTime": "11:30",
+    "receptionLabel": "Reception",
+    "receptionTime": "14:00"
+  },
+  "location": {
+    "sectionLabel": "Location",
+
+    "ceremonyLabel": "Ceremony",
+    "ceremonyLocation": "GIMCHEON SAMYEONGDAESA PARK",
+
+    "receptionLabel": "Reception",
+    "receptionLocation": "GIMCHEON PARK HOTEL",
+
+    "shuttleBusSection": "Shuttle bus available",
+
+    "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
+    "shuttleBusTimeValue": "TBD",
+
+    "shuttleBusLocationLabel": "SHUTTLE BUS PICK UP LOCATION",
+    "shuttleBusLocationValue": "TBD",
+
+    "shuttleBusDeparturePointLabel": "DEPARTURE POINT",
+    "shuttleBusDeparturePointValue": "TBD"
+  },
+
+  "sightseeing": {
+    "hotelLabel": "TBD",
+    "restaurnatsLabel": "TBD",
+    "sightseeingLabel": "TBD"
+  },
+  "rsvp": {
+    "firstNameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+
+    "emailLabel": "Email",
+
+    "relationshipLabel": "Relationship",
+    "relationship1Label": "Bride's relative",
+    "relationship1Value": "bride_relative",
+    "relationship2Label": "Bride's friend",
+    "relationship2Value": "bride_friend",
+    "relationship3Label": "Bride's coworker",
+    "relationship3Value": "bride_coworker",
+    "relationship4Label": "Groom's relative",
+    "relationship4Value": "groom_relative",
+    "relationship5Label": "Groom's friend",
+    "relationship5Value": "groom_friend",
+    "relationship6Label": "Groom's coworker",
+    "relationship6Value": "groom_coworker",
+    "relationship7Label": "Others",
+    "relationship7Value": "others",
+
+    "ceremonyParticipationQuestion": "For the Ceremony",
+    "ceremonyParticipationAnswer1Label": "Presence",
+    "ceremonyParticipationAnswer2Label": "Absence",
+
+    "ctaLabel": "Submit",
+
+    "pickupQuestion": "For Pick Up Service",
+    "pickupAnswer1Label": "Need",
+    "pickupAnswer2Label": "No Need",
+    "arrivalTime": "Please arrive to GIMCHEON SAMYEONGDAESA PARK by 10:30AM. We are looking forward to seeing you in our special day"
   }
 }

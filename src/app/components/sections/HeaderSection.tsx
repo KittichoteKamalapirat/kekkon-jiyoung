@@ -45,7 +45,7 @@ const HeaderSection = () => {
       <div>
         <img
           alt="Header Background 1"
-          src={`/images/hero1.webp`}
+          src={`/images/hero-1.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
             "transition-opacity duration-[3000ms]",
@@ -54,7 +54,7 @@ const HeaderSection = () => {
         />
         <img
           alt="Header Background 2"
-          src={`/images/hero2.webp`}
+          src={`/images/hero-2.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
             "transition-opacity duration-[3000ms]",
@@ -63,7 +63,7 @@ const HeaderSection = () => {
         />
         <img
           alt="Header Background 3"
-          src={`/images/hero3.webp`}
+          src={`/images/hero-3.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
             "transition-opacity duration-[3000ms]",
@@ -75,7 +75,7 @@ const HeaderSection = () => {
         <img
           key={`hero-image-1`}
           alt="Header"
-          src={`/images/hero1.webp`}
+          src={`/images/hero-1.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
             "transition-opacity duration-[3000ms] ",
@@ -86,7 +86,7 @@ const HeaderSection = () => {
         <img
           key={`hero-image-2`}
           alt="Header"
-          src={`/images/hero2.webp`}
+          src={`/images/hero-2.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
             "transition-opacity duration-[3000ms] ",
@@ -97,7 +97,7 @@ const HeaderSection = () => {
         <img
           key={`hero-image-3`}
           alt="Header"
-          src={`/images/hero3.webp`}
+          src={`/images/hero-3.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
             "transition-opacity duration-[3000ms] ",

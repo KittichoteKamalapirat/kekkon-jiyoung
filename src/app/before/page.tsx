@@ -1,3 +1,4 @@
+import MapSection from "../components/MapSection";
 import Navbar from "../components/Navbar";
 import DateTimeSection from "../components/sections/DateTimeSection";
 import DressCodeSection from "../components/sections/DressCodeSectionSection";
@@ -5,7 +6,6 @@ import FooterSection from "../components/sections/FooterSection";
 import HeaderSection from "../components/sections/HeaderSection";
 import ImagesSection from "../components/sections/ImagesSection";
 import InviteSection from "../components/sections/InviteSection";
-import MapSection from "../components/sections/MapSection";
 import SeatMapSection from "../components/sections/SeatMapSection";
 
 export default function BeforePage() {

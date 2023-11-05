@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 }
 const AnimateText = ({}: Props) => {
   const [animate, setAnimate] = useState(false);
+
+  const common = useTranslations("common");
 
   useEffect(() => {
     // Apply animation class after a short delay to trigger animation after page load
@@ -32,7 +35,7 @@ const AnimateText = ({}: Props) => {
               : "-translate-x-[300px] opacity-0"
           )}
         >
-          fon
+          {common("brideName")}
         </h1>
         <h1
           className={clsx(
@@ -51,7 +54,7 @@ const AnimateText = ({}: Props) => {
               : "translate-x-[300px] opacity-0"
           )}
         >
-          Job
+          {common("groomName")}
         </h1>
       </div>
       <h2
@@ -61,7 +64,7 @@ const AnimateText = ({}: Props) => {
           // heroTextColor
         )}
       >
-        19 Aug 2023
+        {common("date")}
       </h2>
     </div>
   );

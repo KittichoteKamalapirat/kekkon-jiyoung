@@ -1,8 +1,15 @@
+import { Button } from "@/components/ui/button";
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import { postToGoogleSheets } from "../../actions";
+import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
+import MyText from "./MyText";
+import { Input } from "./Input";
+import HelpText from "./HelpText/HelpText";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -20,11 +27,22 @@ const schema = z.object({
     .trim()
     .min(1, { message: "Please enter your last name." })
     .max(64, { message: "Should not be longer than 64 characters." }),
+  joinCeremony: z
+    .string()
+    .trim()
+    .min(1, { message: "Please enter your last name." })
+    .max(64, { message: "Should not be longer than 64 characters." }),
+  pickupNeed: z
+    .string()
+    .trim()
+    .min(1, { message: "Please enter your last name." })
+    .max(64, { message: "Should not be longer than 64 characters." }),
 });
 
 export type RsvpFormValues = z.infer<typeof schema>;
 
 const RsvpEditor = ({ initialData, className }: Props) => {
+  const t = useTranslations("rsvp");
   const onSubmit = async (data: RsvpFormValues) => {
     try {
       console.log("data", data);
@@ -35,6 +53,32 @@ const RsvpEditor = ({ initialData, className }: Props) => {
       console.error("error posting RSVP", error);
     }
   };
+
+  const ceremonyOptions: SuperRadioItemProps[] = [
+    {
+      mainLabel: t("ceremonyParticipationAnswer1Label"),
+
+      value: "presence",
+    },
+    {
+      mainLabel: t("ceremonyParticipationAnswer2Label"),
+
+      value: "absence",
+    },
+  ];
+  const pickupServiceOptions: SuperRadioItemProps[] = [
+    {
+      mainLabel: t("pickupAnswer1Label"),
+
+      value: "need",
+    },
+    {
+      mainLabel: t("pickupAnswer2Label"),
+
+      value: "no_need",
+    },
+  ];
+
   const {
     formState: { errors, isSubmitting },
     handleSubmit,
@@ -47,24 +91,54 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx("w-full", className)}
+      className={clsx("w-[400px]", className)}
     >
-      <p>Register</p>
+      <MyText className="font-bold text-3xl text-center">Registration</MyText>
 
       <div className="mt-4 flex flex-col gap-4">
-        <label htmlFor="">first name</label>
-        <input
-          type="text"
-          {...register("firstName")}
-          className="border-black border-2"
-        />
-        <label htmlFor="">last name</label>
-        <input
-          type="text"
-          {...register("lastName")}
-          className="border-black border-2"
-        />
-        <button type="submit">submit</button>
+        <div>
+          <label htmlFor="">{t("firstNameLabel")}</label>
+          <Input
+            type="text"
+            {...register("firstName")}
+            placeholder="First Name"
+          />
+          {errors.firstName && <HelpText message={errors.firstName.message} />}
+        </div>
+
+        <div>
+          <label htmlFor="">{t("lastNameLabel")}</label>
+          <Input
+            type="text"
+            {...register("lastName")}
+            placeholder="Last Name"
+          />
+          {errors.lastName && <HelpText message={errors.lastName.message} />}
+        </div>
+
+        <div>
+          <MyText>{t("ceremonyParticipationQuestion")}</MyText>
+          <SuperRadio
+            orientation="HORIZONTAL"
+            className="flex w-full gap-4"
+            items={ceremonyOptions}
+            {...register("joinCeremony")}
+          />
+        </div>
+
+        <div>
+          <MyText>{t("pickupQuestion")}</MyText>
+          <SuperRadio
+            orientation="HORIZONTAL"
+            className="flex w-full gap-4"
+            items={pickupServiceOptions}
+            {...register("pickupNeed")}
+          />
+        </div>
+
+        <Button variant="default" type="submit">
+          {t("ctaLabel")}
+        </Button>
       </div>
       {/* <Button
         label="Save"

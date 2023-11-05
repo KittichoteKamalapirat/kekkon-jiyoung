@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import React from "react";
+import MyText from "../../components/MyText";
 
 async function getData(): Promise<Row[]> {
   // Auth
@@ -45,10 +46,10 @@ export default async function Page() {
   return (
     <div>
       <div className="grid grid-cols-4">
-        <p>First Name</p>
-        <p>Last Name</p>
-        <p>Participants No.</p>
-        <p>Submit Date</p>
+        <MyText>First Name</MyText>
+        <MyText>Last Name</MyText>
+        <MyText>Participants No.</MyText>
+        <MyText>Submit Date</MyText>
       </div>
       <div className="grid grid-cols-4">
         {rows.map(({ firstName, lastName }, index) => (
