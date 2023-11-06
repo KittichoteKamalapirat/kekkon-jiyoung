@@ -36,7 +36,7 @@ const HamburgerNav = () => {
     >
       <div className="mx-auto flex flex-wrap items-center justify-between p-4">
         <h1 className="self-center whitespace-nowrap text-md font-semibold lg:text-xl">
-          brandname
+          {/* brandname */}
         </h1>
 
         <div className="relative flex gap-4">

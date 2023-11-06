@@ -11,7 +11,7 @@ const InviteSection = ({}: Props) => {
   const greeting = useTranslations("greeting");
   return (
     <SectionWrapper className="flex items-center justify-center w-screen py-20 md:py-20">
-      <div className="relative rounded-md max-w-lg py-40 md:py-60 bg-white w-full text-xl text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
+      <div className="relative container rounded-md max-w-lg py-40 md:py-60 bg-white w-full text-xl text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
         <div className="text-center">
           <p className="font-[SukhumvitSet]">
             {greeting("p1")} <br />

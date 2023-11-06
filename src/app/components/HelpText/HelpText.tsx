@@ -19,12 +19,12 @@ const HelpText = ({
   <div
     data-testid={testId}
     className={clsx(
-      "leading-xs mt-1 inline-flex items-center text-sm text-opacity-black-68",
+      "leading-xs mt-1 inline-flex items-center text-sm text-opacity-black-68 text-red-500",
       className
     )}
   >
-    {showAlertIcon && <IoMdAlert />}
-    <MyText>{message}</MyText>
+    {showAlertIcon && <IoMdAlert className="mr-2" />}
+    <MyText className="text-red-500">{message}</MyText>
   </div>
 );
 

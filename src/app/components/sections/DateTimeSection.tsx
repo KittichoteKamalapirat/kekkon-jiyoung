@@ -15,8 +15,8 @@ const DateTimeSection = ({}: Props) => {
       <div className="ring-gray-300 ring-1 rounded-md px-4 py-20 w-fit mx-auto">
         <h2 className="heading2 text-center">⏱️ {date("sectionLabel")}</h2>
 
-        <ul className="mt-8 md:max-w-[600px] mx-auto flex justify-between">
-          <li className="ml-4">
+        <ul className="mt-8 md:max-w-[600px] mx-auto grid grid-cols-12">
+          <li className="ml-4 col-span-5 text-right">
             <p className="col-span1 font-[Montserrat]">
               {date("ceremonyTime")}
             </p>
@@ -24,9 +24,9 @@ const DateTimeSection = ({}: Props) => {
               {date("receptionTime")}
             </p>
           </li>
-          <li className="ml-4">
+          <li className="ml-4 col-span-6">
             <p className="col-span-2 font-[SukhumvitSet]">
-              {date("ceremonyLabel")}
+              {date("ceremonyLabel")} 🏯
             </p>
             <p className="col-span-2">{date("receptionLabel")} 🥂</p>
           </li>

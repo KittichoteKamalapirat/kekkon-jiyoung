@@ -1,4 +1,6 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -44,6 +46,7 @@ export type RsvpFormValues = z.infer<typeof schema>;
 const RsvpEditor = ({ initialData, className }: Props) => {
   const t = useTranslations("rsvp");
   const onSubmit = async (data: RsvpFormValues) => {
+    console.log("submit");
     try {
       console.log("data", data);
       const reponse2 = await postToGoogleSheets(data);
@@ -80,21 +83,24 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   ];
 
   const {
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
     handleSubmit,
     register,
+    watch,
     setValue,
   } = useForm<RsvpFormValues>({
     defaultValues: initialData,
+    resolver: zodResolver(schema),
   });
+
+  console.log("errors", errors);
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx("w-[400px]", className)}
+      className={clsx("container md:max-w-[400px]", className)}
     >
       <MyText className="font-bold text-3xl text-center">Registration</MyText>
-
       <div className="mt-4 flex flex-col gap-4">
         <div>
           <label htmlFor="">{t("firstNameLabel")}</label>
@@ -105,7 +111,6 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           />
           {errors.firstName && <HelpText message={errors.firstName.message} />}
         </div>
-
         <div>
           <label htmlFor="">{t("lastNameLabel")}</label>
           <Input
@@ -115,22 +120,20 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           />
           {errors.lastName && <HelpText message={errors.lastName.message} />}
         </div>
-
         <div>
           <MyText>{t("ceremonyParticipationQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
-            className="flex w-full gap-4"
+            className="flex flex-col md:flex-row w-full gap-4"
             items={ceremonyOptions}
             {...register("joinCeremony")}
           />
         </div>
-
         <div>
           <MyText>{t("pickupQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
-            className="flex w-full gap-4"
+            className="flex flex-col md:flex-row w-full gap-4"
             items={pickupServiceOptions}
             {...register("pickupNeed")}
           />
