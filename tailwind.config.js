@@ -22,12 +22,6 @@ module.exports = {
         },
       },
       colors: {
-        primary: {
-          100: "#FBEFF0",
-          200: "#F2CFD3",
-          300: "#EAAEB5",
-          DEFAULT: "#b23040",
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -35,6 +29,10 @@ module.exports = {
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          100: "#FBEFF0",
+          200: "#F2CFD3",
+          300: "#EAAEB5",
+          DEFAULT: "#b23040",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

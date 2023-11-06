@@ -44,6 +44,7 @@ const InviteSection = ({}: Props) => {
                 </h1> */}
                 <p className="font-[SukhumvitSet] font-medium text-sm md:text-lg">
                   {greeting("groomName")}
+                  {/* Rodrigo Daniel <br /> Rotela Ramirez */}
                 </p>
               </div>
             </div>

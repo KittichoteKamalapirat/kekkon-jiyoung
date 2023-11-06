@@ -1,12 +1,15 @@
+import { cn } from "../../../lib/utils";
+
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
 
-const Tabs = ({ children }: Props) => {
+const Tabs = ({ children, className }: Props) => {
   const style =
     "flex border-solid border-primary-primary border-2 rounded-l-md rounded-r-md";
 
-  return <div className={style}>{children}</div>;
+  return <div className={cn(style, className)}>{children}</div>;
 };
 
 export default Tabs;
