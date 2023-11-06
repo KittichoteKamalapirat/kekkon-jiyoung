@@ -15,8 +15,8 @@ const FooterSection = ({}: Props) => {
             </h2>
             <img
               alt="Footer"
-              src={`/images/looking-forward.webp`}
-              className="w-11/12 md:max-w-[300px] mx-auto mt-10 rounded-lg"
+              src={`/images/korean-couple.svg`}
+              className="w-11/12 md:max-w-[400px] mx-auto mt-10 rounded-lg"
               loading="lazy"
             />
           </div>
