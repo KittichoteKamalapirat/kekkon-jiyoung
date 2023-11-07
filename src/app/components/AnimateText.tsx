@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 interface Props {
   heroTextColor: string;
 }
-const AnimateText = ({}: Props) => {
+const AnimateText = ({ heroTextColor }: Props) => {
   const [animate, setAnimate] = useState(false);
 
   const common = useTranslations("common");
@@ -32,15 +32,17 @@ const AnimateText = ({}: Props) => {
 
             animate
               ? "translate-x-[0] opacity-100"
-              : "-translate-x-[300px] opacity-0"
+              : "-translate-x-[300px] opacity-0",
+            heroTextColor
           )}
         >
           {common("brideName")}
         </h1>
         <h1
           className={clsx(
-            "transition-all duration-[2000ms] font-[Tangerine] delay-1000",
-            animate ? "opacity-100" : "opacity-0"
+            "transition-all duration-[2000ms] font-[Tangerine]",
+            animate ? "opacity-100" : "opacity-0",
+            heroTextColor
           )}
         >
           &
@@ -51,7 +53,8 @@ const AnimateText = ({}: Props) => {
 
             animate
               ? "translate-x-[0] opacity-100"
-              : "translate-x-[300px] opacity-0"
+              : "translate-x-[300px] opacity-0",
+            heroTextColor
           )}
         >
           {common("groomName")}
@@ -59,9 +62,9 @@ const AnimateText = ({}: Props) => {
       </div>
       <h2
         className={clsx(
-          "transition-all duration-[1000ms] delay-[2000ms] text-xl text-center font-[Montserrat]",
-          animate ? "opacity-100" : "opacity-0"
-          // heroTextColor
+          "transition-all duration-[2000ms]  text-xl text-center font-[Montserrat]",
+          animate ? "opacity-100" : "opacity-0",
+          heroTextColor
         )}
       >
         {common("date")}

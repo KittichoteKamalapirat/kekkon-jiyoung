@@ -2,7 +2,6 @@
 "use client";
 import KUTE from "kute.js";
 import { ReactNode, useEffect } from "react";
-import FireshipBlob12 from "./svg/FireshipBlob12";
 
 interface Props {
   className?: string;

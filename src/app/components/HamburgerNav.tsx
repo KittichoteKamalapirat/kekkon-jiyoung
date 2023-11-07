@@ -8,6 +8,8 @@ import { useCallback, useRef, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { useClickOutside } from "../hooks/useClickOutside";
 import { ICON_SIZE } from "../../constants";
+import Image from "next/image";
+import MyText from "./MyText";
 
 const HamburgerNav = () => {
   const path = usePathname();
@@ -59,15 +61,26 @@ const HamburgerNav = () => {
             ref={mobileMenuRef}
           >
             {/* Below is hidden by default */}
-            <ul className="mt-4 flex flex-col gap-[2px] rounded-lg  border-2 border-lm-text bg-lm-bg-light font-medium  shadow ">
+            <ul className="mt-4 flex bg-white p-4 flex-col gap-4 rounded-lg  shadowmd bg-lm-bg-light font-medium  shadow">
               <li
                 className={clsx(
                   "text-md hover:font-semibold",
                   isActive("/") && "font-bold pointer-events-none"
                 )}
               >
-                <Link href="/" locale="en">
-                  EN
+                <Link
+                  href="/"
+                  locale="en"
+                  className="flex gap-2"
+                  onClick={closeMenu}
+                >
+                  <Image
+                    alt="english"
+                    src="/images/lang/en.svg"
+                    width={20}
+                    height={20}
+                  />
+                  <MyText className="text-sm">EN</MyText>
                 </Link>
               </li>
               <li
@@ -76,20 +89,37 @@ const HamburgerNav = () => {
                   isActive("/ja") && "font-bold pointer-events-none"
                 )}
               >
-                <Link href="/" locale="ja">
-                  日本語
+                <Link
+                  href="/"
+                  locale="ja"
+                  className="flex gap-2"
+                  onClick={closeMenu}
+                >
+                  <Image
+                    alt="Japanese"
+                    src="/images/lang/ja.svg"
+                    width={20}
+                    height={20}
+                  />
+                  <MyText className="text-sm">日本語</MyText>
                 </Link>
               </li>
-              <li
+              {/* <li
                 className={clsx(
                   "text-md hover:font-semibold",
                   isActive("/es") && "font-bold pointer-events-none"
                 )}
               >
-                <Link href="/" locale="es">
-                  ES
+                <Link href="/" locale="es" className="flex gap-2">
+                  <Image
+                    alt="Spanish"
+                    src="/images/lang/es.svg"
+                    width={20}
+                    height={20}
+                  />
+                  <MyText className="text-sm">ES</MyText>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

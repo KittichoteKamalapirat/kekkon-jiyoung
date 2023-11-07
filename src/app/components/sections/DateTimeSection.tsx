@@ -1,10 +1,9 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import SectionWrapper from "../wrappers/SectionWrapper";
-import AnimateBlob from "../AnimateBlob";
-import FireshipBlob12 from "../svg/FireshipBlob12";
-import FireshipBlob34 from "../svg/FireshipBlob34";
 import { useTranslations } from "next-intl";
+import AnimateBlob from "../AnimateBlob";
+import FireshipBlob34 from "../svg/FireshipBlob34";
+import SectionWrapper from "../wrappers/SectionWrapper";
 
 interface Props {}
 
@@ -33,19 +32,21 @@ const DateTimeSection = ({}: Props) => {
         </ul>
       </div>
 
-      {/* <img
-        alt="pink roses frame"
-        src="/images/floral-pink-top-left.webp"
-        className="w-[200px] md:w-[400px] absolute z-10 left-0 top-0 opacity-40"
-      /> */}
-      <AnimateBlob
+      <div className="translate-x-[calc(8%-24px)] translate-y-1/3 absolute z-10 top-0 left-0 ">
+        <img
+          alt="flower"
+          src="/images/sakura-top-left.svg"
+          className="h-[100px] md:h-[150px] animate-wiggle"
+        />
+      </div>
+      {/* <AnimateBlob
         blobId1="#blob3"
         blobId2="#blob4"
         image={
           <div className="translate-x-[calc(8%-24px)] translate-y-1/3 absolute z-10 top-0 left-0 ">
             <img
               alt="flower"
-              src="/images/flower-2.svg"
+              src="/images/sakura-top-left.svg"
               className="h-[100px] md:h-[150px] animate-wiggle"
             />
           </div>
@@ -53,7 +54,7 @@ const DateTimeSection = ({}: Props) => {
         blob={
           <FireshipBlob34 className="w-60 h-60 md:w-80 md:h-80 absolute top-0 left-0 z-0  -translate-x-[calc(35%)] -translate-y-1/4" />
         }
-      />
+      /> */}
     </SectionWrapper>
   );
 };

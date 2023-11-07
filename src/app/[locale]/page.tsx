@@ -1,10 +1,7 @@
-"use client";
-
-import { useTranslations } from "next-intl";
 import HamburgerNav from "../components/HamburgerNav";
 import MapSection from "../components/MapSection";
 import DateTimeSection from "../components/sections/DateTimeSection";
-import DressCodeSection from "../components/sections/DressCodeSectionSection";
+import LineInviteSection from "../components/sections/LineInviteSection";
 import FooterSection from "../components/sections/FooterSection";
 import HeaderSection from "../components/sections/HeaderSection";
 import ImagesSection from "../components/sections/ImagesSection";
@@ -37,7 +34,7 @@ export default function Home() {
         <MapSection />
         <DateTimeSection />
         <ImagesSection />
-        <DressCodeSection />
+        <LineInviteSection />
         {/* <SeatMapSection /> */}
         {/* <FormSection /> */}
         <FooterSection />
