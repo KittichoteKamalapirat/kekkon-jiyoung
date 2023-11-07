@@ -24,6 +24,7 @@
     "axios": "^1.5.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "dotenv": "^16.3.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "google-map-react": "^2.2.1",
