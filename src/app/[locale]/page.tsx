@@ -10,7 +10,7 @@ import RsvpSection from "../components/sections/RsvpSection";
 import LocaleLayout from "./layout";
 
 export default function Home() {
-  console.log("env", process.env.NEXT_PUBLIC_APP_SCRIPT_URL);
+  console.log("env var", process.env.NEXT_PUBLIC_APP_SCRIPT_URL);
 
   return (
     <LocaleLayout params={{ locale: "en" }}>
