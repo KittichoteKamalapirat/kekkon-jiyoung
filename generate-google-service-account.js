@@ -17,6 +17,6 @@ const credentials = {
 };
 
 fs.writeFileSync(
-  "kekkon-jiyoung-service-account-secretx.json",
+  "kekkon-jiyoung-service-account-secret.json",
   JSON.stringify(credentials, null, 2)
 );
