@@ -1,5 +1,3 @@
-import { ObjectValues } from "./lib";
-
 export const SIZE = {
   XXL: "XXL",
   XL: "XL",
@@ -38,6 +36,9 @@ export const FONT_SIZE = {
 } as const;
 
 export type FontSize = ObjectValues<typeof FONT_SIZE>;
+
+export type ObjectKeys<T> = keyof T;
+export type ObjectValues<T> = T[keyof T];
 
 export const DIRECTION = {
   VERTICAL: "VERTICAL",

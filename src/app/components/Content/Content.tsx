@@ -2,8 +2,7 @@ import { Fragment, MouseEventHandler } from "react";
 
 import clsx from "clsx";
 
-import { ObjectValues } from "../../lib";
-import { Size } from "../../token.interface";
+import { ObjectValues, Size } from "../../token.interface";
 
 export const FONT = {
   MARKETING: "MARKETING",

@@ -1,30 +1,23 @@
 "use client";
-import { GiPagoda } from "react-icons/gi";
-import { BsFillBuildingsFill } from "react-icons/bs";
+import clsx from "clsx";
 import GoogleMapReact from "google-map-react";
-import { MdLocationPin } from "react-icons/md";
-import SectionWrapper from "./wrappers/SectionWrapper";
-import Image from "next/image";
+
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { ReactNode, useState } from "react";
+import { BsFillBuildingsFill } from "react-icons/bs";
+import { GiPagoda } from "react-icons/gi";
 import {
   CEREMONY_LOCATION_LINK,
   RECEPTION_LOCATION_LINK,
 } from "../../constants";
-import { ReactNode, useState } from "react";
-import clsx from "clsx";
-import Tabs from "./Tabs";
-import Tab from "./Tabs/Tab";
-import { mapTypeOptions } from "./Tabs/CONTAINER_TAB_TYPE";
-import MyText from "./MyText";
 import { cn } from "../../lib/utils";
+import MyText from "./MyText";
+import Tabs from "./Tabs";
+import { mapTypeOptions } from "./Tabs/CONTAINER_TAB_TYPE";
+import Tab from "./Tabs/Tab";
+import SectionWrapper from "./wrappers/SectionWrapper";
 
-const NormalPin = ({}: { lat: number; lng: number }) => (
-  <MdLocationPin
-    size={40}
-    color="red"
-    className="absolute -translate-x-1/2 -translate-y-full" // make sure the tip points to location
-  />
-);
 const PagodaPin = ({
   className,
 }: {
@@ -172,7 +165,7 @@ const CeremonyMap = () => {
       <div className="w-[300px] h-[250px] md:w-[500px] md:h-[400px] relative mx-auto mt-8">
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY, // TODO
+            key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY, //
             version: "3.31",
           }}
           zoom={defaultProps.zoom}
@@ -181,17 +174,6 @@ const CeremonyMap = () => {
           defaultZoom={defaultProps.zoom}
           key={new Date().getTime()}
         >
-          {/* {["all", "ceremony"].includes(mapType) ? (
-            <PagodaPin lat={13.873904734916668} lng={100.58171033296948} />
-          ) : (
-            <></>
-          )}
-          {["all", "reception"].includes(mapType) ? (
-            <PagodaPin lat={14.873904734916668} lng={101.58171033296948} />
-          ) : (
-            <></>
-          )} */}
-
           <PagodaPin
             lat={pins.ceremony.lat}
             lng={pins.ceremony.lng}
@@ -204,6 +186,7 @@ const CeremonyMap = () => {
             lng={pins.reception.lng}
             className={showReception ? "block" : "hidden"}
           />
+
           {/* <PagodaPin lat={13.8741327} lng={100.5805335} /> */}
         </GoogleMapReact>
       </div>

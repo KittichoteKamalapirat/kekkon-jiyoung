@@ -1,7 +1,6 @@
 import clsx from "clsx";
-import MyText from "./MyText";
-import TextField from "./TextField/TextField";
 import { Input } from "./Input";
+import MyText from "./MyText";
 
 interface Props {
   className?: string;

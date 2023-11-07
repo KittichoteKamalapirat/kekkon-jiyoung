@@ -1,5 +1,4 @@
-export type ObjectKeys<T> = keyof T;
-export type ObjectValues<T> = T[keyof T];
+declare module "google-map-react";
 
 declare global {
   namespace JSX {
