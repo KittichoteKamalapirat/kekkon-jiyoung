@@ -1,16 +1,19 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import SectionWrapper from "../wrappers/SectionWrapper";
+import { useTranslations } from "next-intl";
 
 interface Props {}
 
 const LineInviteSection = ({}: Props) => {
+  const lineInvite = useTranslations("lineInvite");
   return (
     <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center">
       <div>
-        <h2 className="heading2 text-center">Scan the QR Code</h2>
+        <h2 className="heading2 text-center">{lineInvite("title")}</h2>
         <p className="text-center font-[Montserrat]">
-          We will update the event information here
+          {lineInvite("description")}
         </p>
 
         <Image

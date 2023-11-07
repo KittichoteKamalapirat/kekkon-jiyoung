@@ -62,6 +62,10 @@
     "restaurnatsLabel": "TBD",
     "sightseeingLabel": "TBD"
   },
+  "lineInvite": {
+    "title": "QRコードをスキャンして",
+    "description": "結婚式に関する情報を受けます。"
+  },
   "rsvp": {
     "firstNameLabel": "名",
     "lastNameLabel": "性",
@@ -93,5 +97,8 @@
 
     "ctaLabel": "登録",
     "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 10時 30分迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます"
+  },
+  "footer": {
+    "copy": "お客様の皆さんにお会いできるように楽しみにしております"
   }
 }

@@ -62,6 +62,10 @@
     "restaurnatsLabel": "TBD",
     "sightseeingLabel": "TBD"
   },
+  "lineInvite": {
+    "title": "Scan the QR Code",
+    "description": "We will update the event information here"
+  },
   "rsvp": {
     "firstNameLabel": "First Name",
     "lastNameLabel": "Last Name",
@@ -94,5 +98,8 @@
     "pickupAnswer1Label": "Need",
     "pickupAnswer2Label": "No Need",
     "arrivalTime": "Please arrive to GIMCHEON SAMYEONGDAESA PARK by 10:30AM. We are looking forward to seeing you in our special day"
+  },
+  "footer": {
+    "copy": "Looking forward to meeting all the guests"
   }
 }

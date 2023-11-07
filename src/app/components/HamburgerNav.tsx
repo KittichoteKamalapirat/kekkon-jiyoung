@@ -43,13 +43,34 @@ const HamburgerNav = () => {
 
         <div className="relative flex gap-4">
           {/* Shown by default */}
-          <button onClick={toggleMenu}>
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden p-2 bg-white rounded-full shadow-inner"
+          >
             {isExpanded ? (
-              <IoMdClose size={ICON_SIZE} color="white" />
+              <IoMdClose size={ICON_SIZE} color="#000" />
             ) : (
-              <IoMdMenu size={ICON_SIZE} color="white" />
+              <IoMdMenu size={ICON_SIZE} color="#000" />
             )}
           </button>
+          <div className="lg:flex gap-2 hidden">
+            <Link href="/" locale="en" className="flex gap-2 hover:opacity-50">
+              <Image
+                alt="English"
+                src="/images/lang/en.svg"
+                width={30}
+                height={30}
+              />
+            </Link>
+            <Link href="/" locale="ja" className="flex gap-2 hover:opacity-50">
+              <Image
+                alt="Japanese"
+                src="/images/lang/ja.svg"
+                width={30}
+                height={30}
+              />
+            </Link>
+          </div>
 
           {/* menu items */}
           <div
@@ -71,7 +92,7 @@ const HamburgerNav = () => {
                 <Link
                   href="/"
                   locale="en"
-                  className="flex gap-2"
+                  className="flex gap-2 hover:opacity-50"
                   onClick={closeMenu}
                 >
                   <Image
@@ -92,7 +113,7 @@ const HamburgerNav = () => {
                 <Link
                   href="/"
                   locale="ja"
-                  className="flex gap-2"
+                  className="flex gap-2 hover:opacity-50"
                   onClick={closeMenu}
                 >
                   <Image
