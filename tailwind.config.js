@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -28,11 +30,12 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          100: "#FBEFF0",
-          200: "#F2CFD3",
-          300: "#EAAEB5",
-          DEFAULT: "#b23040",
+          // DEFAULT: "hsl(var(--primary))",
+          50: colors.rose[50],
+          100: colors.rose[100],
+          200: colors.rose[200],
+          300: colors.rose[300],
+          DEFAULT: colors.rose[300],
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

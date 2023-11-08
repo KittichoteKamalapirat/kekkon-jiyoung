@@ -103,11 +103,11 @@ const RsvpEditor = ({ initialData, className }: Props) => {
       <MyText className="font-bold text-3xl text-center">Registration</MyText>
       <div className="mt-4 flex flex-col gap-4">
         <div>
-          <label htmlFor="">{t("firstNameLabel")}</label>
+          <label>{t("firstNameLabel")}</label>
           <Input
             type="text"
             {...register("firstName")}
-            placeholder="First Name"
+            placeholder={t("firstNamePlaceholder")}
           />
           {errors.firstName && <HelpText message={errors.firstName.message} />}
         </div>
@@ -116,7 +116,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           <Input
             type="text"
             {...register("lastName")}
-            placeholder="Last Name"
+            placeholder={t("lastNamePlaceholder")}
           />
           {errors.lastName && <HelpText message={errors.lastName.message} />}
         </div>

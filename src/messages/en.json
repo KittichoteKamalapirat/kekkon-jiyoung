@@ -45,6 +45,9 @@
     "receptionLabel": "Reception",
     "receptionLocation": "GIMCHEON PARK HOTEL",
 
+    "bothLabel": "Both",
+    "openInGoogleMapLabel": "Open in Google Map",
+
     "shuttleBusSection": "Shuttle bus available",
 
     "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
@@ -68,7 +71,10 @@
   },
   "rsvp": {
     "firstNameLabel": "First Name",
+    "firstNamePlaceholder": "First Name",
+
     "lastNameLabel": "Last Name",
+    "lastNamePlaceholder": "Last Name",
 
     "emailLabel": "Email",
 

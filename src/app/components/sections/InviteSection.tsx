@@ -2,22 +2,34 @@
 /* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
 import SectionWrapper from "../wrappers/SectionWrapper";
+import Image from "next/image";
 
 interface Props {}
 
 const InviteSection = ({}: Props) => {
   const greeting = useTranslations("greeting");
   return (
-    <SectionWrapper className="flex items-center justify-center w-screen py-20 md:py-20">
+    <SectionWrapper className="flex items-center justify-center w-screen py-20 md:py-20 relative">
+      <Image
+        alt="Pungmul"
+        // placeholder="blur"
+        fill
+        src="/images/pungmul.webp"
+        // width={40}
+        sizes="100vw"
+        // height={40}
+        className="blur-lg absolute opacity-20"
+      />
       <div className="relative container rounded-md max-w-lg py-40 md:py-60 bg-white w-full text-xl text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
         <div className="text-center">
-          <p className="font-[SukhumvitSet]">
-            {greeting("p1")} <br />
-            {greeting("p2")} <br />
-            {greeting("p3")} <br />
-            {greeting("p4")} <br />
-            {greeting("p5")} <br />
-          </p>
+          <div className="font-[SukhumvitSet] flex flex-col gap-6">
+            <p>{greeting("p1")}</p>
+
+            <p>{greeting("p2")}</p>
+            <p>{greeting("p3")}</p>
+            <p>{greeting("p4")}</p>
+            <p>{greeting("p5")}</p>
+          </div>
           <br />
           <p className="font-[SukhumvitSet]">{greeting("between")}</p>
           <br />

@@ -1,3 +1,4 @@
+"use client"; // for translation to work
 import HamburgerNav from "../components/HamburgerNav";
 import MapSection from "../components/MapSection";
 import DateTimeSection from "../components/sections/DateTimeSection";
@@ -10,14 +11,13 @@ import RsvpSection from "../components/sections/RsvpSection";
 import LocaleLayout from "./layout";
 
 export default function Home() {
-  console.log("env var", process.env.NEXT_PUBLIC_APP_SCRIPT_URL);
-
   return (
-    <LocaleLayout params={{ locale: "en" }}>
+    <div>
       <main className="flex min-h-screen flex-col items-center justify-between">
         {/* <Navbar /> */}
         <HamburgerNav />
         <HeaderSection />
+        <InviteSection />
         <RsvpSection />
         {/* added below so overflow absolute don't cause scrollable */}
         {/* https://stackoverflow.com/questions/64344836/absolutely-positioned-elements-adding-scroll-on-mobile */}
@@ -29,7 +29,7 @@ export default function Home() {
         Find my seat 🪑
       </a> */}
         {/* <HeaderSection /> */}
-        <InviteSection />
+
         {/* <VideoSection /> */}
         <MapSection />
         <DateTimeSection />
@@ -39,6 +39,6 @@ export default function Home() {
         {/* <FormSection /> */}
         <FooterSection />
       </main>
-    </LocaleLayout>
+    </div>
   );
 }

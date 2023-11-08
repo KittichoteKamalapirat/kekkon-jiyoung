@@ -93,7 +93,7 @@ const CeremonyMap = () => {
 
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
-    <SectionWrapper className="bg-primary-100 w-screen py-16">
+    <SectionWrapper className="bg-primary-50 w-screen py-16">
       <Tabs className="mx-auto w-fit mb-8">
         {mapTypeOptions.map((option) => (
           <Tab
@@ -103,7 +103,9 @@ const CeremonyMap = () => {
               setMapType(option.value);
             }}
           >
-            {option.label}
+            {option.label === "Ceremony" && location("ceremonyLabel")}
+            {option.label === "Reception" && location("receptionLabel")}
+            {option.label === "Both" && location("bothLabel")}
           </Tab>
         ))}
       </Tabs>
@@ -126,7 +128,7 @@ const CeremonyMap = () => {
               width={20}
               height={20}
             />
-            <MyText>Open in Google Map</MyText>
+            <MyText>{location("openInGoogleMapLabel")}</MyText>
           </a>
         </div>
       )}

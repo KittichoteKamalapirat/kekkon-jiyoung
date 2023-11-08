@@ -3,31 +3,6 @@ import axios from "axios";
 import { google } from "googleapis";
 import { RsvpFormValues } from "./app/components/RsvpEditor";
 
-export async function postToAppScriptUnauth(data: RsvpFormValues) {
-  try {
-    console.log("url", process.env.NEXT_PUBLIC_APP_SCRIPT_URL);
-    console.log("data", data);
-    const formData = new FormData();
-    formData.append("firstName", data.firstName);
-    formData.append("lastName", data.lastName);
-
-    const result = await axios.post(
-      process.env.NEXT_PUBLIC_APP_SCRIPT_URL as string,
-      formData,
-      {
-        headers: {
-          // "Content-Type": "application/json",
-          "Content-Type": `multipart/form-data`,
-        },
-      }
-    );
-    // console.log("result", result.data);
-    return result;
-  } catch (error) {
-    console.error("error in server action", error);
-  }
-}
-
 export async function postToGoogleSheets(data: RsvpFormValues) {
   try {
     // Auth

@@ -15,9 +15,9 @@
     "brideName": "芝英 朴",
     "between": "",
     "p1": "謹啓",
-    "p2": "皆様におかれまして􏰀 ご清祥􏰁こととお慶び申し上げます",
-    "p3": "このたび 私たち􏰀結婚式を挙げることになりましweたdding. つきまして􏰀日頃お世話になっている 皆様にお集まりいただき 小宴を催したいと存じます",
-    "p4": "ご多用中 誠に恐縮で􏰀ございますが ご来臨􏰁栄を賜りたく 謹んでご案内申し上げます",
+    "p2": "皆様におかれましてはご清祥のこととお慶び申し上げます。",
+    "p3": "このたび私たちは結婚式を挙げることになりました。つきましては日頃お世話になっている皆様にお集まりいただき、小宴を催したいと存じます。",
+    "p4": "ご多用中 誠に恐縮ではございますが、ご来臨の栄を賜りたく、謹んでご案内申し上げます。",
     "p5": "謹白"
   },
   "intro": {
@@ -45,6 +45,9 @@
     "receptionLabel": "披露宴",
     "receptionLocation": "GIMCHEON PARK HOTEL",
 
+    "bothLabel": "両方",
+    "openInGoogleMapLabel": "Googleマップで開く",
+
     "shuttleBusSection": "当日􏰀貸切バスで移動をお願いいたします",
 
     "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
@@ -68,7 +71,10 @@
   },
   "rsvp": {
     "firstNameLabel": "名",
+    "firstNamePlaceholder": "名",
+
     "lastNameLabel": "性",
+    "lastNamePlaceholder": "性",
     "emailLabel": "メール",
 
     "relationshipLabel": "関係",

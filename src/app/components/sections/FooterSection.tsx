@@ -9,7 +9,7 @@ interface Props {}
 const FooterSection = ({}: Props) => {
   const footer = useTranslations("footer");
   return (
-    <SectionWrapper className="relative w-screen py-8 md:py-8 bg-primary-100 flex items-center justify-center">
+    <SectionWrapper className="relative w-screen py-8 md:py-8 bg-primary-50 flex items-center justify-center">
       <footer>
         <div className="px-4 py-6 md:flex md:items-center md:justify-between w-screen text-center">
           <div className="mx-auto w-full max-w-screen-xl">
