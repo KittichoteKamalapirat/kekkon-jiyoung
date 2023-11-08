@@ -18,7 +18,7 @@ const RsvpSection = ({ className }: Props) => {
           firstName: "",
           lastName: "",
           joinCeremony: "",
-          pickupNeed: "",
+          needPickup: "",
         }}
       />
     </div>

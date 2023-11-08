@@ -2,13 +2,12 @@
 import HamburgerNav from "../components/HamburgerNav";
 import MapSection from "../components/MapSection";
 import DateTimeSection from "../components/sections/DateTimeSection";
-import LineInviteSection from "../components/sections/LineInviteSection";
 import FooterSection from "../components/sections/FooterSection";
 import HeaderSection from "../components/sections/HeaderSection";
 import ImagesSection from "../components/sections/ImagesSection";
 import InviteSection from "../components/sections/InviteSection";
+import LineInviteSection from "../components/sections/LineInviteSection";
 import RsvpSection from "../components/sections/RsvpSection";
-import LocaleLayout from "./layout";
 
 export default function Home() {
   return (

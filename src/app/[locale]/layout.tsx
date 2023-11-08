@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
+import { Toaster, toast } from "sonner";
+
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "es" }, { locale: "ja" }];
 }
@@ -28,6 +30,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Toaster richColors />
           {children}
         </NextIntlClientProvider>
       </body>

@@ -2,7 +2,7 @@ import { google } from "googleapis";
 import React from "react";
 import MyText from "../../components/MyText";
 
-async function getData(): Promise<Row[]> {
+export async function getData(): Promise<Row[]> {
   // Auth
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],

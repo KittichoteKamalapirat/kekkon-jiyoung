@@ -18,7 +18,7 @@ const InviteSection = ({}: Props) => {
         // width={40}
         sizes="100vw"
         // height={40}
-        className="blur-lg absolute opacity-20"
+        className="blur absolute opacity-20"
       />
       <div className="relative container rounded-md max-w-lg py-40 md:py-60 bg-white w-full text-xl text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
         <div className="text-center">

@@ -1,17 +1,19 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
 
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { isDirty, z } from "zod";
 
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import { postToGoogleSheets } from "../../actions";
-import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
-import MyText from "./MyText";
-import { Input } from "./Input";
+import { useState } from "react";
+import { SubmitErrorCode, postToGoogleSheets } from "../../actions";
 import HelpText from "./HelpText/HelpText";
+import { Input } from "./Input";
+import MyText from "./MyText";
+import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -34,7 +36,7 @@ const schema = z.object({
     .trim()
     .min(1, { message: "Please enter your last name." })
     .max(64, { message: "Should not be longer than 64 characters." }),
-  pickupNeed: z
+  needPickup: z
     .string()
     .trim()
     .min(1, { message: "Please enter your last name." })
@@ -45,15 +47,40 @@ export type RsvpFormValues = z.infer<typeof schema>;
 
 const RsvpEditor = ({ initialData, className }: Props) => {
   const t = useTranslations("rsvp");
+
+  const successErrorMessage = t("successfullySubmitted");
+  const unknownErrorMessage = t("unknownError");
+
+  const alreadySubmittedErrorMessage = t("alreadySubmittedError");
+  const [submitErrorCode, setSubmitErrorCode] = useState<
+    SubmitErrorCode | undefined
+  >();
+  // const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
   const onSubmit = async (data: RsvpFormValues) => {
     console.log("submit");
+    // setIsSubmitting(true);
     try {
-      console.log("data", data);
-      const reponse2 = await postToGoogleSheets(data);
+      const response = await postToGoogleSheets("xxx");
 
-      // console.log("response", reponse2.data);
+      console.log("response", response);
+
+      if (response.success) {
+        toast.success(successErrorMessage);
+      } else {
+        setSubmitErrorCode(response.errorCode);
+        toast.error(
+          response.errorCode === "already_submitted"
+            ? alreadySubmittedErrorMessage
+            : unknownErrorMessage
+        );
+      }
+      // setIsSubmitting(false);
     } catch (error) {
       console.error("error posting RSVP", error);
+      // console.error("error posting RSVP", error.message);
+      setSubmitErrorCode("unknown_error");
+      // setIsSubmitting(false);
     }
   };
 
@@ -135,12 +162,22 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             orientation="HORIZONTAL"
             className="flex flex-col md:flex-row w-full gap-4"
             items={pickupServiceOptions}
-            {...register("pickupNeed")}
+            {...register("needPickup")}
           />
         </div>
 
-        <Button variant="default" type="submit">
-          {t("ctaLabel")}
+        {submitErrorCode === "already_submitted" && (
+          <MyText className="text-error">{alreadySubmittedErrorMessage}</MyText>
+        )}
+        {submitErrorCode === "unknown_error" && (
+          <MyText className="text-error">{unknownErrorMessage}</MyText>
+        )}
+        <Button
+          variant="default"
+          type="submit"
+          disabled={!isDirty || isSubmitting}
+        >
+          {!isSubmitting ? t("ctaLabel") : "loading..."}
         </Button>
       </div>
       {/* <Button

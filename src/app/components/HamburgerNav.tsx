@@ -4,15 +4,18 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import Link from "next-intl/link";
 
+import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import { useClickOutside } from "../hooks/useClickOutside";
 import { ICON_SIZE } from "../../constants";
-import Image from "next/image";
+import { cn } from "../../lib/utils";
+import { useClickOutside } from "../hooks/useClickOutside";
 import MyText from "./MyText";
 
 const HamburgerNav = () => {
   const path = usePathname();
+
+  const isJapanese = path.includes("ja");
 
   const isActive = (navPath: string) => path === navPath;
 
@@ -54,7 +57,14 @@ const HamburgerNav = () => {
             )}
           </button>
           <div className="lg:flex gap-2 hidden">
-            <Link href="/" locale="en" className="flex gap-2 hover:opacity-50">
+            <Link
+              href="/"
+              locale="en"
+              className={cn(
+                "flex gap-2 hover:opacity-50",
+                !isJapanese && "ring-2 ring-black ring-offset-0 rounded-full"
+              )}
+            >
               <Image
                 alt="English"
                 src="/images/lang/en.svg"
@@ -62,7 +72,14 @@ const HamburgerNav = () => {
                 height={30}
               />
             </Link>
-            <Link href="/" locale="ja" className="flex gap-2 hover:opacity-50">
+            <Link
+              href="/"
+              locale="ja"
+              className={cn(
+                "flex gap-2 hover:opacity-50",
+                isJapanese && "ring-2 ring-black ring-offset-0 rounded-full"
+              )}
+            >
               <Image
                 alt="Japanese"
                 src="/images/lang/ja.svg"
@@ -100,6 +117,10 @@ const HamburgerNav = () => {
                     src="/images/lang/en.svg"
                     width={20}
                     height={20}
+                    className={cn(
+                      !isJapanese &&
+                        "ring-2 ring-primary ring-offset-0 rounded-full"
+                    )}
                   />
                   <MyText className="text-sm">EN</MyText>
                 </Link>
@@ -121,6 +142,10 @@ const HamburgerNav = () => {
                     src="/images/lang/ja.svg"
                     width={20}
                     height={20}
+                    className={cn(
+                      isJapanese &&
+                        "ring-2 ring-primary ring-offset-0 rounded-full"
+                    )}
                   />
                   <MyText className="text-sm">日本語</MyText>
                 </Link>

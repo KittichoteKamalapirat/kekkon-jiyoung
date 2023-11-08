@@ -98,6 +98,9 @@
     "ceremonyParticipationAnswer1Label": "Presence",
     "ceremonyParticipationAnswer2Label": "Absence",
 
+    "successfullySubmitted": "Successfully submitted",
+    "alreadySubmittedError": "You have already submitted this form",
+    "unknownError": "Unknown error. Please try again later",
     "ctaLabel": "Submit",
 
     "pickupQuestion": "For Pick Up Service",
