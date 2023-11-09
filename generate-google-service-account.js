@@ -16,7 +16,11 @@ const credentials = {
   universe_domain: "googleapis.com",
 };
 
+console.log("credentials", credentials);
+
 fs.writeFileSync(
   "kekkon-jiyoung-service-account-secret.json",
   JSON.stringify(credentials, null, 2)
 );
+
+console.log("after generating");
