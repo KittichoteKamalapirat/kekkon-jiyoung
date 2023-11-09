@@ -105,7 +105,8 @@
     "alreadySubmittedError": "すでに登録されています",
     "unknownError": "エラーが発生しました。もう一度お試しください。",
 
-    "ctaLabel": "登録",
+    "ctaLabel": "登録する",
+    "ctaLabelLoading": "登録している",
     "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 10時 30分迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます"
   },
   "footer": {

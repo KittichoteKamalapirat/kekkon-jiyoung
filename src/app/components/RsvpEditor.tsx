@@ -58,12 +58,8 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   // const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const onSubmit = async (data: RsvpFormValues) => {
-    console.log("submit");
-    // setIsSubmitting(true);
     try {
-      const response = await postToGoogleSheets("xxx");
-
-      console.log("response", response);
+      const response = await postToGoogleSheets(data);
 
       if (response.success) {
         toast.success(successErrorMessage);
@@ -125,7 +121,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx("container md:max-w-[400px]", className)}
+      className={clsx("container md:max-w-[400px] mb-12", className)}
     >
       <MyText className="font-bold text-3xl text-center">Registration</MyText>
       <div className="mt-4 flex flex-col gap-4">
@@ -151,7 +147,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           <MyText>{t("ceremonyParticipationQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
-            className="flex flex-col md:flex-row w-full gap-4"
+            className="flex flex-col md:flex-row w-full gap-2"
             items={ceremonyOptions}
             {...register("joinCeremony")}
           />
@@ -160,7 +156,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           <MyText>{t("pickupQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
-            className="flex flex-col md:flex-row w-full gap-4"
+            className="flex flex-col md:flex-row w-full gap-2"
             items={pickupServiceOptions}
             {...register("needPickup")}
           />
@@ -177,18 +173,9 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           type="submit"
           disabled={!isDirty || isSubmitting}
         >
-          {!isSubmitting ? t("ctaLabel") : "loading..."}
+          {!isSubmitting ? t("ctaLabel") : t("ctaLabelLoading")}
         </Button>
       </div>
-      {/* <Button
-        label="Save"
-        type="submit"
-        className="mt-4"
-        width="FULL"
-        isLoading={isSubmitting}
-
-        // disabled={!isDirty}
-      /> */}
     </form>
   );
 };

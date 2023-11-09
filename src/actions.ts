@@ -6,7 +6,7 @@ import { RsvpFormValues } from "./app/components/RsvpEditor";
 export type SubmitErrorCode = "already_submitted" | "unknown_error";
 type SubmitSuccessResponse = {
   success: true;
-  data: any;
+  // data: any;
 };
 
 type SubmitErrorResponse = {
@@ -16,7 +16,7 @@ type SubmitErrorResponse = {
 
 export type SubmitResponse = SubmitSuccessResponse | SubmitErrorResponse;
 export async function postToGoogleSheets(
-  data: string
+  data: RsvpFormValues
 ): Promise<SubmitResponse> {
   "use server";
   try {
@@ -33,19 +33,15 @@ export async function postToGoogleSheets(
 
     const range = `dev`;
 
-    // const { firstName, lastName, joinCeremony, needPickup } = data;
-    const firstName = "x";
-    const lastName = "x";
-    const joinCeremony = "x";
-    const needPickup = "x";
+    const { firstName, lastName, joinCeremony, needPickup } = data;
 
-    const header = [
-      "firstName",
-      "lastName",
-      "ceremony",
-      "pickup",
-      "submiteDate",
-    ];
+    // const header = [
+    //   "firstName",
+    //   "lastName",
+    //   "ceremony",
+    //   "pickup",
+    //   "submiteDate",
+    // ];
     // Get existing data
     const existingDataResponse = await sheets.spreadsheets.values.get({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
@@ -73,7 +69,7 @@ export async function postToGoogleSheets(
     }
 
     const date = dayjs().format("DD/MMM/YYYY");
-    console.log("date", date);
+
     const rowData = [
       [firstName, lastName, joinCeremony, needPickup, `"${date}"`],
     ]; // replace with your actual row data
@@ -89,14 +85,10 @@ export async function postToGoogleSheets(
       auth: auth,
     };
 
-    console.log("1");
+    await sheets.spreadsheets.values.append(request);
 
-    const response = await sheets.spreadsheets.values.append(request);
-    console.log("2");
-    // console.log("result", result.data);
-    return { success: true, data: response };
+    return { success: true };
   } catch (error) {
-    console.log("3");
     console.error("error in server action", error);
 
     return { success: false, errorCode: "unknown_error" };
