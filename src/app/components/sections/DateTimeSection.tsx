@@ -1,8 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import { useTranslations } from "next-intl";
-import AnimateBlob from "../AnimateBlob";
-import FireshipBlob34 from "../svg/FireshipBlob34";
 import SectionWrapper from "../wrappers/SectionWrapper";
 
 interface Props {}
@@ -11,7 +9,7 @@ const DateTimeSection = ({}: Props) => {
   const date = useTranslations("date");
   return (
     <SectionWrapper className="relative py-32 md:py-40 w-screen font-[SukhumvitSet]">
-      <div className="ring-gray-300 ring-1 rounded-md px-4 py-20 w-fit mx-auto">
+      <div className="ring-gray-300 ring-1 rounded-md px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
         <h2 className="heading2 text-center">⏱️ {date("sectionLabel")}</h2>
 
         <ul className="mt-8 md:max-w-[600px] mx-auto grid grid-cols-12">
