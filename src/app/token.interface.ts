@@ -7,7 +7,8 @@ export const SIZE = {
   XS: "XS",
 } as const;
 
-export type Size = ObjectValues<typeof SIZE>;
+// export type Size = ObjectValues<typeof SIZE>;
+export type Size = "XXL" | "XL" | "LARGE" | "MEDIUM" | "SMALL" | "XS";
 
 export type Context = "contained" | "standalone";
 export type Background = "default" | "lightgrey" | "lightblue";
@@ -35,14 +36,16 @@ export const FONT_SIZE = {
   "3xl": "3xl",
 } as const;
 
-export type FontSize = ObjectValues<typeof FONT_SIZE>;
+// export type FontSize = ObjectValues<typeof FONT_SIZE>;
+export type FontSize = "xl" | "xs" | "2xs" | "sm" | "md" | "lg" | "2xl" | "3xl";
 
-export type ObjectKeys<T> = keyof T;
-export type ObjectValues<T> = T[keyof T];
+// export type ObjectKeys<T> = keyof T;
+// export type ObjectValues<T> = T[keyof T];
 
 export const DIRECTION = {
   VERTICAL: "VERTICAL",
   HORIZONTAL: "HORIZONTAL",
 } as const;
 
-export type Direction = ObjectValues<typeof DIRECTION>;
+// export type Direction = ObjectValues<typeof DIRECTION>;
+export type Direction = "VERTICAL" | "HORIZONTAL";

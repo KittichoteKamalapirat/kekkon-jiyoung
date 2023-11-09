@@ -1,6 +1,7 @@
 "use client";
+import GoogleMap from "google-maps-react-markers";
 import clsx from "clsx";
-import GoogleMapReact from "google-map-react";
+import { RiSyringeFill } from "react-icons/ri";
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -35,6 +36,7 @@ const PagodaPin = ({
     />
   </div>
 );
+
 const BuildingPin = ({
   className,
 }: {
@@ -66,7 +68,7 @@ const defaultProps = {
     lat: 36.1167177,
     lng: 128.0153575,
   },
-  zoom: 16,
+  zoom: 14,
 };
 
 const pins = {
@@ -91,6 +93,7 @@ const CeremonyMap = () => {
     setMapType(mapType);
   };
 
+  console.log("pins.ceremony.lat", pins.ceremony.lat);
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
     <SectionWrapper className="bg-primary-50 w-screen py-16">
@@ -156,22 +159,9 @@ const CeremonyMap = () => {
         </div>
       )}
 
-      {/* <p className="text-center text-smmd mt-4 font-[Montserrat]">
-        02-015-3765
-      </p> */}
-      {/* <p className="text-center font-[Montserrat]">
-        79, 1 Vibhavadi Rangsit 64 Alley <br /> Talat Bang Khen, Lak Si <br />
-        Bangkok 10210
-      </p> */}
-
       <div className="w-[300px] h-[250px] md:w-[500px] md:h-[400px] relative mx-auto mt-8">
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY, //
-            version: "3.31",
-          }}
-          zoom={defaultProps.zoom}
-          center={defaultProps[mapType]}
+        <GoogleMap
+          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}
           defaultCenter={defaultProps[mapType]}
           defaultZoom={defaultProps.zoom}
           key={new Date().getTime()}
@@ -180,17 +170,13 @@ const CeremonyMap = () => {
             lat={pins.ceremony.lat}
             lng={pins.ceremony.lng}
             className={showCeremony ? "block" : "hidden"}
-            // isShow={["all", "ceremony"].includes(mapType)}
-            // mapType={mapType}
           />
           <BuildingPin
             lat={pins.reception.lat}
             lng={pins.reception.lng}
             className={showReception ? "block" : "hidden"}
           />
-
-          {/* <PagodaPin lat={13.8741327} lng={100.5805335} /> */}
-        </GoogleMapReact>
+        </GoogleMap>
       </div>
     </SectionWrapper>
   );

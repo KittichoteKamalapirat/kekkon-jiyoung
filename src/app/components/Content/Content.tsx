@@ -2,14 +2,15 @@ import { Fragment, MouseEventHandler } from "react";
 
 import clsx from "clsx";
 
-import { ObjectValues, Size } from "../../token.interface";
+import { Size } from "../../token.interface";
 
 export const FONT = {
   MARKETING: "MARKETING",
   BASE: "BASE",
 } as const;
 
-type Font = ObjectValues<typeof FONT>;
+// type Font = ObjectValues<typeof FONT>;
+type Font = "MARKETING" | "BASE";
 
 export const CONTENT_SIZE = {
   DISPLAY_XL: "DISPLAY_XL",
@@ -25,7 +26,19 @@ export const CONTENT_SIZE = {
   XS: "XS",
 } as const;
 
-export type ContentSize = ObjectValues<typeof CONTENT_SIZE>;
+// export type ContentSize = ObjectValues<typeof CONTENT_SIZE>;
+export type ContentSize =
+  | "DISPLAY_XL"
+  | "DISPLAY_LARGE"
+  | "DISPLAY_MEDIUM"
+  | "DISPLAY_SMALL"
+  | "HEADING_1"
+  | "XXL"
+  | "XL"
+  | "LARGE"
+  | "MEDIUM"
+  | "SMALL"
+  | "XS";
 
 export const CONTENT_ALIGN = {
   CENTER: "CENTER",
@@ -33,7 +46,8 @@ export const CONTENT_ALIGN = {
   RIGHT: "RIGHT",
 } as const;
 
-type ContentAlign = ObjectValues<typeof CONTENT_ALIGN>;
+// type ContentAlign = ObjectValues<typeof CONTENT_ALIGN>;
+type ContentAlign = "CENTER" | "LEFT" | "RIGHT";
 
 export interface ContentProps {
   font?: Font;

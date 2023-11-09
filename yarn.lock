@@ -1589,7 +1589,7 @@ google-auth-library@^9.0.0:
     gtoken "^7.0.0"
     jws "^4.0.0"
 
-google-map-react@^2.2.1:
+google-map-react@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-2.2.1.tgz#54c45899966fb0000e04cde2d5ca44ad728bdba6"
   integrity sha512-Dg8aexf5rNSmywj0XKQ5m4RNzVcWwKEM2BGDj5aPChD0um8ZRjB5Upcb/yg/i0oG1aES29asQ5+6BHVgrK5xGA==
@@ -1598,6 +1598,11 @@ google-map-react@^2.2.1:
     "@mapbox/point-geometry" "^0.1.0"
     eventemitter3 "^4.0.4"
     prop-types "^15.7.2"
+
+google-maps-react-markers@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/google-maps-react-markers/-/google-maps-react-markers-2.0.6.tgz#f85a328b51d7c6d5cedcf21f2ec8495bd3dd7804"
+  integrity sha512-jeugrrNbAG+xRtdbt9Uy8JHNHR6L7KdR8tmtEE3zWPoNw1TkyuQNZciO4G7nuE2JjUR6zxYrNukIJOL5PKwqJw==
 
 googleapis-common@^7.0.0:
   version "7.0.1"
