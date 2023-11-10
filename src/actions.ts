@@ -26,7 +26,7 @@ export async function postToGoogleSheets(
       ],
       projectId: process.env.GOOGLE_PROJECT_ID,
       credentials: {
-        private_key: process.env.GOOGLE_PRIVATE_KEY,
+        private_key: JSON.parse(process.env.GOOGLE_PRIVATE_KEY as string),
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
       },
     });
@@ -35,6 +35,10 @@ export async function postToGoogleSheets(
     console.log(
       "process.env.GOOGLE_PRIVATE_KEY",
       process.env.GOOGLE_PRIVATE_KEY
+    );
+    console.log(
+      "parse process.env.GOOGLE_PRIVATE_KEY",
+      JSON.parse(process.env.GOOGLE_PRIVATE_KEY as string)
     );
     console.log(
       "process.env.GOOGLE_CLIENT_EMAIL",

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node generate-google-service-account.js",
+    "prebuild-not-using": "node generate-google-service-account.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
