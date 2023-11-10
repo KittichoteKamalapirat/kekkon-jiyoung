@@ -34,8 +34,6 @@ export async function postToGoogleSheets(
 
     const sheets = google.sheets({ version: "v4", auth });
 
-    // Query
-
     const range = `dev`;
 
     const { firstName, lastName, joinCeremony, needPickup } = data;
