@@ -25,6 +25,11 @@ export async function postToGoogleSheets(
       scopes: [
         "https://www.googleapis.com/auth/spreadsheets", // for write
       ],
+      projectId: process.env.GOOGLE_PROJECT_ID,
+      credentials: {
+        private_key: process.env.GOOGLE_PRIVATE_KEY,
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      },
     });
 
     const sheets = google.sheets({ version: "v4", auth });
