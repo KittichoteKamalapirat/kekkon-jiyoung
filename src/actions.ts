@@ -6,7 +6,6 @@ import { RsvpFormValues } from "./app/components/RsvpEditor";
 export type SubmitErrorCode = "already_submitted" | "unknown_error";
 type SubmitSuccessResponse = {
   success: true;
-  // data: any;
 };
 
 type SubmitErrorResponse = {
