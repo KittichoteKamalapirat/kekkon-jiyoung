@@ -118,16 +118,10 @@ const RsvpEditor = ({ initialData, className }: Props) => {
     handleSubmit,
     register,
     watch,
-    setValue,
   } = useForm<RsvpFormValues>({
     defaultValues: initialData,
     resolver: zodResolver(schema),
   });
-
-  console.log("errors", errors);
-
-  console.log("height", height);
-  console.log("width", width);
 
   const isJoin = watch("joinCeremony") === "presence";
 

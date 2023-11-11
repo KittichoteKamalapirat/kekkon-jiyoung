@@ -94,7 +94,6 @@ const CeremonyMap = () => {
     setMapType(mapType);
   };
 
-  console.log("pins.ceremony.lat", pins.ceremony.lat);
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
     <SectionWrapper className="bg-primary-50 w-screen py-16 relative">
@@ -117,13 +116,13 @@ const CeremonyMap = () => {
       </Tabs>
       {showCeremony && (
         <div>
-          <h2 className="heading2 text-center font-Montserrat">
+          <h2 className="heading2 text-center font-[Montserrat]">
             {location("ceremonyLabel")}
           </h2>
-          <h3 className="text-md lg:text-lg font-bold text-center font-Montserrat">
+          <h3 className="text-md lg:text-lg font-bold text-center font-[Montserrat]">
             ⏱️ {date("ceremonyTime")}
           </h3>
-          <h3 className="text-md lg:text-lg text-center font-Montserrat">
+          <h3 className="text-md lg:text-lg text-center font-[Montserrat]">
             🏯 {location("ceremonyLocation")}
           </h3>
           <a
@@ -143,13 +142,13 @@ const CeremonyMap = () => {
       )}
       {showReception && (
         <div className={cn(showCeremony && "mt-8")}>
-          <h2 className="heading2 text-center font-Montserrat">
+          <h2 className="heading2 text-center font-[Montserrat]">
             {location("receptionLabel")}
           </h2>
-          <h3 className="text-md lg:text-lg font-bold text-center font-Montserrat">
+          <h3 className="text-md lg:text-lg font-bold text-center font-[Montserrat]">
             ⏱️ {date("receptionTime")}
           </h3>
-          <h3 className="text-md lg:text-lg text-center font-Montserrat">
+          <h3 className="text-md lg:text-lg text-center font-[Montserrat]">
             🏨 {location("receptionLocation")}
           </h3>
           <a
