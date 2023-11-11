@@ -43,7 +43,12 @@ const SightSeeingSection = ({}: Props) => {
   ];
 
   return (
-    <SectionWrapper className={cn("relative w-screen", "pt-32 pb-4 md:py-40 ")}>
+    <SectionWrapper
+      className={cn(
+        "relative w-screen",
+        "pt-32 pb-4 md:py-40 overflow-y-hidden"
+      )}
+    >
       <div className=" px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
         <h2 className="heading2 text-center">{gimcheon("title")}</h2>
 
@@ -90,7 +95,7 @@ const SightSeeingSection = ({}: Props) => {
             "w-[480px]",
             "absolute mx-auto bottom-0 -left-1/4 md:left-0 xl:left-1/4 opacity-20 -z-10 blur-sm",
             "transition-all duration-[3000ms] ease-in-out",
-            templeIsInView ? "translate-y-0" : "translate-y-[2000px]"
+            templeIsInView ? "translate-y-0" : "translate-y-[1000px]"
           )}
         />
       </InView>
@@ -110,7 +115,7 @@ const SightSeeingSection = ({}: Props) => {
             "w-[400px] hidden xl:block",
             "absolute mx-auto bottom-0 right-0 opacity-10 -z-10 blur-sm",
             "transition-transform duration-[2000ms] delay-[1000ms] ease-in-out",
-            wheelIsInView ? "translate-y-0" : "translate-y-[2000px]"
+            wheelIsInView ? "translate-y-0" : "translate-y-[1000px]"
           )}
         />
       </InView>
