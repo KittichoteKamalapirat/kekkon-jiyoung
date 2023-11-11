@@ -40,23 +40,23 @@
     "sectionLabel": "場所",
 
     "ceremonyLabel": "挙式",
-    "ceremonyLocation": "GIMCHEON SAMYEONGDAESA PARK (11:30)",
+    "ceremonyLocation": "Gimcheon Samyeongdaesa Park",
 
     "receptionLabel": "披露宴",
-    "receptionLocation": "GIMCHEON PARK HOTEL (14:00)",
+    "receptionLocation": "Gimcheon Park Hotel",
 
     "bothLabel": "両方",
     "openInGoogleMapLabel": "Googleマップで開く",
 
     "shuttleBusSection": "当日􏰀貸切バスで移動をお願いいたします",
 
-    "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
+    "shuttleBusTimeLabel": "Shuttle Bus Pick Up Time",
     "shuttleBusTimeValue": "TBD",
 
-    "shuttleBusLocationLabel": "SHUTTLE BUS PICK UP LOCATION",
+    "shuttleBusLocationLabel": "Shuttle Bus Pick Up Location",
     "shuttleBusLocationValue": "TBD",
 
-    "shuttleBusDeparturePointLabel": "DEPARTURE POINT",
+    "shuttleBusDeparturePointLabel": "Departure Point",
     "shuttleBusDeparturePointValue": "TBD"
   },
 
@@ -70,6 +70,7 @@
     "description": "結婚式に関する情報を受けます。"
   },
   "rsvp": {
+    "title": "登録",
     "firstNameLabel": "名",
     "firstNamePlaceholder": "名",
 

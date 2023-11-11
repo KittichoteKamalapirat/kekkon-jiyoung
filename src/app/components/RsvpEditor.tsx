@@ -191,7 +191,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
         />
       )}
 
-      <MyText className="font-bold text-3xl text-center">Registration</MyText>
+      <MyText className="font-bold text-3xl text-center">{t("title")}</MyText>
       <div className="mt-4 flex flex-col gap-4">
         <div>
           <label className="ml-1">{t("firstNameLabel")}</label>

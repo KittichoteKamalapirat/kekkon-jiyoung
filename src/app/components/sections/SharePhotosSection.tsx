@@ -12,10 +12,7 @@ interface Props {
 const SharePhotosSection = ({ className }: Props) => {
   return (
     <SectionWrapper
-      className={clsx(
-        "bg-white w-screen py-32 md:py-40 font-[SukhumvitSet] max-w-7xl",
-        className
-      )}
+      className={clsx("bg-white w-screen py-32 md:py-40  max-w-7xl", className)}
     >
       <div className="flex justify-between items-center flex-col lg:flex-row mx-10">
         <div>

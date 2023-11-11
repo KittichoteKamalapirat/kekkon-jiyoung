@@ -8,7 +8,7 @@ interface Props {}
 const DateTimeSection = ({}: Props) => {
   const date = useTranslations("date");
   return (
-    <SectionWrapper className="relative py-32 md:py-40 w-screen font-[SukhumvitSet]">
+    <SectionWrapper className="relative py-32 md:py-40 w-screen ">
       <div className="ring-gray-300 ring-1 rounded-md px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
         <h2 className="heading2 text-center">⏱️ {date("sectionLabel")}</h2>
 
@@ -18,7 +18,7 @@ const DateTimeSection = ({}: Props) => {
             <p className="font-[Montserrat] mt-4">{date("receptionTime")}</p>
           </li>
           <li className="ml-4 col-span-6">
-            <p className="font-[SukhumvitSet]">{date("ceremonyLabel")} 🏯</p>
+            <p className="">{date("ceremonyLabel")} 🏯</p>
             <p className="mt-4">{date("receptionLabel")} 🥂</p>
           </li>
         </ul>

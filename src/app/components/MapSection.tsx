@@ -84,6 +84,7 @@ const pins = {
 type MapType = "ceremony" | "reception" | "all";
 const CeremonyMap = () => {
   const location = useTranslations("location");
+  const date = useTranslations("date");
 
   const [mapType, setMapType] = useState<MapType>("all");
   const showCeremony = mapType === "all" || mapType === "ceremony";
@@ -96,7 +97,7 @@ const CeremonyMap = () => {
   console.log("pins.ceremony.lat", pins.ceremony.lat);
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
-    <SectionWrapper className="bg-primary-50 w-screen py-16">
+    <SectionWrapper className="bg-primary-50 w-screen py-16 relative">
       <Tabs className="mx-auto w-fit mb-8">
         {mapTypeOptions.map((option, index) => (
           <Tab
@@ -119,8 +120,11 @@ const CeremonyMap = () => {
           <h2 className="heading2 text-center font-Montserrat">
             {location("ceremonyLabel")}
           </h2>
-          <h3 className="heading3 text-center font-Montserrat">
-            {location("ceremonyLocation")}
+          <h3 className="text-md lg:text-lg font-bold text-center font-Montserrat">
+            ⏱️ {date("ceremonyTime")}
+          </h3>
+          <h3 className="text-md lg:text-lg text-center font-Montserrat">
+            🏯 {location("ceremonyLocation")}
           </h3>
           <a
             href={CEREMONY_LOCATION_LINK}
@@ -142,8 +146,11 @@ const CeremonyMap = () => {
           <h2 className="heading2 text-center font-Montserrat">
             {location("receptionLabel")}
           </h2>
-          <h3 className="heading3 text-center font-Montserrat">
-            {location("receptionLocation")}
+          <h3 className="text-md lg:text-lg font-bold text-center font-Montserrat">
+            ⏱️ {date("receptionTime")}
+          </h3>
+          <h3 className="text-md lg:text-lg text-center font-Montserrat">
+            🏨 {location("receptionLocation")}
           </h3>
           <a
             href={RECEPTION_LOCATION_LINK}
@@ -179,6 +186,16 @@ const CeremonyMap = () => {
             className={showReception ? "block" : "hidden"}
           />
         </GoogleMap>
+      </div>
+
+      {/* Sakura */}
+
+      <div className="translate-x-[calc(8%-24px)] translate-y-2 absolute z-10 top-[-40px] lg:top-0 left-0 ">
+        <img
+          alt="flower"
+          src="/images/sakura-top-left.svg"
+          className="h-[100px] md:h-[150px] animate-wiggle"
+        />
       </div>
     </SectionWrapper>
   );

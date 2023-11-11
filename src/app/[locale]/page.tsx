@@ -31,7 +31,7 @@ export default function Home() {
 
         {/* <VideoSection /> */}
         <MapSection />
-        <DateTimeSection />
+        {/* <DateTimeSection /> */}
         <ImagesSection />
         <LineInviteSection />
         {/* <SeatMapSection /> */}

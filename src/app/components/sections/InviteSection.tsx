@@ -20,16 +20,16 @@ const InviteSection = ({}: Props) => {
       />
       <div className="relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
         <div className="text-center">
-          <div className="font-[SukhumvitSet] flex flex-col gap-6">
+          <div className=" flex flex-col gap-6">
             <p>{greeting("p1")}</p>
 
-            <p>{greeting("p2")}</p>
-            <p>{greeting("p3")}</p>
-            <p>{greeting("p4")}</p>
-            <p>{greeting("p5")}</p>
+            {greeting("p2") && <p>{greeting("p2")}</p>}
+            {greeting("p3") && <p>{greeting("p3")}</p>}
+            {greeting("p4") && <p>{greeting("p4")}</p>}
+            {greeting("p5") && <p>{greeting("p5")}</p>}
           </div>
           <br />
-          <p className="font-[SukhumvitSet]">{greeting("between")}</p>
+          <p className="">{greeting("between")}</p>
           <br />
           {/* center wrapper */}
 
@@ -50,7 +50,7 @@ const InviteSection = ({}: Props) => {
             <div className="flex flex-col gap-2">
               <Image
                 alt="Japanese"
-                src="/images/gloom.webp"
+                src="/images/groom.webp"
                 width={100}
                 height={100}
                 className="rounded-full w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
@@ -59,7 +59,7 @@ const InviteSection = ({}: Props) => {
           </div>
 
           <div className="flex justify-around items-start gap-4 mt-2">
-            <p className="font-[SukhumvitSet] font-semibold text-md md:text-lg flex-1">
+            <p className=" font-semibold text-md md:text-lg flex-1">
               {greeting("brideName")}
             </p>
             <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
@@ -67,7 +67,7 @@ const InviteSection = ({}: Props) => {
             </p>
 
             <p
-              className="font-[SukhumvitSet] font-semibold text-md md:text-lg flex-1"
+              className=" font-semibold text-md md:text-lg flex-1"
               dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
             ></p>
           </div>

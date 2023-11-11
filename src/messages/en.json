@@ -40,23 +40,23 @@
     "sectionLabel": "Location",
 
     "ceremonyLabel": "Ceremony",
-    "ceremonyLocation": "GIMCHEON SAMYEONGDAESA PARK (11:30)",
+    "ceremonyLocation": "Gimcheon Samyeongdaesa Park",
 
     "receptionLabel": "Reception",
-    "receptionLocation": "GIMCHEON PARK HOTEL (14:00)",
+    "receptionLocation": "Gimcheon Park Hotel",
 
     "bothLabel": "Both",
     "openInGoogleMapLabel": "Open in Google Map",
 
     "shuttleBusSection": "Shuttle bus available",
 
-    "shuttleBusTimeLabel": "SHUTTLE BUS PICK UP TIME",
+    "shuttleBusTimeLabel": "Shuttle Bus Pick Up Time",
     "shuttleBusTimeValue": "TBD",
 
-    "shuttleBusLocationLabel": "SHUTTLE BUS PICK UP LOCATION",
+    "shuttleBusLocationLabel": "Shuttle Bus Pick Up Location",
     "shuttleBusLocationValue": "TBD",
 
-    "shuttleBusDeparturePointLabel": "DEPARTURE POINT",
+    "shuttleBusDeparturePointLabel": "Departure Point",
     "shuttleBusDeparturePointValue": "TBD"
   },
 
@@ -70,6 +70,7 @@
     "description": "We will update the event information here"
   },
   "rsvp": {
+    "title": "Registration",
     "firstNameLabel": "First Name",
     "firstNamePlaceholder": "First Name",
 
@@ -107,7 +108,7 @@
     "pickupQuestion": "For Pick Up Service",
     "pickupAnswer1Label": "Need",
     "pickupAnswer2Label": "No Need",
-    "arrivalTime": "Please arrive to GIMCHEON SAMYEONGDAESA PARK by 10:30AM. We are looking forward to seeing you in our special day",
+    "arrivalTime": "Please arrive to Gimcheon Samyeongdaesa Park by 10:30AM. We are looking forward to seeing you in our special day",
 
     "afterSubmitTitle": "We have received your response.",
     "afterSubmitDescription": "We look forward to seeing you on our special day!"

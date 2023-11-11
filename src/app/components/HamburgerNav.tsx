@@ -7,6 +7,8 @@ import Link from "next-intl/link";
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
+import { HiMiniLanguage } from "react-icons/hi2";
+import { LiaLanguageSolid } from "react-icons/lia";
 import { ICON_SIZE } from "../../constants";
 import { cn, isJapaneseLocale } from "../../lib/utils";
 import { useClickOutside } from "../hooks/useClickOutside";
@@ -53,7 +55,7 @@ const HamburgerNav = () => {
             {isExpanded ? (
               <IoMdClose size={ICON_SIZE} color="#000" />
             ) : (
-              <IoMdMenu size={ICON_SIZE} color="#000" />
+              <LiaLanguageSolid size={ICON_SIZE} color="#000" />
             )}
           </button>
           <div className="lg:flex gap-2 hidden">
