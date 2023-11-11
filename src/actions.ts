@@ -123,7 +123,13 @@ export async function getFromGoogleSheets(data: RsvpFormValues) {
 
     // Query
 
-    const range = process.env.NODE_ENV === "production" ? "prod" : "dev";
+    console.log("process.env.NODE_ENV", process.env.NODE_ENV);
+    const range =
+      process.env.VERCEL_ENV === "production"
+        ? "prod"
+        : process.env.VERCEL_ENV
+        ? "dev"
+        : "localhost";
 
     const { firstName, lastName } = data;
     const rowData = [[firstName, lastName, "phone"]]; // replace with your actual row data
