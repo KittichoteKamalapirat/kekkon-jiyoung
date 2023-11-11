@@ -1,8 +1,12 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
+import { InView } from "react-intersection-observer";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "../wrappers/SectionWrapper";
 import Image from "next/image";
+import { useState } from "react";
+import { cn } from "../../../lib/utils";
+import InviteSection from "./InviteSection";
 
 interface Props {}
 
@@ -14,6 +18,9 @@ interface Link {
 
 const SightSeeingSection = ({}: Props) => {
   const gimcheon = useTranslations("gimcheon");
+
+  const [templeIsInView, setTempleIsInView] = useState<boolean>(false);
+  const [wheelIsInView, setWheelIsInView] = useState<boolean>(false);
 
   const links: Link[] = [
     {
@@ -36,7 +43,7 @@ const SightSeeingSection = ({}: Props) => {
   ];
 
   return (
-    <SectionWrapper className="relative py-32 md:py-40 w-screen ">
+    <SectionWrapper className={cn("relative w-screen", "pt-32 pb-4 md:py-40 ")}>
       <div className=" px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
         <h2 className="heading2 text-center">{gimcheon("title")}</h2>
 
@@ -67,20 +74,46 @@ const SightSeeingSection = ({}: Props) => {
           className="h-[100px] md:h-[150px] animate-wiggle"
         />
       </div>
-      <Image
-        alt="Korean Temple"
-        src="/images/temple.svg"
-        width={200}
-        height={200}
-        className="absolute mx-auto"
-      />
-      <Image
-        alt="Wheel"
-        src="/images/wheel.svg"
-        width={200}
-        height={200}
-        className="mx-auto"
-      />
+
+      <InView
+        as="div"
+        onChange={setTempleIsInView}
+        initialInView={false}
+        // rootMargin="-200px"
+      >
+        <Image
+          alt="Korean Temple"
+          src="/images/temple.svg"
+          width={400}
+          height={400}
+          className={cn(
+            "w-[480px]",
+            "absolute mx-auto bottom-0 -left-1/4 md:left-0 xl:left-1/4 opacity-20 -z-10 blur-sm",
+            "transition-all duration-[3000ms] ease-in-out",
+            templeIsInView ? "translate-y-0" : "translate-y-[2000px]"
+          )}
+        />
+      </InView>
+
+      <InView
+        as="div"
+        onChange={setWheelIsInView}
+        initialInView={false}
+        // rootMargin="-200px"
+      >
+        <Image
+          alt="Wheel"
+          src="/images/wheel.svg"
+          width={450}
+          height={450}
+          className={cn(
+            "w-[400px] hidden xl:block",
+            "absolute mx-auto bottom-0 right-0 opacity-10 -z-10 blur-sm",
+            "transition-transform duration-[2000ms] delay-[1000ms] ease-in-out",
+            wheelIsInView ? "translate-y-0" : "translate-y-[2000px]"
+          )}
+        />
+      </InView>
     </SectionWrapper>
   );
 };
