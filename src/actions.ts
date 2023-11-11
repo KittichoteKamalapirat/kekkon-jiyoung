@@ -48,7 +48,12 @@ export async function postToGoogleSheets(
 
     const sheets = google.sheets({ version: "v4", auth });
 
-    const range = `dev`;
+    const range =
+      process.env.VERCEL_ENV === "production"
+        ? "production"
+        : process.env.VERCEL_ENV
+        ? "development"
+        : "localhost";
 
     const { firstName, lastName, joinCeremony, needPickup } = data;
 
