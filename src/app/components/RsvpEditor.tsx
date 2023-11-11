@@ -126,7 +126,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
       <MyText className="font-bold text-3xl text-center">Registration</MyText>
       <div className="mt-4 flex flex-col gap-4">
         <div>
-          <label>{t("firstNameLabel")}</label>
+          <label className="ml-1">{t("firstNameLabel")}</label>
           <Input
             type="text"
             {...register("firstName")}
@@ -134,8 +134,8 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           />
           {errors.firstName && <HelpText message={errors.firstName.message} />}
         </div>
-        <div>
-          <label htmlFor="">{t("lastNameLabel")}</label>
+        <div className="mt-2">
+          <label className="ml-1">{t("lastNameLabel")}</label>
           <Input
             type="text"
             {...register("lastName")}
@@ -143,8 +143,8 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           />
           {errors.lastName && <HelpText message={errors.lastName.message} />}
         </div>
-        <div>
-          <MyText>{t("ceremonyParticipationQuestion")}</MyText>
+        <div className="mt-2">
+          <MyText className="ml-1">{t("ceremonyParticipationQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
             className="flex flex-col md:flex-row w-full gap-2"
@@ -152,8 +152,8 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             {...register("joinCeremony")}
           />
         </div>
-        <div>
-          <MyText>{t("pickupQuestion")}</MyText>
+        <div className="mt-2">
+          <MyText className="ml-1">{t("pickupQuestion")}</MyText>
           <SuperRadio
             orientation="HORIZONTAL"
             className="flex flex-col md:flex-row w-full gap-2"

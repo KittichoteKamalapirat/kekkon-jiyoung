@@ -11,7 +11,7 @@
   },
   "greeting": {
     "sectionLabel": "Greeting",
-    "groomName": "Rodrigo Daniel Rotela Ramirez",
+    "groomName": "Rodrigo Daniel <br/> Rotela Ramirez",
     "brideName": "Jiyoung Park",
     "between": "between",
     "p1": "With joyful hearts, we would like to request the pleasure of your presence at our wedding",
@@ -30,7 +30,7 @@
     "brideHometown": "Gimcheon, South Korea"
   },
   "date": {
-    "sectionLabel": "Details of our special day",
+    "sectionLabel": "Agenda of our special day",
     "ceremonyLabel": "Ceremony",
     "ceremonyTime": "11:30",
     "receptionLabel": "Reception",

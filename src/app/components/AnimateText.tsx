@@ -1,12 +1,19 @@
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
+import { isJapaneseLocale, isMobile } from "../../lib/utils";
+import { useCurrentBreakpoint } from "../hooks/useCurrentBreakpoint";
+import { usePathname } from "next/navigation";
 
 interface Props {
   heroTextColor: string;
 }
 const AnimateText = ({ heroTextColor }: Props) => {
   const [animate, setAnimate] = useState(false);
+  const path = usePathname();
+  const isJapanese = isJapaneseLocale(path);
+  const breakpoint = useCurrentBreakpoint();
+  console.log("breakpoint", breakpoint);
 
   const common = useTranslations("common");
 
@@ -23,24 +30,32 @@ const AnimateText = ({ heroTextColor }: Props) => {
     <div>
       <div
         className={clsx(
-          "flex gap-2  px-4 py-2 font-bold text-5xl md:text-7xl text-center "
+          "flex gap-2  px-4 py-2 font-bold text-center justify-center items-center flex-row-reverse"
         )}
       >
         <h1
           className={clsx(
-            "transition-all duration-[2000ms] font-[Tangerine]",
+            "transition-all duration-[2000ms] font-[Tangerine] text-4xl lg:text-5xl xl:text-7xl",
 
             animate
               ? "translate-x-[0] opacity-100"
               : "-translate-x-[300px] opacity-0",
             heroTextColor
           )}
+          style={{
+            writingMode: isJapanese
+              ? isMobile
+                ? "vertical-rl"
+                : "horizontal-tb"
+              : "horizontal-tb",
+            textOrientation: "upright",
+          }}
         >
           {common("brideName")}
         </h1>
         <h1
           className={clsx(
-            "transition-all duration-[2000ms] font-[Tangerine]",
+            "transition-all duration-[2000ms] font-[Tangerine] text-4xl lg:text-5xl xl:text-7xl",
             animate ? "opacity-100" : "opacity-0",
             heroTextColor
           )}
@@ -49,26 +64,57 @@ const AnimateText = ({ heroTextColor }: Props) => {
         </h1>
         <h1
           className={clsx(
-            "transition-all duration-[2000ms] font-[Tangerine]",
+            "transition-all duration-[2000ms] font-[Tangerine] text-4xl lg:text-5xl xl:text-7xl",
 
             animate
               ? "translate-x-[0] opacity-100"
               : "translate-x-[300px] opacity-0",
             heroTextColor
           )}
+          style={{
+            writingMode: isJapanese
+              ? isMobile
+                ? "vertical-rl"
+                : "horizontal-tb"
+              : "horizontal-tb",
+            textOrientation: "upright",
+          }}
         >
           {common("groomName")}
         </h1>
-      </div>
-      <h2
-        className={clsx(
-          "transition-all duration-[2000ms]  text-xl text-center font-[Montserrat]",
-          animate ? "opacity-100" : "opacity-0",
-          heroTextColor
+        {/* date for japanese + mobile */}
+        {isJapanese && isMobile && (
+          <p
+            className={clsx(
+              "transition-all duration-[2000ms] text-[16px] text-center font-[Montserrat] font-normal",
+              animate ? "opacity-100" : "opacity-0",
+              "md:hidden",
+              heroTextColor
+            )}
+            style={{
+              writingMode: "vertical-rl",
+              textOrientation: "upright",
+            }}
+          >
+            {common("date")}
+          </p>
         )}
-      >
-        {common("date")}
-      </h2>
+      </div>
+      {/* date for not japanese, or japanese + desktop */}
+
+      {(!isJapanese || !isMobile) && (
+        <p
+          className={clsx(
+            "transition-all duration-[2000ms] text-xl text-center font-[Montserrat]",
+            animate ? "opacity-100" : "opacity-0",
+
+            // "hidden md:block",
+            heroTextColor
+          )}
+        >
+          {common("date")}
+        </p>
+      )}
     </div>
   );
 };

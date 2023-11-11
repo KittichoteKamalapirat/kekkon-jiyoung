@@ -98,9 +98,11 @@ const CeremonyMap = () => {
   return (
     <SectionWrapper className="bg-primary-50 w-screen py-16">
       <Tabs className="mx-auto w-fit mb-8">
-        {mapTypeOptions.map((option) => (
+        {mapTypeOptions.map((option, index) => (
           <Tab
             key={option.value}
+            index={index}
+            tabsNum={mapTypeOptions.length}
             isActive={mapType === option.value}
             onClick={() => {
               setMapType(option.value);
@@ -123,7 +125,7 @@ const CeremonyMap = () => {
           <a
             href={CEREMONY_LOCATION_LINK}
             target="_blank"
-            className="flex items-center gap-2 bg-white px-2 py-1 mx-auto rounded-sm border-[1px] text-sm mt-2 hover:cursor-pointer w-fit"
+            className="flex items-center gap-2 bg-white px-2 py-1 mx-auto rounded-md border-[1px] text-sm mt-2 hover:cursor-pointer w-fit"
           >
             <Image
               alt="pink roses frame"
@@ -136,7 +138,7 @@ const CeremonyMap = () => {
         </div>
       )}
       {showReception && (
-        <div className={cn(showCeremony && "mt-4")}>
+        <div className={cn(showCeremony && "mt-8")}>
           <h2 className="heading2 text-center font-Montserrat">
             {location("receptionLabel")}
           </h2>

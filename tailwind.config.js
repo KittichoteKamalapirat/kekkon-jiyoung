@@ -8,14 +8,33 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    // screens: {
+    //   xs: "0px",
+    //   xsm: "375px",
+    //   sm: "568px",
+    //   md: "800px",
+    //   lg: "1280px",
+    //   xl: "1440px",
+    // },
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
     },
     extend: {
+      fontSize: {
+        xs: "0.75rem",
+        sm: "0.875rem",
+        md: "1rem",
+        lg: "1.25rem",
+        xl: "1.5rem",
+        "2xl": "1.875rem",
+        "3xl": "2.25rem",
+        "4xl": "2.625rem",
+        "5xl": "3rem",
+        "6xl": "3.5rem",
+        "7xl": "4.5rem",
+        "8xl": "6rem",
+      },
       typography: {
         // fontFamily: ["Tangerine"],
         fontFamily: {

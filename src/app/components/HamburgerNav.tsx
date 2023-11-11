@@ -8,14 +8,14 @@ import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { ICON_SIZE } from "../../constants";
-import { cn } from "../../lib/utils";
+import { cn, isJapaneseLocale } from "../../lib/utils";
 import { useClickOutside } from "../hooks/useClickOutside";
 import MyText from "./MyText";
 
 const HamburgerNav = () => {
   const path = usePathname();
 
-  const isJapanese = path.includes("ja");
+  const isJapanese = isJapaneseLocale(path);
 
   const isActive = (navPath: string) => path === navPath;
 

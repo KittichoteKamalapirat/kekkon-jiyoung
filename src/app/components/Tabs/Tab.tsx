@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { cn } from "../../../lib/utils";
+import clsx from "clsx";
 
 interface Props {
   children: ReactNode;
   href?: string;
   isActive: boolean;
+  index: number;
+  tabsNum: number;
 
   badgeContent?: string;
   onClick?: () => void;
@@ -17,11 +20,17 @@ const Tab = ({
   href,
   isActive,
   className,
+  index,
+  tabsNum,
 
   onClick,
 }: Props) => {
   const tabClass = (() => {
-    const commonClass = "rounded-md py-2 px-6";
+    const commonClass = clsx(
+      "py-2 px-6",
+      index === 0 && "rounded-l-sm",
+      index + 1 === tabsNum && "rounded-r-sm"
+    );
 
     const selectedTabClass = isActive
       ? "text-white font-bold bg-primary"
