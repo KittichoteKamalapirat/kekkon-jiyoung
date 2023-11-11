@@ -1,4 +1,6 @@
 "use client";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -8,12 +10,13 @@ import { isDirty, z } from "zod";
 
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SubmitErrorCode, postToGoogleSheets } from "../../actions";
 import HelpText from "./HelpText/HelpText";
 import { Input } from "./Input";
 import MyText from "./MyText";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
+import { cn } from "../../lib/utils";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -47,7 +50,8 @@ export type RsvpFormValues = z.infer<typeof schema>;
 
 const RsvpEditor = ({ initialData, className }: Props) => {
   const t = useTranslations("rsvp");
-
+  const { width, height } = useWindowSize();
+  const [runConfetti, setRunConfetti] = useState<boolean>(false);
   const successErrorMessage = t("successfullySubmitted");
   const unknownErrorMessage = t("unknownError");
 
@@ -118,11 +122,45 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   console.log("errors", errors);
 
+  const isJoin = watch("joinCeremony") === "presence";
+
+  useEffect(() => {
+    if (!isJoin) return;
+    setRunConfetti(true);
+    setTimeout(() => setRunConfetti(false), 3000);
+  }, [isJoin]);
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx("container md:max-w-[400px] mb-12", className)}
+      className={clsx("container md:max-w-[400px] mb-12 relative", className)}
     >
+      {runConfetti && (
+        <Confetti
+          width={width}
+          height={height}
+          colors={[
+            "#fff1f2", // primary 50
+            "#ffe4e6", // primary 100
+            "#fecdd3", // primary 200
+            "#fda4af", // primary 300
+            "#fb7185", // primary 400
+            "#f43f5e", // primary 500
+          ]}
+          opacity={0.8}
+          gravity={0.4}
+          // numberOfPieces={400}
+          // run={runConfetti}
+          recycle={true} // whether to loop or not
+          confettiSource={{
+            x: 0,
+            y: -height,
+            w: width,
+            h: height,
+          }}
+        />
+      )}
+
       <MyText className="font-bold text-3xl text-center">Registration</MyText>
       <div className="mt-4 flex flex-col gap-4">
         <div>
@@ -160,6 +198,16 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             items={pickupServiceOptions}
             {...register("needPickup")}
           />
+
+          <p
+            className={cn(
+              "text-sm mt-4",
+              "transition-opacity",
+              watch("needPickup") === "need" ? "opacity-100" : "opacity-0"
+            )}
+          >
+            * {t("arrivalTime")}
+          </p>
         </div>
 
         {submitErrorCode === "already_submitted" && (

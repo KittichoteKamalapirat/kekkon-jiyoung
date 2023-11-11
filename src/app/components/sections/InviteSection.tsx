@@ -15,12 +15,10 @@ const InviteSection = ({}: Props) => {
         // placeholder="blur"
         fill
         src="/images/pungmul.webp"
-        // width={40}
         sizes="100vw"
-        // height={40}
         className="blur absolute opacity-20"
       />
-      <div className="relative container rounded-md max-w-lg py-40 md:py-60 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
+      <div className="relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
         <div className="text-center">
           <div className="font-[SukhumvitSet] flex flex-col gap-6">
             <p>{greeting("p1")}</p>
