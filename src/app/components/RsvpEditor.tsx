@@ -126,12 +126,17 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   console.log("errors", errors);
 
+  console.log("height", height);
+  console.log("width", width);
+
   const isJoin = watch("joinCeremony") === "presence";
 
   useEffect(() => {
     if (!isJoin) return;
     setRunConfetti(true);
-    setTimeout(() => setRunConfetti(false), 3000);
+    const timeoutId = setTimeout(() => setRunConfetti(false), 3000);
+
+    return () => clearTimeout(timeoutId);
   }, [isJoin]);
 
   if (isSuccess)
@@ -177,9 +182,9 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             "#fb7185", // primary 400
             "#f43f5e", // primary 500
           ]}
-          opacity={0.8}
+          // opacity={0.8}
           gravity={0.4}
-          // numberOfPieces={400}
+          // numberOfPieces={2000}
           // run={runConfetti}
           recycle={true} // whether to loop or not
           confettiSource={{
