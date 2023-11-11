@@ -25,6 +25,7 @@
     "groomName": "Rodrigo Daniel Rotela Ramirez",
     "groomBirthday": "Nov 16, 1989",
     "groomHometown": "Asunción, Paraguay",
+
     "brideName": "Jiyoung Park",
     "brideBirthday": "Oct 8, 1996",
     "brideHometown": "Gimcheon, South Korea"
@@ -112,6 +113,12 @@
 
     "afterSubmitTitle": "We have received your response.",
     "afterSubmitDescription": "We look forward to seeing you on our special day!"
+  },
+  "gimcheon": {
+    "title": "About Gimcheon",
+    "sightseeingLabel": "Sightseeing",
+    "restaurantsLabel": "Restaurants",
+    "hotelsLabel": "Hotels"
   },
   "footer": {
     "copy": "Looking forward to meeting all the guests"

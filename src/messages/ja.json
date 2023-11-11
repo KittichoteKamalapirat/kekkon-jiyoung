@@ -24,10 +24,10 @@
     "sectionLabel": "Stare",
     "groomName": "ロドリゴ ロテラ",
     "groomBirthday": "1989年11月16日",
-    "groomHometown": "Asunción, パラグアイ",
+    "groomHometown": "アスンシオン、パラグアイ",
     "brideName": "芝英 朴",
     "brideBirthday": "1996年10月8日",
-    "brideHometown": "Gimcheon, 韓国"
+    "brideHometown": "キムチョン、 韓国"
   },
   "date": {
     "sectionLabel": "当日の詳細",
@@ -67,7 +67,7 @@
   },
   "lineInvite": {
     "title": "QRコードをスキャンして",
-    "description": "結婚式に関する情報を受けます。"
+    "description": "イベントに関する情報をラインで共有します"
   },
   "rsvp": {
     "title": "登録",
@@ -112,6 +112,12 @@
 
     "afterSubmitTitle": "登録が完了しました",
     "afterSubmitDescription": "あなたにお会いできるように楽しみにしております！"
+  },
+  "gimcheon": {
+    "title": "キムチョンに関する情報",
+    "sightseeingLabel": "観光",
+    "restaurantsLabel": "レストラン",
+    "hotelsLabel": "宿泊"
   },
   "footer": {
     "copy": "お客様の皆さんにお会いできるように楽しみにしております"

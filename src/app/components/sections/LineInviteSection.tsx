@@ -9,7 +9,7 @@ interface Props {}
 const LineInviteSection = ({}: Props) => {
   const lineInvite = useTranslations("lineInvite");
   return (
-    <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center">
+    <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center bg-primary-50">
       <div>
         <h2 className="heading2 text-center">{lineInvite("title")}</h2>
         <p className="text-center font-[Montserrat]">

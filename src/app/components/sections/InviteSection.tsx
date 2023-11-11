@@ -8,6 +8,7 @@ interface Props {}
 
 const InviteSection = ({}: Props) => {
   const greeting = useTranslations("greeting");
+  const intro = useTranslations("intro");
   return (
     <SectionWrapper className="flex items-center font-thin justify-center w-screen py-20 md:py-20 relative">
       <Image
@@ -59,17 +60,26 @@ const InviteSection = ({}: Props) => {
           </div>
 
           <div className="flex justify-around items-start gap-4 mt-2">
-            <p className=" font-semibold text-md md:text-lg flex-1">
-              {greeting("brideName")}
-            </p>
+            <div className="flex flex-col items-center">
+              <p className=" font-semibold text-md md:text-lg flex-1">
+                {greeting("brideName")}
+              </p>
+
+              <p className="text-sm">{intro("brideBirthday")}</p>
+              <p className="text-sm">{intro("brideHometown")}</p>
+            </div>
+
             <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
               &
             </p>
-
-            <p
-              className=" font-semibold text-md md:text-lg flex-1"
-              dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
-            ></p>
+            <div className="flex flex-col items-center">
+              <p
+                className=" font-semibold text-md md:text-lg flex-1"
+                dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
+              ></p>
+              <p className="text-sm">{intro("groomBirthday")}</p>
+              <p className="text-sm">{intro("groomHometown")}</p>
+            </div>
           </div>
         </div>
 
@@ -84,7 +94,7 @@ const InviteSection = ({}: Props) => {
           className="w-[200px] md:w-[250px] absolute z-10 right-0 bottom-0 opacity-40"
         /> */}
 
-        <div className="translate-x-[calc(8%-10px)] translate-y-1/3 absolute z-10 bottom-0 right-0 ">
+        <div className="translate-x-[calc(8%-10px)] translate-y-1/2 absolute z-10 bottom-0 right-0 ">
           <img
             alt="flower"
             src="/images/single-sakura.svg"
