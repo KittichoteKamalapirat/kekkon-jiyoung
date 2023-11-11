@@ -107,7 +107,10 @@
     "pickupQuestion": "For Pick Up Service",
     "pickupAnswer1Label": "Need",
     "pickupAnswer2Label": "No Need",
-    "arrivalTime": "Please arrive to GIMCHEON SAMYEONGDAESA PARK by 10:30AM. We are looking forward to seeing you in our special day"
+    "arrivalTime": "Please arrive to GIMCHEON SAMYEONGDAESA PARK by 10:30AM. We are looking forward to seeing you in our special day",
+
+    "afterSubmitTitle": "We have received your response.",
+    "afterSubmitDescription": "We look forward to seeing you on our special day!"
   },
   "footer": {
     "copy": "Looking forward to meeting all the guests"

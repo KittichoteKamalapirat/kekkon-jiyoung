@@ -20,13 +20,14 @@ export async function postToGoogleSheets(
   "use server";
   try {
     // Auth
+
     const auth = await google.auth.getClient({
       scopes: [
         "https://www.googleapis.com/auth/spreadsheets", // for write
       ],
       projectId: process.env.GOOGLE_PROJECT_ID,
       credentials: {
-        private_key: JSON.parse(process.env.GOOGLE_PRIVATE_KEY as string),
+        private_key: JSON.parse(process.env.GOOGLE_PRIVATE_KEY as string), // need "" inside '
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
       },
     });

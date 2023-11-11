@@ -97,6 +97,7 @@ module.exports = {
       },
       animation: {
         "bounce-rotate": "bounce-rotate 1.2s infinite",
+        "wiggle-heavy": "wiggle-heavy 2s ease-in-out infinite",
         wiggle: "wiggle 3s ease-in-out infinite",
         "wiggle-tiny": "wiggle 1s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -114,6 +115,10 @@ module.exports = {
         wiggle: {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
+        },
+        "wiggle-heavy": {
+          "0%, 100%": { transform: "rotate(-12deg)" },
+          "50%": { transform: "rotate(12deg)" },
         },
         "wiggle-tiny": {
           "0%, 100%": { transform: "rotate(-0.5deg)" },

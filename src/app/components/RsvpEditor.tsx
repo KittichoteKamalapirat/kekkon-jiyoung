@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { isDirty, z } from "zod";
 
 import clsx from "clsx";
@@ -17,6 +17,7 @@ import { Input } from "./Input";
 import MyText from "./MyText";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
 import { cn } from "../../lib/utils";
+import Image from "next/image";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -54,6 +55,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   const [runConfetti, setRunConfetti] = useState<boolean>(false);
   const successErrorMessage = t("successfullySubmitted");
   const unknownErrorMessage = t("unknownError");
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   const alreadySubmittedErrorMessage = t("alreadySubmittedError");
   const [submitErrorCode, setSubmitErrorCode] = useState<
@@ -66,6 +68,8 @@ const RsvpEditor = ({ initialData, className }: Props) => {
       const response = await postToGoogleSheets(data);
 
       if (response.success) {
+        setIsSuccess(true);
+        setSubmitErrorCode(undefined);
         toast.success(successErrorMessage);
       } else {
         setSubmitErrorCode(response.errorCode);
@@ -130,11 +134,37 @@ const RsvpEditor = ({ initialData, className }: Props) => {
     setTimeout(() => setRunConfetti(false), 3000);
   }, [isJoin]);
 
+  if (isSuccess)
+    return (
+      <div className={clsx("text-center container py-12")}>
+        <h1 className="text-lg font-bold">{t("afterSubmitTitle")}</h1>
+        <p className="mt-2">{t("afterSubmitDescription")}</p>
+        <div className="relative w-fit mx-auto">
+          <p
+            className={clsx(
+              "absolute animate-wiggle-heavy",
+              "top-[-20px] left-[-20px] text-[40px]",
+              "lg:top-[-40px] lg:left-[-30px]  lg:text-[60px] "
+            )}
+          >
+            👋
+          </p>
+          <Image
+            alt="Japanese"
+            src="/images/looking-forward.webp"
+            width={400}
+            height={100}
+            className="rounded-lg mt-4 w-full lg:w-[600px]"
+          />
+        </div>
+      </div>
+    );
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className={clsx("container md:max-w-[400px] mb-12 relative", className)}
+      className={clsx("container md:max-w-[400px] mb-12", className)}
     >
+      {/* need relative on higher component */}
       {runConfetti && (
         <Confetti
           width={width}
