@@ -81,20 +81,17 @@
     "emailLabel": "メール",
 
     "relationshipLabel": "関係",
-    "relationship1Label": "嫁の親戚",
-    "relationship1Value": "bride_relative",
-    "relationship2Label": "嫁の友達",
-    "relationship2Value": "bride_friend",
-    "relationship3Label": "嫁の同僚",
-    "relationship3Value": "bride_coworker",
-    "relationship4Label": "Groom's relative",
-    "relationship4Value": "groom_relative",
-    "relationship5Label": "Groom's friend",
-    "relationship5Value": "groom_friend",
-    "relationship6Label": "Groom's coworker",
-    "relationship6Value": "groom_coworker",
-    "relationship7Label": "Others",
-    "relationship7Value": "others",
+
+    "brideRelativeLabel": "新婦の親戚",
+    "brideFriendLabel": "新婦の友達",
+    "brideCoworkerLabel": "新婦の同僚",
+
+    "groomRelativeLabel": "新郎の親戚",
+    "groomFriendLabel": "新郎の友達",
+    "groomCoworkerLabel": "新郎の同僚",
+
+    "relationshipOthersLabel": "その他",
+    "relationshipPlaceholder": "選択",
 
     "ceremonyParticipationQuestion": "挙式への参加",
     "ceremonyParticipationAnswer1Label": "参加する",

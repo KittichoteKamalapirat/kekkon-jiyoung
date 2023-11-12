@@ -3,14 +3,21 @@
 import Image from "next/image";
 import SectionWrapper from "../wrappers/SectionWrapper";
 import { useTranslations } from "next-intl";
+import { useAnimateOnSroll } from "../../hooks/useAnimateOnScroll";
 
 interface Props {}
 
 const LineInviteSection = ({}: Props) => {
   const lineInvite = useTranslations("lineInvite");
+  const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
   return (
     <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center bg-primary-50">
-      <div>
+      {/* dummy */}
+      <div
+        ref={sectionRef}
+        className="absolute top-1/2 left-1/2 w-10 h-10 opacity-0"
+      />
+      <div className={animateClassName}>
         <h2 className="heading2 text-center">{lineInvite("title")}</h2>
         <p className="text-center font-[Montserrat]">
           {lineInvite("description")}

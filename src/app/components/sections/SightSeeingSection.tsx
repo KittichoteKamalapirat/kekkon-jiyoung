@@ -1,12 +1,12 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { InView } from "react-intersection-observer";
 import { useTranslations } from "next-intl";
-import SectionWrapper from "../wrappers/SectionWrapper";
 import Image from "next/image";
 import { useState } from "react";
+import { InView } from "react-intersection-observer";
 import { cn } from "../../../lib/utils";
-import InviteSection from "./InviteSection";
+import { useAnimateOnSroll } from "../../hooks/useAnimateOnScroll";
+import SectionWrapper from "../wrappers/SectionWrapper";
 
 interface Props {}
 
@@ -18,7 +18,7 @@ interface Link {
 
 const SightSeeingSection = ({}: Props) => {
   const gimcheon = useTranslations("gimcheon");
-
+  const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
   const [templeIsInView, setTempleIsInView] = useState<boolean>(false);
   const [wheelIsInView, setWheelIsInView] = useState<boolean>(false);
 
@@ -49,41 +49,48 @@ const SightSeeingSection = ({}: Props) => {
         "pt-32 pb-4 md:py-40 overflow-y-hidden"
       )}
     >
-      <div className=" px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
-        <h2 className="heading2 text-center">{gimcheon("title")}</h2>
+      {/* dummy */}
+      <div
+        ref={sectionRef}
+        className="absolute top-1/2 left-1/2 w-10 h-10 opacity-0"
+      />
+      <div className={animateClassName}>
+        <div className="px-4 py-20 w-fit mx-auto sm:min-w-[400px]">
+          <h2 className="heading2 text-center">{gimcheon("title")}</h2>
 
-        <ul className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {links.map((link, index) => (
-            <li className="relative" key={`info-${index}`}>
-              <a href={link.externalUrl} target="_blank">
-                <Image
-                  alt={link.label}
-                  src={link.imageUrl}
-                  width={400}
-                  height={400}
-                  className="rounded-lg hover:cursor-pointer shadow-lg brightness-50 hover:brightness-100 transition-all duration-500 ease-in-out peer-hover:brightness-90"
-                />
-                <p className="absolute top-1/2 left-1/2 z-10 text-white font-bold -translate-x-1/2 text-3xl -translate-y-1/2 peer hover:cursor-pointer pointer-events-none shadow-xl">
-                  {link.label}
-                </p>
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {links.map((link, index) => (
+              <li className="relative" key={`info-${index}`}>
+                <a href={link.externalUrl} target="_blank">
+                  <Image
+                    alt={link.label}
+                    src={link.imageUrl}
+                    width={400}
+                    height={400}
+                    className="rounded-lg hover:cursor-pointer shadow-lg brightness-50 hover:brightness-100 transition-all duration-500 ease-in-out peer-hover:brightness-90"
+                  />
+                  <p className="absolute top-1/2 left-1/2 z-10 text-white font-bold -translate-x-1/2 text-3xl -translate-y-1/2 peer hover:cursor-pointer pointer-events-none shadow-xl">
+                    {link.label}
+                  </p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-
+      {/* Sakura */}
       <div className="translate-x-[calc(8%-24px)] translate-y-1/3 absolute z-10 top-0 left-0 ">
         <img
-          alt="flower"
+          alt="Sakura"
           src="/images/sakura-top-left.svg"
           className="h-[100px] md:h-[150px] animate-wiggle"
         />
       </div>
-
       <InView
         as="div"
         onChange={setTempleIsInView}
         initialInView={false}
+        triggerOnce
         // rootMargin="-200px"
       >
         <Image
@@ -105,6 +112,7 @@ const SightSeeingSection = ({}: Props) => {
         onChange={setWheelIsInView}
         initialInView={false}
         // rootMargin="-200px"
+        triggerOnce
       >
         <Image
           alt="Wheel"

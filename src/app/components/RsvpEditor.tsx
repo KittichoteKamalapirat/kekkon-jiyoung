@@ -1,23 +1,38 @@
 "use client";
-import useWindowSize from "react-use/lib/useWindowSize";
-import Confetti from "react-confetti";
 import { Button } from "@/components/ui/button";
+import {
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Form,
+} from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Confetti from "react-confetti";
+import useWindowSize from "react-use/lib/useWindowSize";
 import { toast } from "sonner";
 
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { isDirty, z } from "zod";
 
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SubmitErrorCode, postToGoogleSheets } from "../../actions";
+import { cn } from "../../lib/utils";
 import HelpText from "./HelpText/HelpText";
 import { Input } from "./Input";
 import MyText from "./MyText";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
-import { cn } from "../../lib/utils";
-import Image from "next/image";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -34,6 +49,11 @@ const schema = z.object({
     .string()
     .trim()
     .min(1, { message: "Please enter your last name." })
+    .max(64, { message: "Should not be longer than 64 characters." }),
+  relationship: z
+    .string()
+    .trim()
+    .min(1, { message: "Please enter your relationship." })
     .max(64, { message: "Should not be longer than 64 characters." }),
   joinCeremony: z
     .string()
@@ -113,20 +133,20 @@ const RsvpEditor = ({ initialData, className }: Props) => {
     },
   ];
 
+  const form = useForm<RsvpFormValues>({
+    defaultValues: initialData,
+    resolver: zodResolver(schema),
+  });
+
   const {
     formState: { errors, isSubmitting, isValid },
     handleSubmit,
     register,
     watch,
-  } = useForm<RsvpFormValues>({
-    defaultValues: initialData,
-    resolver: zodResolver(schema),
-  });
+    control,
+  } = form;
 
   const isJoin = watch("joinCeremony") === "presence";
-
-  console.log("isJoin", isJoin);
-  console.log("runConfetti", runConfetti);
 
   useEffect(() => {
     // if (!isJoin) {
@@ -140,7 +160,12 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   if (isSuccess)
     return (
-      <div className={clsx("text-center container py-12")}>
+      <div
+        className={clsx(
+          "text-center container py-12",
+          isSuccess ? "opacity-100 translate-y-0" : "translate-y-1/4 opacity-0"
+        )}
+      >
         <h1 className="text-lg font-bold">{t("afterSubmitTitle")}</h1>
         <p className="mt-2">{t("afterSubmitDescription")}</p>
         <div className="relative w-fit mx-auto">
@@ -164,100 +189,159 @@ const RsvpEditor = ({ initialData, className }: Props) => {
       </div>
     );
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className={clsx("container md:max-w-[400px] mb-12", className)}
-    >
-      {/* need relative on higher component */}
-      {runConfetti && (
-        <Confetti
-          width={width}
-          height={height}
-          colors={[
-            "#fff1f2", // primary 50
-            "#ffe4e6", // primary 100
-            "#fecdd3", // primary 200
-            "#fda4af", // primary 300
-            "#fb7185", // primary 400
-            "#f43f5e", // primary 500
-          ]}
-          // opacity={0.8}
-          gravity={0.4}
-          // numberOfPieces={2000}
-          // run={runConfetti}
-          recycle={true} // whether to loop or not
-          confettiSource={{
-            x: 0,
-            y: -height,
-            w: width,
-            h: height,
-          }}
-        />
-      )}
+    <Form {...form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={clsx("container md:max-w-[400px] mb-12", className)}
+      >
+        {/* need relative on higher component */}
+        {runConfetti && (
+          <Confetti
+            width={width}
+            height={height}
+            colors={[
+              "#fff1f2", // primary 50
+              "#ffe4e6", // primary 100
+              "#fecdd3", // primary 200
+              "#fda4af", // primary 300
+              "#fb7185", // primary 400
+              "#f43f5e", // primary 500
+            ]}
+            // opacity={0.8}
+            gravity={0.4}
+            // numberOfPieces={2000}
+            // run={runConfetti}
+            recycle={true} // whether to loop or not
+            confettiSource={{
+              x: 0,
+              y: -height,
+              w: width,
+              h: height,
+            }}
+          />
+        )}
 
-      <MyText className="font-bold text-3xl text-center">{t("title")}</MyText>
-      <div className="mt-4 flex flex-col gap-4">
-        <div>
-          <label className="ml-1">{t("firstNameLabel")}</label>
-          <Input
-            type="text"
-            {...register("firstName")}
-            placeholder={t("firstNamePlaceholder")}
-          />
-          {errors.firstName && <HelpText message={errors.firstName.message} />}
-        </div>
-        <div className="mt-2">
-          <label className="ml-1">{t("lastNameLabel")}</label>
-          <Input
-            type="text"
-            {...register("lastName")}
-            placeholder={t("lastNamePlaceholder")}
-          />
-          {errors.lastName && <HelpText message={errors.lastName.message} />}
-        </div>
-        <div className="mt-2">
-          <MyText className="ml-1">{t("ceremonyParticipationQuestion")}</MyText>
-          <SuperRadio
-            orientation="HORIZONTAL"
-            className="flex flex-col md:flex-row w-full gap-2"
-            items={ceremonyOptions}
-            {...register("joinCeremony")}
-          />
-          <p
-            className={cn(
-              "text-sm mt-4",
-              "transition-opacity",
-              watch("joinCeremony") === "presence" ? "block" : "hidden"
+        <MyText className="font-bold text-3xl text-center">{t("title")}</MyText>
+        <div className="mt-4 flex flex-col gap-4">
+          <div>
+            <label className="ml-1">{t("firstNameLabel")}</label>
+            <Input
+              type="text"
+              {...register("firstName")}
+              placeholder={t("firstNamePlaceholder")}
+            />
+            {errors.firstName && (
+              <HelpText message={errors.firstName.message} />
             )}
-          >
-            * {t("arrivalTime")}
-          </p>
-        </div>
-        <div className="mt-2">
-          <MyText className="ml-1">{t("pickupQuestion")}</MyText>
-          <SuperRadio
-            orientation="HORIZONTAL"
-            className="flex flex-col md:flex-row w-full gap-2"
-            items={pickupServiceOptions}
-            {...register("needPickup")}
-          />
-        </div>
+          </div>
+          <div className="mt-2">
+            <label className="ml-1">{t("lastNameLabel")}</label>
+            <Input
+              type="text"
+              {...register("lastName")}
+              placeholder={t("lastNamePlaceholder")}
+            />
+            {errors.lastName && <HelpText message={errors.lastName.message} />}
+          </div>
 
-        {submitErrorCode === "already_submitted" && (
-          <MyText className="text-error">{alreadySubmittedErrorMessage}</MyText>
-        )}
-        {submitErrorCode === "unknown_error" && (
-          <MyText className="text-error">{unknownErrorMessage}</MyText>
-        )}
-        <Button
-          variant="default"
-          type="submit"
-          disabled={!isDirty || isSubmitting}
-        >
-          {!isSubmitting ? t("ctaLabel") : t("ctaLabelLoading")}
-        </Button>
-      </div>
-    </form>
+          <div className="mt-2">
+            <label className="ml-1">{t("relationshipLabel")}</label>
+            <FormField
+              control={control}
+              name="relationship"
+              render={({ field }) => (
+                <FormItem>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue
+                          placeholder={t("relationshipPlaceholder")}
+                        />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="bride_relative">
+                        {t("brideRelativeLabel")}
+                      </SelectItem>
+                      <SelectItem value="bride_friend">
+                        {t("brideFriendLabel")}
+                      </SelectItem>
+                      <SelectItem value="bride_coworker">
+                        {t("brideCoworkerLabel")}
+                      </SelectItem>
+
+                      <SelectItem value="groom_relative">
+                        {t("groomRelativeLabel")}
+                      </SelectItem>
+                      <SelectItem value="groom_friend">
+                        {t("groomFriendLabel")}
+                      </SelectItem>
+                      <SelectItem value="groom_coworker">
+                        {t("groomCoworkerLabel")}
+                      </SelectItem>
+
+                      <SelectItem value="others">
+                        {t("relationshipOthersLabel")}
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div className="mt-2">
+            <MyText className="ml-1">
+              {t("ceremonyParticipationQuestion")}
+            </MyText>
+            <SuperRadio
+              orientation="HORIZONTAL"
+              className="flex flex-col md:flex-row w-full gap-2"
+              items={ceremonyOptions}
+              {...register("joinCeremony")}
+            />
+            <p
+              className={cn(
+                "text-sm mt-4",
+                "transition-opacity",
+                watch("joinCeremony") === "presence" ? "block" : "hidden"
+              )}
+            >
+              * {t("arrivalTime")}
+            </p>
+          </div>
+          <div className="mt-2">
+            <MyText className="ml-1">{t("pickupQuestion")}</MyText>
+            <SuperRadio
+              orientation="HORIZONTAL"
+              className="flex flex-col md:flex-row w-full gap-2"
+              items={pickupServiceOptions}
+              {...register("needPickup")}
+            />
+          </div>
+
+          {submitErrorCode === "already_submitted" && (
+            <MyText className="text-error">
+              {alreadySubmittedErrorMessage}
+            </MyText>
+          )}
+          {submitErrorCode === "unknown_error" && (
+            <MyText className="text-error">{unknownErrorMessage}</MyText>
+          )}
+          <Button
+            variant="default"
+            type="submit"
+            disabled={!isDirty || isSubmitting}
+          >
+            {!isSubmitting ? t("ctaLabel") : t("ctaLabelLoading")}
+          </Button>
+        </div>
+      </form>
+    </Form>
   );
 };
 export default RsvpEditor;

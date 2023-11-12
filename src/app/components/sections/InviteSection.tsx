@@ -3,12 +3,16 @@
 import { useTranslations } from "next-intl";
 import SectionWrapper from "../wrappers/SectionWrapper";
 import Image from "next/image";
+import { useAnimateOnSroll } from "../../hooks/useAnimateOnScroll";
+import { cn } from "../../../lib/utils";
 
 interface Props {}
 
 const InviteSection = ({}: Props) => {
   const greeting = useTranslations("greeting");
   const intro = useTranslations("intro");
+
+  const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
   return (
     <SectionWrapper className="flex items-center font-thin justify-center w-screen py-20 md:py-20 relative">
       <Image
@@ -19,7 +23,17 @@ const InviteSection = ({}: Props) => {
         sizes="100vw"
         className="blur absolute opacity-20"
       />
-      <div className="relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4">
+      {/* dummy */}
+      <div
+        ref={sectionRef}
+        className="absolute top-1/2  w-10 h-10 bg-black opacity-0"
+      />
+      <div
+        className={cn(
+          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4",
+          animateClassName
+        )}
+      >
         <div className="text-center">
           <div className=" flex flex-col gap-6">
             <p>{greeting("p1")}</p>

@@ -1,7 +1,6 @@
 "use client";
-import GoogleMap from "google-maps-react-markers";
 import clsx from "clsx";
-import { RiSyringeFill } from "react-icons/ri";
+import GoogleMap from "google-maps-react-markers";
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -10,18 +9,16 @@ import { BsFillBuildingsFill } from "react-icons/bs";
 import { GiPagoda } from "react-icons/gi";
 import {
   CEREMONY_LOCATION_LINK,
-  GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK,
-  GIMCHEON_SAMYEONGDAESA_PARK_MAP_LINK,
-  PARK_HOTEL_LOBBY_MAP_LINK,
   RECEPTION_LOCATION_LINK,
 } from "../../constants";
 import { cn } from "../../lib/utils";
+import BusTimeTable from "./BusTimeTable";
 import MyText from "./MyText";
 import Tabs from "./Tabs";
 import { mapTypeOptions } from "./Tabs/CONTAINER_TAB_TYPE";
 import Tab from "./Tabs/Tab";
 import SectionWrapper from "./wrappers/SectionWrapper";
-import BusTimeTable from "./BusTimeTable";
+import { useAnimateOnSroll } from "../hooks/useAnimateOnScroll";
 
 const PagodaPin = ({
   className,
@@ -94,14 +91,16 @@ const CeremonyMap = () => {
   const showCeremony = mapType === "all" || mapType === "ceremony";
   const showReception = mapType === "all" || mapType === "reception";
 
-  const handleMapType = (mapType: MapType) => {
-    setMapType(mapType);
-  };
+  const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
 
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
     <SectionWrapper className="w-screen py-16 relative">
-      <div className="container">
+      <div
+        ref={sectionRef}
+        className="absolute top-1/2 left-1/2 w-10 h-10 opacity-0"
+      />
+      <div className={cn("container", animateClassName)}>
         <Tabs className="mx-auto w-fit mb-8">
           {mapTypeOptions.map((option, index) => (
             <Tab

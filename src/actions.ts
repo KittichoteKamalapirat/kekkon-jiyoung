@@ -32,20 +32,6 @@ export async function postToGoogleSheets(
       },
     });
 
-    console.log("process.env.GOOGLE_PROJECT_ID", process.env.GOOGLE_PROJECT_ID);
-    console.log(
-      "process.env.GOOGLE_PRIVATE_KEY",
-      process.env.GOOGLE_PRIVATE_KEY
-    );
-    console.log(
-      "parse process.env.GOOGLE_PRIVATE_KEY",
-      JSON.parse(process.env.GOOGLE_PRIVATE_KEY as string)
-    );
-    console.log(
-      "process.env.GOOGLE_CLIENT_EMAIL",
-      process.env.GOOGLE_CLIENT_EMAIL
-    );
-
     const sheets = google.sheets({ version: "v4", auth });
 
     const range =
@@ -55,11 +41,14 @@ export async function postToGoogleSheets(
         ? "development"
         : "localhost";
 
-    const { firstName, lastName, joinCeremony, needPickup } = data;
+    const { firstName, lastName, relationship, joinCeremony, needPickup } =
+      data;
 
     // const header = [
     //   "firstName",
     //   "lastName",
+    //   "relationship",
+
     //   "ceremony",
     //   "pickup",
     //   "submiteDate",
@@ -76,11 +65,13 @@ export async function postToGoogleSheets(
       ([
         existingFirstName,
         existingLastName,
+        existingRelationship,
         existingCeremony,
         existingPickup,
       ]) =>
         existingFirstName === firstName &&
         existingLastName === lastName &&
+        existingRelationship === relationship &&
         existingCeremony === joinCeremony &&
         existingPickup === needPickup
     );
@@ -93,7 +84,14 @@ export async function postToGoogleSheets(
     const date = dayjs().format("DD/MMM/YYYY");
 
     const rowData = [
-      [firstName, lastName, joinCeremony, needPickup, `"${date}"`],
+      [
+        firstName,
+        lastName,
+        relationship,
+        joinCeremony,
+        needPickup,
+        `"${date}"`,
+      ],
     ]; // replace with your actual row data
 
     const request = {

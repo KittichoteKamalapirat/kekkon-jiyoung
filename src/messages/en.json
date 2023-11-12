@@ -83,20 +83,17 @@
     "emailLabel": "Email",
 
     "relationshipLabel": "Relationship",
-    "relationship1Label": "Bride's relative",
-    "relationship1Value": "bride_relative",
-    "relationship2Label": "Bride's friend",
-    "relationship2Value": "bride_friend",
-    "relationship3Label": "Bride's coworker",
-    "relationship3Value": "bride_coworker",
-    "relationship4Label": "Groom's relative",
-    "relationship4Value": "groom_relative",
-    "relationship5Label": "Groom's friend",
-    "relationship5Value": "groom_friend",
-    "relationship6Label": "Groom's coworker",
-    "relationship6Value": "groom_coworker",
-    "relationship7Label": "Others",
-    "relationship7Value": "others",
+    "relationshipPlaceholder": "Please select",
+
+    "brideRelativeLabel": "Bride's relative",
+    "brideFriendLabel": "Bride's friend",
+    "brideCoworkerLabel": "Bride's coworker",
+
+    "groomRelativeLabel": "Groom's relative",
+    "groomFriendLabel": "Groom's friend",
+    "groomCoworkerLabel": "Groom's coworker",
+
+    "relationshipOthersLabel": "Others",
 
     "ceremonyParticipationQuestion": "For the Ceremony",
     "ceremonyParticipationAnswer1Label": "Presence",
