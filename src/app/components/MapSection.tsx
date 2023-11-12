@@ -10,6 +10,9 @@ import { BsFillBuildingsFill } from "react-icons/bs";
 import { GiPagoda } from "react-icons/gi";
 import {
   CEREMONY_LOCATION_LINK,
+  GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK,
+  GIMCHEON_SAMYEONGDAESA_PARK_MAP_LINK,
+  PARK_HOTEL_LOBBY_MAP_LINK,
   RECEPTION_LOCATION_LINK,
 } from "../../constants";
 import { cn } from "../../lib/utils";
@@ -18,6 +21,7 @@ import Tabs from "./Tabs";
 import { mapTypeOptions } from "./Tabs/CONTAINER_TAB_TYPE";
 import Tab from "./Tabs/Tab";
 import SectionWrapper from "./wrappers/SectionWrapper";
+import BusTimeTable from "./BusTimeTable";
 
 const PagodaPin = ({
   className,
@@ -96,95 +100,128 @@ const CeremonyMap = () => {
 
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY) return;
   return (
-    <SectionWrapper className="bg-primary-50 w-screen py-16 relative">
-      <Tabs className="mx-auto w-fit mb-8">
-        {mapTypeOptions.map((option, index) => (
-          <Tab
-            key={option.value}
-            index={index}
-            tabsNum={mapTypeOptions.length}
-            isActive={mapType === option.value}
-            onClick={() => {
-              setMapType(option.value);
-            }}
+    <SectionWrapper className="w-screen py-16 relative">
+      <div className="container">
+        <Tabs className="mx-auto w-fit mb-8">
+          {mapTypeOptions.map((option, index) => (
+            <Tab
+              key={option.value}
+              index={index}
+              tabsNum={mapTypeOptions.length}
+              isActive={mapType === option.value}
+              onClick={() => {
+                setMapType(option.value);
+              }}
+            >
+              {option.label === "Ceremony" && location("ceremonyLabel")}
+              {option.label === "Reception" && location("receptionLabel")}
+              {option.label === "Both" && location("bothLabel")}
+            </Tab>
+          ))}
+        </Tabs>
+        {/* info */}
+        <div className="xl:flex mx-auto w-fit justify-center items-start gap-2">
+          {showCeremony && (
+            <div className="flex-1 border-[1px] rounded-lg p-4">
+              <h2 className="heading2 text-center font-[Montserrat]">
+                {location("ceremonyLabel")}
+              </h2>
+              <h3 className="font-bold text-center font-[Montserrat]">
+                ⏱️ {date("ceremonyTime")}
+              </h3>
+              <h3 className="text-md text-center font-[Montserrat]">
+                🏯 {location("ceremonyLocation")}
+              </h3>
+
+              {/* bus time table */}
+              <BusTimeTable />
+            </div>
+          )}
+          {showReception && (
+            <div
+              className={cn(
+                showCeremony && "mt-8 xl:mt-0",
+                !showCeremony && "w-full sm:min-w-[400px]",
+                "h-full flex-1 border-[1px] rounded-lg px-12 xl:px-4 py-4"
+              )}
+            >
+              <h2 className="heading2 text-center font-[Montserrat]">
+                {location("receptionLabel")}
+              </h2>
+              <h3 className="text-md font-bold text-center font-[Montserrat]">
+                ⏱️ {date("receptionTime")}
+              </h3>
+              <h3 className="text-md text-center font-[Montserrat]">
+                🏨 {location("receptionLocation")}
+              </h3>
+            </div>
+          )}
+        </div>
+
+        <div className="w-[300px] h-[250px] md:w-[500px] md:h-[400px] relative mx-auto mt-8">
+          <GoogleMap
+            apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}
+            defaultCenter={defaultProps[mapType]}
+            defaultZoom={defaultProps.zoom}
+            key={new Date().getTime()}
           >
-            {option.label === "Ceremony" && location("ceremonyLabel")}
-            {option.label === "Reception" && location("receptionLabel")}
-            {option.label === "Both" && location("bothLabel")}
-          </Tab>
-        ))}
-      </Tabs>
-      {showCeremony && (
-        <div>
-          <h2 className="heading2 text-center font-[Montserrat]">
-            {location("ceremonyLabel")}
-          </h2>
-          <h3 className="text-md lg:text-lg font-bold text-center font-[Montserrat]">
-            ⏱️ {date("ceremonyTime")}
-          </h3>
-          <h3 className="text-md lg:text-lg text-center font-[Montserrat]">
-            🏯 {location("ceremonyLocation")}
-          </h3>
+            <PagodaPin
+              lat={pins.ceremony.lat}
+              lng={pins.ceremony.lng}
+              className={showCeremony ? "block" : "hidden"}
+            />
+            <BuildingPin
+              lat={pins.reception.lat}
+              lng={pins.reception.lng}
+              className={showReception ? "block" : "hidden"}
+            />
+          </GoogleMap>
+
           <a
             href={CEREMONY_LOCATION_LINK}
             target="_blank"
-            className="flex items-center gap-2 bg-white px-2 py-1 mx-auto rounded-md border-[1px] text-sm mt-2 hover:cursor-pointer w-fit"
+            className={cn(
+              "absolute ",
+              showCeremony ? "flex" : "hidden",
+              showReception
+                ? "bottom-12 lg:bottom-16 left-4"
+                : "bottom-4 left-4",
+              // showReception ? "bottom-12 left-4" : "bottom-4 left-4",
+              "items-center gap-2 bg-white mx-auto font-semibold mt-2 w-fit",
+              "hover:cursor-pointer hover:bg-primary-50 rounded-sm shadow-sm",
+              "text-xs lg:text-md p-1 lg:p-2"
+            )}
           >
             <Image
               alt="pink roses frame"
               src="/images/icons/google-map.svg"
               width={20}
               height={20}
+              className="w-4 h-4 lg:w-5 lg:h-5"
             />
-            <MyText>{location("openInGoogleMapLabel")}</MyText>
+            <MyText> {location("openInGoogleMapLabel")} 🏯</MyText>
           </a>
-        </div>
-      )}
-      {showReception && (
-        <div className={cn(showCeremony && "mt-8")}>
-          <h2 className="heading2 text-center font-[Montserrat]">
-            {location("receptionLabel")}
-          </h2>
-          <h3 className="text-md lg:text-lg font-bold text-center font-[Montserrat]">
-            ⏱️ {date("receptionTime")}
-          </h3>
-          <h3 className="text-md lg:text-lg text-center font-[Montserrat]">
-            🏨 {location("receptionLocation")}
-          </h3>
           <a
             href={RECEPTION_LOCATION_LINK}
             target="_blank"
-            className="flex items-center gap-2 bg-white px-2 py-1 mx-auto rounded-sm border-[1px] text-sm mt-2 hover:cursor-pointer w-fit"
+            className={cn(
+              showReception ? "flex" : "hidden",
+              "absolute bottom-4 left-4",
+              "items-center gap-2 bg-white mx-auto font-semibold mt-2 w-fit",
+              "hover:cursor-pointer hover:bg-primary-50 rounded-sm shadow-sm",
+              "text-xs lg:text-md p-1 lg:p-2"
+            )}
           >
             <Image
               alt="pink roses frame"
               src="/images/icons/google-map.svg"
               width={20}
               height={20}
+              className="w-4 h-4 lg:w-5 lg:h-5"
             />
-            <MyText>Open in Google Map</MyText>
+            <MyText> {location("openInGoogleMapLabel")} 🏨</MyText>
           </a>
         </div>
-      )}
-
-      <div className="w-[300px] h-[250px] md:w-[500px] md:h-[400px] relative mx-auto mt-8">
-        <GoogleMap
-          apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAP_KEY}
-          defaultCenter={defaultProps[mapType]}
-          defaultZoom={defaultProps.zoom}
-          key={new Date().getTime()}
-        >
-          <PagodaPin
-            lat={pins.ceremony.lat}
-            lng={pins.ceremony.lng}
-            className={showCeremony ? "block" : "hidden"}
-          />
-          <BuildingPin
-            lat={pins.reception.lat}
-            lng={pins.reception.lng}
-            className={showReception ? "block" : "hidden"}
-          />
-        </GoogleMap>
       </div>
 
       {/* Sakura */}

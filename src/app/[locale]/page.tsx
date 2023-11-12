@@ -18,6 +18,7 @@ export default function Home() {
         <HamburgerNav />
         <HeaderSection />
         <InviteSection />
+        <MapSection />
         <RsvpSection />
         {/* added below so overflow absolute don't cause scrollable */}
         {/* https://stackoverflow.com/questions/64344836/absolutely-positioned-elements-adding-scroll-on-mobile */}
@@ -31,7 +32,7 @@ export default function Home() {
         {/* <HeaderSection /> */}
 
         {/* <VideoSection /> */}
-        <MapSection />
+
         {/* <DateTimeSection /> */}
 
         <ImagesSection />

@@ -9,7 +9,7 @@ const RsvpSection = ({ className }: Props) => {
   return (
     <div
       className={clsx(
-        "md:h-[80vh] mt-12 w-full flex flex-col items-center justify-center relative",
+        "md:h-[80vh] mt-12 w-full flex flex-col items-center justify-center relative bg-primary-50 ",
         className
       )}
     >

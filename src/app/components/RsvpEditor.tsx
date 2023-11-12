@@ -125,9 +125,14 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   const isJoin = watch("joinCeremony") === "presence";
 
+  console.log("isJoin", isJoin);
+  console.log("runConfetti", runConfetti);
+
   useEffect(() => {
-    if (!isJoin) return;
-    setRunConfetti(true);
+    // if (!isJoin) {
+    //   return
+    // }
+    setRunConfetti(isJoin);
     const timeoutId = setTimeout(() => setRunConfetti(false), 3000);
 
     return () => clearTimeout(timeoutId);
@@ -218,6 +223,15 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             items={ceremonyOptions}
             {...register("joinCeremony")}
           />
+          <p
+            className={cn(
+              "text-sm mt-4",
+              "transition-opacity",
+              watch("joinCeremony") === "presence" ? "block" : "hidden"
+            )}
+          >
+            * {t("arrivalTime")}
+          </p>
         </div>
         <div className="mt-2">
           <MyText className="ml-1">{t("pickupQuestion")}</MyText>
@@ -227,16 +241,6 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             items={pickupServiceOptions}
             {...register("needPickup")}
           />
-
-          <p
-            className={cn(
-              "text-sm mt-4",
-              "transition-opacity",
-              watch("needPickup") === "need" ? "opacity-100" : "opacity-0"
-            )}
-          >
-            * {t("arrivalTime")}
-          </p>
         </div>
 
         {submitErrorCode === "already_submitted" && (

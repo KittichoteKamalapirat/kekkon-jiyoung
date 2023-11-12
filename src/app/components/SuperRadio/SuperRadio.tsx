@@ -73,7 +73,7 @@ export const SuperRadio = forwardRef<HTMLInputElement, SuperRadioProps<string>>(
               return (
                 <div
                   className={clsx(
-                    "flex justify-between gap-2 rounded-md border-[1px] px-4 py-2",
+                    "flex justify-between gap-2 rounded-md border-[1px] px-4 py-2 bg-white",
                     orientation === "HORIZONTAL"
                       ? "flex-row"
                       : "h-full flex-col items-center",

@@ -51,14 +51,16 @@
 
     "shuttleBusSection": "Shuttle bus available",
 
-    "shuttleBusTimeLabel": "Shuttle Bus Pick Up Time",
-    "shuttleBusTimeValue": "TBD",
+    "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
-    "shuttleBusLocationLabel": "Shuttle Bus Pick Up Location",
-    "shuttleBusLocationValue": "TBD",
+    "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
+    "shuttleBusDeparturePointValue": "9:30",
 
-    "shuttleBusDeparturePointLabel": "Departure Point",
-    "shuttleBusDeparturePointValue": "TBD"
+    "shuttleBusFirstStopLabel": "Park Hotel Lobby",
+    "shuttleBusFirstStopValue": "10:00",
+
+    "shuttleBusLastStopLabel": "Gimcheon Samyeongdaesa Park",
+    "shuttleBusLastStopValue": "10:10"
   },
 
   "sightseeing": {

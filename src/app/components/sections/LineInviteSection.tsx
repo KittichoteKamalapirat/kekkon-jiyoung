@@ -21,7 +21,7 @@ const LineInviteSection = ({}: Props) => {
           src="/images/qr-placeholder.jpg"
           width={200}
           height={200}
-          className="mx-auto"
+          className="mx-auto mt-4"
         />
       </div>
       <div className="translate-x-[calc(8%-10px)] translate-y-1/3 absolute z-10 top-0 right-0 ">
