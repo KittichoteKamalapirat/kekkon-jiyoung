@@ -13,7 +13,6 @@ const AnimateText = ({ heroTextColor }: Props) => {
   const path = usePathname();
   const isJapanese = isJapaneseLocale(path);
   const breakpoint = useCurrentBreakpoint();
-  console.log("breakpoint", breakpoint);
 
   const common = useTranslations("common");
 

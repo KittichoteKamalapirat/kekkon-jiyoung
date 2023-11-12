@@ -1,7 +1,8 @@
 import { useInView } from "react-intersection-observer";
 import { cn } from "../../lib/utils";
 
-const commonClassName = "transition-all duration-[2000ms] ease-in-out";
+const commonClassName =
+  "transition-all duration-[2000ms] ease-in-out overflow-y-hidden";
 export const useAnimateOnSroll = () => {
   const view = useInView({
     /* Optional options */
