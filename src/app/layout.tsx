@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Jiyoung & Rodrigo",
   description: "Jiyoung & Rodrigo Wedding Invitation",
+  openGraph: {
+    images: "/images/logo/android-chrome-512x512.png",
+  },
 };
 
 export default function RootLayout({

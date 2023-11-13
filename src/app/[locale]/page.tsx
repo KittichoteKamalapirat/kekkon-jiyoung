@@ -1,7 +1,6 @@
 "use client"; // for translation to work
 import HamburgerNav from "../components/HamburgerNav";
 import MapSection from "../components/MapSection";
-import DateTimeSection from "../components/sections/DateTimeSection";
 import FooterSection from "../components/sections/FooterSection";
 import HeaderSection from "../components/sections/HeaderSection";
 import ImagesSection from "../components/sections/ImagesSection";
