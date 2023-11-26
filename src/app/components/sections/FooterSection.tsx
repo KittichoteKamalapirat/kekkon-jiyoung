@@ -1,24 +1,18 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
-import SectionWrapper from "../wrappers/SectionWrapper";
 import { useTranslations } from "next-intl";
-import { useAnimateOnSroll } from "../../hooks/useAnimateOnScroll";
+import SectionWrapper from "../wrappers/SectionWrapper";
 
 interface Props {}
 
 const FooterSection = ({}: Props) => {
   const footer = useTranslations("footer");
-  const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
 
   return (
     <SectionWrapper className="relative w-screen py-8 md:py-8 bg-white flex items-center justify-center">
       {/* dummy */}
-      <div
-        ref={sectionRef}
-        className="absolute top-1/2 left-1/2 w-10 h-10 opacity-0"
-      />
-      <footer className={animateClassName}>
+
+      <footer>
         <div className="px-4 py-6 md:flex md:items-center md:justify-between w-screen text-center">
           <div className="mx-auto w-full max-w-screen-xl">
             <h2 className="text-md lg:text-xl text-center my font-[Montserrat]">
