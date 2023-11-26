@@ -73,7 +73,7 @@ const InviteSection = ({}: Props) => {
           </div>
 
           <div className="flex justify-around items-start gap-4 mt-2">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-1 flex-col items-center">
               <p className=" font-semibold text-md md:text-lg flex-1">
                 {greeting("brideName")}
               </p>
@@ -93,7 +93,7 @@ const InviteSection = ({}: Props) => {
             <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
               &
             </p>
-            <div className="flex flex-col items-center">
+            <div className="flex  flex-1  flex-col items-center">
               <p
                 className=" font-semibold text-md md:text-lg flex-1"
                 dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
