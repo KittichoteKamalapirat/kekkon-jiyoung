@@ -11,8 +11,21 @@
   },
   "greeting": {
     "sectionLabel": "Greeting",
-    "groomName": "Rodrigo Daniel <br/> Rotela Ramirez",
+    "groomName": "Rodrigo Rotela",
     "brideName": "Jiyoung Park",
+
+    "groomBirthday": "Nov 16, 1989",
+    "groomHometownCity": "Asunción, Paraguay",
+    "groomHometownCountry": "",
+
+    "brideBirthday": "Oct 8, 1996",
+    "brideHometownCity": "Gimcheon, South Korea",
+    "brideHometownCountry": "",
+
+    "favoriteFoodLabel": "Favorite food",
+    "groomFavoriteFoodValue": "Melon-pan",
+    "brideFavoriteFoodValue": "Sweet TAMAGOYAKI, Homemade SUNDUBU",
+
     "between": "between",
     "p1": "With joyful hearts, we would like to request the pleasure of your presence at our wedding",
     "p2": "",
@@ -21,21 +34,14 @@
     "p5": ""
   },
   "intro": {
-    "sectionLabel": "Stare",
-    "groomName": "Rodrigo Daniel Rotela Ramirez",
-    "groomBirthday": "Nov 16, 1989",
-    "groomHometown": "Asunción, Paraguay",
-
-    "brideName": "Jiyoung Park",
-    "brideBirthday": "Oct 8, 1996",
-    "brideHometown": "Gimcheon, South Korea"
+    "sectionLabel": "Stare"
   },
   "date": {
     "sectionLabel": "Agenda of our special day",
     "ceremonyLabel": "Ceremony",
     "ceremonyTime": "11:30",
     "receptionLabel": "Reception",
-    "receptionTime": "14:00"
+    "receptionTime": "13:00"
   },
   "location": {
     "sectionLabel": "Location",
@@ -49,18 +55,18 @@
     "bothLabel": "Both",
     "openInGoogleMapLabel": "Open in Google Map",
 
-    "shuttleBusSection": "Shuttle bus available",
+    "shuttleBusSection": "Shuttle bus available. See details below.",
 
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
     "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
-    "shuttleBusDeparturePointValue": "9:30",
+    "shuttleBusDeparturePointValue": "10:00",
 
     "shuttleBusFirstStopLabel": "Park Hotel Lobby",
-    "shuttleBusFirstStopValue": "10:00",
+    "shuttleBusFirstStopValue": "10:50",
 
     "shuttleBusLastStopLabel": "Gimcheon Samyeongdaesa Park",
-    "shuttleBusLastStopValue": "10:10"
+    "shuttleBusLastStopValue": "11:00"
   },
 
   "sightseeing": {
@@ -70,10 +76,12 @@
   },
   "lineInvite": {
     "title": "Scan the QR Code",
-    "description": "We will update the event information here"
+    "description": "Please scan the QR Code to receive the latest updates of the event."
   },
   "rsvp": {
-    "title": "Registration",
+    "title": "Guest Registration",
+    "description1": "",
+    "description2": "",
     "firstNameLabel": "First Name",
     "firstNamePlaceholder": "First Name",
 
@@ -105,9 +113,14 @@
     "ctaLabel": "Submit",
     "ctaLabelLoading": "Submitting",
 
-    "pickupQuestion": "For Pick Up Service",
+    "attendantNumQuestion": "Number of attendants",
+
+    "pickupQuestion": "Do you need the pick up service?",
+    "pickupSpotQuestion": "Please choose your pick-up place",
     "pickupAnswer1Label": "Need",
     "pickupAnswer2Label": "No Need",
+    "pickupSpotGumiLabel": "10:10 🚏 Gimcheon Gumi Sta Parking Area",
+    "pickupSpotParkLabel": "10:50 🏨 Park Hotel Lobby",
     "arrivalTime": "Please arrive to Gimcheon Samyeongdaesa Park by 10:30AM. We are looking forward to seeing you in our special day",
 
     "afterSubmitTitle": "We have received your response.",
@@ -120,6 +133,6 @@
     "hotelsLabel": "Hotels"
   },
   "footer": {
-    "copy": "Looking forward to meeting all the guests"
+    "copy": "We are looking forward to seeing you at our wedding!"
   }
 }

@@ -37,7 +37,7 @@ export default function Home() {
         <ImagesSection />
 
         <LineInviteSection />
-        <SightSeeingSection />
+        {/* <SightSeeingSection /> */}
         {/* <SeatMapSection /> */}
         {/* <FormSection /> */}
         <FooterSection />

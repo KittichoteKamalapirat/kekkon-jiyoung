@@ -10,7 +10,6 @@ interface Props {}
 
 const InviteSection = ({}: Props) => {
   const greeting = useTranslations("greeting");
-  const intro = useTranslations("intro");
 
   const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
   return (
@@ -79,8 +78,16 @@ const InviteSection = ({}: Props) => {
                 {greeting("brideName")}
               </p>
 
-              <p className="text-sm">{intro("brideBirthday")}</p>
-              <p className="text-sm">{intro("brideHometown")}</p>
+              <p className="text-sm">{greeting("brideBirthday")}</p>
+              <p className="text-sm">{greeting("brideHometownCity")}</p>
+              {greeting("brideHometownCountry") && (
+                <p className="text-sm">{greeting("brideHometownCountry")}</p>
+              )}
+
+              <p className="text-sm">
+                {greeting("favoriteFoodLabel")}:{" "}
+                {greeting("brideFavoriteFoodValue")}
+              </p>
             </div>
 
             <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
@@ -91,8 +98,15 @@ const InviteSection = ({}: Props) => {
                 className=" font-semibold text-md md:text-lg flex-1"
                 dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
               ></p>
-              <p className="text-sm">{intro("groomBirthday")}</p>
-              <p className="text-sm">{intro("groomHometown")}</p>
+              <p className="text-sm">{greeting("groomBirthday")}</p>
+              <p className="text-sm">{greeting("groomHometownCity")}</p>
+              {greeting("brideHometownCountry") && (
+                <p className="text-sm">{greeting("brideHometownCountry")}</p>
+              )}
+              <p className="text-sm">
+                {greeting("favoriteFoodLabel")}:{" "}
+                {greeting("groomFavoriteFoodValue")}
+              </p>
             </div>
           </div>
         </div>

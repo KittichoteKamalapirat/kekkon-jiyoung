@@ -12,7 +12,20 @@
   "greeting": {
     "sectionLabel": "ご挨拶",
     "groomName": "ロドリゴ ロテラ",
-    "brideName": "芝英 朴",
+    "brideName": "パク ジヨン",
+
+    "groomBirthday": "1989年11月16日",
+    "groomHometownCity": "アスンシオン",
+    "groomHometownCountry": "パラグアイ",
+
+    "brideBirthday": "1996年10月8日",
+    "brideHometownCity": "キムチョン",
+    "brideHometownCountry": "韓国",
+
+    "favoriteFoodLabel": "好きな食べ物",
+    "groomFavoriteFoodValue": "メロンパン",
+    "brideFavoriteFoodValue": "甘い卵焼きと実家の手作りスンドゥブ",
+
     "between": "",
     "p1": "謹啓",
     "p2": "皆様におかれましてはご清祥のこととお慶び申し上げます。",
@@ -21,20 +34,14 @@
     "p5": "謹白"
   },
   "intro": {
-    "sectionLabel": "Stare",
-    "groomName": "ロドリゴ ロテラ",
-    "groomBirthday": "1989年11月16日",
-    "groomHometown": "アスンシオン、パラグアイ",
-    "brideName": "芝英 朴",
-    "brideBirthday": "1996年10月8日",
-    "brideHometown": "キムチョン、 韓国"
+    "sectionLabel": "Stare"
   },
   "date": {
     "sectionLabel": "当日の詳細",
     "ceremonyLabel": "挙式",
     "ceremonyTime": "11:30",
     "receptionLabel": "披露宴",
-    "receptionTime": "14:00"
+    "receptionTime": "13:00"
   },
   "location": {
     "sectionLabel": "場所",
@@ -48,18 +55,18 @@
     "bothLabel": "両方",
     "openInGoogleMapLabel": "Googleマップで開く",
 
-    "shuttleBusSection": "当日􏰀貸切バスで移動をお願いいたします",
+    "shuttleBusSection": "当日シャトルバスをご用意させていただきます。（下記参照）",
 
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
     "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
-    "shuttleBusDeparturePointValue": "9:30",
+    "shuttleBusDeparturePointValue": "10:00",
 
     "shuttleBusFirstStopLabel": "Park Hotel Lobby",
-    "shuttleBusFirstStopValue": "10:00",
+    "shuttleBusFirstStopValue": "10:50",
 
     "shuttleBusLastStopLabel": "Gimcheon Samyeongdaesa Park",
-    "shuttleBusLastStopValue": "10:10"
+    "shuttleBusLastStopValue": "11:00"
   },
 
   "sightseeing": {
@@ -68,16 +75,18 @@
     "sightseeingLabel": "TBD"
   },
   "lineInvite": {
-    "title": "QRコードをスキャンして",
-    "description": "イベントに関する情報をラインで共有します"
+    "title": "以下QRコードのご登録をお願い致します。",
+    "description": "イベントに関する情報をラインで共有させていただきます"
   },
   "rsvp": {
-    "title": "登録",
+    "title": "ゲスト様入力項目",
+    "description1": "お手数ですが以下お日にち迄に出欠情報のご連絡をお願い申し上げます。",
+    "description2": "２０２３年１月１４日（日）期日までのご連絡が難しい場合にはご一報いただけますと幸いです。",
     "firstNameLabel": "名",
     "firstNamePlaceholder": "名",
 
-    "lastNameLabel": "性",
-    "lastNamePlaceholder": "性",
+    "lastNameLabel": "姓",
+    "lastNamePlaceholder": "姓",
     "emailLabel": "メール",
 
     "relationshipLabel": "関係",
@@ -93,13 +102,19 @@
     "relationshipOthersLabel": "その他",
     "relationshipPlaceholder": "選択",
 
-    "ceremonyParticipationQuestion": "挙式への参加",
-    "ceremonyParticipationAnswer1Label": "参加する",
-    "ceremonyParticipationAnswer2Label": "参加しない",
+    "ceremonyParticipationQuestion": "いずれかお選びください",
+    "ceremonyParticipationAnswer1Label": "ご出席",
+    "ceremonyParticipationAnswer2Label": "ご欠席",
+
+    "attendantNumQuestion": "参列者数",
 
     "pickupQuestion": "ピックアップサービス",
-    "pickupAnswer1Label": "使用する",
-    "pickupAnswer2Label": "使用しない",
+    "pickupSpotQuestion": "ピックアップをご希望される場所をお選びください",
+    "pickupAnswer1Label": "ご希望",
+    "pickupAnswer2Label": "不要",
+
+    "pickupSpotGumiLabel": "10:10 🚏 Gimcheon Gumi Sta Parking Area",
+    "pickupSpotParkLabel": "10:50 🏨 Park Hotel Lobby",
 
     "successfullySubmitted": "登録が完了しました",
     "alreadySubmittedError": "すでに登録されています",
@@ -119,6 +134,6 @@
     "hotelsLabel": "宿泊"
   },
   "footer": {
-    "copy": "お客様の皆さんにお会いできるように楽しみにしております"
+    "copy": "Thank you. 皆さまにお会いできることを楽しみにしております"
   }
 }

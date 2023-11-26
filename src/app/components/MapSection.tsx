@@ -132,6 +132,10 @@ const CeremonyMap = () => {
                 🏯 {location("ceremonyLocation")}
               </h3>
 
+              <p className="text-sm font-[Montserrat] mt-2 text-left">
+                * {location("shuttleBusSection")}
+              </p>
+
               {/* bus time table */}
               <BusTimeTable />
             </div>

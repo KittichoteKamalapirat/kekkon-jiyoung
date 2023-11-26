@@ -12,7 +12,7 @@ const FooterSection = ({}: Props) => {
   const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
 
   return (
-    <SectionWrapper className="relative w-screen py-8 md:py-8 bg-primary-50 flex items-center justify-center">
+    <SectionWrapper className="relative w-screen py-8 md:py-8 bg-white flex items-center justify-center">
       {/* dummy */}
       <div
         ref={sectionRef}
