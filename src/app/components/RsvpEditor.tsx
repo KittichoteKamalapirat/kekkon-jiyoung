@@ -139,7 +139,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   const onSubmit = async (data: RsvpFormValues) => {
     try {
-      const response = await postToGoogleSheets(data);
+      const response = await postToGoogleSheets(data as any); // TODO
 
       if (response.success) {
         setIsSuccess(true);
@@ -354,6 +354,27 @@ const RsvpEditor = ({ initialData, className }: Props) => {
             </div>
 
             <div className="mt-2">
+              <MyText className="ml-1">
+                {t("ceremonyParticipationQuestion")}
+              </MyText>
+              <SuperRadio
+                orientation="HORIZONTAL"
+                className="flex flex-col md:flex-row w-full gap-2"
+                items={ceremonyOptions}
+                {...register("joinCeremony")}
+              />
+              <p
+                className={cn(
+                  "text-sm mt-4",
+                  "transition-opacity",
+                  watch("joinCeremony") === "presence" ? "block" : "hidden"
+                )}
+              >
+                * {t("arrivalTime")}
+              </p>
+            </div>
+
+            <div className="mt-2">
               <label className="ml-1">{t("relationshipLabel")}</label>
               <FormField
                 control={control}
@@ -472,26 +493,6 @@ const RsvpEditor = ({ initialData, className }: Props) => {
               ))}
             </div>
 
-            <div className="mt-2">
-              <MyText className="ml-1">
-                {t("ceremonyParticipationQuestion")}
-              </MyText>
-              <SuperRadio
-                orientation="HORIZONTAL"
-                className="flex flex-col md:flex-row w-full gap-2"
-                items={ceremonyOptions}
-                {...register("joinCeremony")}
-              />
-              <p
-                className={cn(
-                  "text-sm mt-4",
-                  "transition-opacity",
-                  watch("joinCeremony") === "presence" ? "block" : "hidden"
-                )}
-              >
-                * {t("arrivalTime")}
-              </p>
-            </div>
             <div className="mt-2">
               <MyText className="ml-1">{t("pickupQuestion")}</MyText>
               <SuperRadio

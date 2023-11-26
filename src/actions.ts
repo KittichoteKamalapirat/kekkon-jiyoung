@@ -1,7 +1,7 @@
 "use server";
 import dayjs from "dayjs";
 import { google } from "googleapis";
-import { RsvpFormValues } from "./app/components/RsvpEditor";
+import { RsvpFormValues } from "./app/components/RsvpEditorUnion";
 
 export type SubmitErrorCode = "already_submitted" | "unknown_error";
 type SubmitSuccessResponse = {
@@ -41,9 +41,19 @@ export async function postToGoogleSheets(
         ? "development"
         : "localhost";
 
-    const { firstName, lastName, relationship, joinCeremony, needPickup } =
-      data;
+    const { firstName, lastName, joinCeremony } = data;
 
+    const attendantNum =
+      data.joinCeremony === "yes" && data.attendantNum ? data.attendantNum : 0;
+    const attendants = (data.joinCeremony === "yes" && data.attendants) || [];
+    const needPickup = (data.joinCeremony === "yes" && data.needPickup) || "";
+    const relationship =
+      (data.joinCeremony === "yes" && data.relationship) || "";
+    const pickupSpot =
+      (data.joinCeremony === "yes" &&
+        data.needPickup === "yes" &&
+        data.pickupSpot) ||
+      "";
     // const header = [
     //   "firstName",
     //   "lastName",
@@ -61,19 +71,24 @@ export async function postToGoogleSheets(
 
     // Check if firstName and lastName already exist in existing data
     const existingData = existingDataResponse.data.values || [];
+    // prevent same answer submission
     const doesExist = existingData.some(
       ([
         existingFirstName,
         existingLastName,
+        existingJoinCeremony,
         existingRelationship,
-        existingCeremony,
-        existingPickup,
+        _existingAttendantNum,
+        _existingAttendants,
+        _existingNeedPickup,
+        _existingPickupSpot,
+        _existingDate,
       ]) =>
-        existingFirstName === firstName &&
-        existingLastName === lastName &&
-        existingRelationship === relationship &&
-        existingCeremony === joinCeremony &&
-        existingPickup === needPickup
+        existingFirstName === firstName && // should not change
+        existingLastName === lastName && // should not change
+        existingJoinCeremony === joinCeremony && // should not change unless want to change
+        existingRelationship === relationship // should not change
+      // existingNeedPickup === needPickup
     );
 
     // If firstName and lastName exist, return without appending new data
@@ -87,9 +102,15 @@ export async function postToGoogleSheets(
       [
         firstName,
         lastName,
-        relationship,
         joinCeremony,
+        relationship,
+        attendantNum,
+        attendants.map(
+          (attendant) => `${attendant.firstName} ${attendant.lastName}`
+        ).join(`
+`),
         needPickup,
+        pickupSpot,
         `"${date}"`,
       ],
     ]; // replace with your actual row data

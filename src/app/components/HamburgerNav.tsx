@@ -6,8 +6,7 @@ import Link from "next-intl/link";
 
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
-import { IoMdClose, IoMdMenu } from "react-icons/io";
-import { HiMiniLanguage } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
 import { LiaLanguageSolid } from "react-icons/lia";
 import { ICON_SIZE } from "../../constants";
 import { cn, isJapaneseLocale } from "../../lib/utils";
