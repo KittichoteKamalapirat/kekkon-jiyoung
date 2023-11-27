@@ -44,10 +44,7 @@ const RsvpSection = ({ className }: Props) => {
             // attendants: [{ firstName: "", lastName: "" }],
           }}
           setRunConfetti={setRunConfetti}
-          className={cn(
-            animateClassName,
-            "bg-white rounded-lg py-8 my-8 min-h-screen"
-          )}
+          className={cn(animateClassName, "bg-white rounded-lg py-8 my-8")}
         />
       </div>
       {runConfetti && (
