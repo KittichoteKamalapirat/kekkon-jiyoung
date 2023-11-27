@@ -7,7 +7,6 @@ import ImagesSection from "../components/sections/ImagesSection";
 import InviteSection from "../components/sections/InviteSection";
 import LineInviteSection from "../components/sections/LineInviteSection";
 import RsvpSection from "../components/sections/RsvpSection";
-import SightSeeingSection from "../components/sections/SightSeeingSection";
 
 export default function Home() {
   return (

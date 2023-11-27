@@ -11,16 +11,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Jiyoung & Rodrigo",
     description: "Jiyoung & Rodrigo Wedding Invitation",
-    url: "https://kekkon-jiyoung.vercel.app",
+    url: "https://parkandrotela.com",
     type: "website",
-    images: "/images/logo/android-chrome-512x512.png",
+    images: "/images/opengraph.webp",
   },
   twitter: {
     card: "summary_large_image",
     title: "Jiyoung & Rodrigo",
     description: "Jiyoung & Rodrigo Wedding Invitation",
     creator: "@Shaneinsane6",
-    images: "/images/logo/android-chrome-512x512.png",
+    images: "/images/opengraph.webp",
   },
 };
 

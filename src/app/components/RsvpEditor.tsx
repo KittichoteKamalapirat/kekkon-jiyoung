@@ -515,15 +515,6 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           </div>
         </div>
       </form>
-
-      <Transition
-        show={isSuccess}
-        leave="duration-200 ease-out"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-      >
-        <SubmitSuccess />;
-      </Transition>
     </Form>
   );
 };
