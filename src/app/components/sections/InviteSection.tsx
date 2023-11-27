@@ -29,104 +29,106 @@ const InviteSection = ({}: Props) => {
       />
       <div
         className={cn(
-          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4",
-          animateClassName
+          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4"
         )}
       >
-        <div className="text-center">
-          <div className=" flex flex-col gap-6">
-            <p>{greeting("p1")}</p>
+        <div className={animateClassName}>
+          <div className="text-center">
+            <div className=" flex flex-col gap-6">
+              <p>{greeting("p1")}</p>
 
-            {greeting("p2") && <p>{greeting("p2")}</p>}
-            {greeting("p3") && <p>{greeting("p3")}</p>}
-            {greeting("p4") && <p>{greeting("p4")}</p>}
-            {greeting("p5") && <p>{greeting("p5")}</p>}
-          </div>
-          <br />
-          <p className="">{greeting("between")}</p>
-          <br />
-          {/* center wrapper */}
-
-          {/* actual card */}
-          <div className="flex justify-around items-center gap-4">
-            <div className="flex flex-col gap-2">
-              <Image
-                alt="Japanese"
-                src="/images/bride.webp"
-                width={100}
-                height={100}
-                className="rounded-full w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
-              />
+              {greeting("p2") && <p>{greeting("p2")}</p>}
+              {greeting("p3") && <p>{greeting("p3")}</p>}
+              {greeting("p4") && <p>{greeting("p4")}</p>}
+              {greeting("p5") && <p>{greeting("p5")}</p>}
             </div>
-            <p className="font-[Tangerine] font-thin text-4xl md:text-6xl text-center">
-              &
-            </p>
-            <div className="flex flex-col gap-2">
-              <Image
-                alt="Japanese"
-                src="/images/groom.webp"
-                width={100}
-                height={100}
-                className="rounded-full w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
-              />
-            </div>
-          </div>
+            <br />
+            <p className="">{greeting("between")}</p>
+            <br />
+            {/* center wrapper */}
 
-          <div className="flex justify-around items-start gap-4 mt-2">
-            <div className="flex flex-1 flex-col items-center">
-              <p className=" font-semibold text-md md:text-lg flex-1">
-                {greeting("brideName")}
+            {/* actual card */}
+            <div className="flex justify-around items-center gap-4">
+              <div className="flex flex-col gap-2">
+                <Image
+                  alt="Japanese"
+                  src="/images/bride.webp"
+                  width={100}
+                  height={100}
+                  className="rounded-full w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
+                />
+              </div>
+
+              <p className="font-[Tangerine] font-thin text-4xl md:text-6xl text-center">
+                &
               </p>
 
-              <p className="text-sm">{greeting("brideBirthday")}</p>
-              <p className="text-sm">{greeting("brideHometownCity")}</p>
-              {greeting("brideHometownCountry") && (
-                <p className="text-sm">{greeting("brideHometownCountry")}</p>
-              )}
-
-              <p className="text-sm">
-                {greeting("favoriteFoodLabel")}:{" "}
-                {greeting("brideFavoriteFoodValue")}
-              </p>
+              <div className="flex flex-col gap-2">
+                <Image
+                  alt="Japanese"
+                  src="/images/groom.webp"
+                  width={100}
+                  height={100}
+                  className="rounded-full w-[100px] h-[100px] md:w-[150px] md:h-[150px]"
+                />
+              </div>
             </div>
 
-            <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
-              &
-            </p>
-            <div className="flex  flex-1  flex-col items-center">
-              <p
-                className=" font-semibold text-md md:text-lg flex-1"
-                dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
-              ></p>
-              <p className="text-sm">{greeting("groomBirthday")}</p>
-              <p className="text-sm">{greeting("groomHometownCity")}</p>
-              {greeting("brideHometownCountry") && (
-                <p className="text-sm">{greeting("brideHometownCountry")}</p>
-              )}
-              <p className="text-sm">
-                {greeting("favoriteFoodLabel")}:{" "}
-                {greeting("groomFavoriteFoodValue")}
+            <div className="flex justify-around items-start gap-4 mt-2">
+              <div className="flex flex-1 flex-col items-center">
+                <p className=" font-semibold text-md md:text-lg flex-1">
+                  {greeting("brideName")}
+                </p>
+
+                <p className="text-sm">{greeting("brideBirthday")}</p>
+                <p className="text-sm">{greeting("brideHometownCity")}</p>
+                {greeting("brideHometownCountry") && (
+                  <p className="text-sm">{greeting("brideHometownCountry")}</p>
+                )}
+
+                <p className="text-sm">
+                  {greeting("favoriteFoodLabel")}:{" "}
+                  {greeting("brideFavoriteFoodValue")}
+                </p>
+              </div>
+
+              <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
+                &
               </p>
+              <div className="flex  flex-1  flex-col items-center">
+                <p
+                  className=" font-semibold text-md md:text-lg flex-1"
+                  dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
+                ></p>
+                <p className="text-sm">{greeting("groomBirthday")}</p>
+                <p className="text-sm">{greeting("groomHometownCity")}</p>
+                {greeting("brideHometownCountry") && (
+                  <p className="text-sm">{greeting("brideHometownCountry")}</p>
+                )}
+                <p className="text-sm">
+                  {greeting("favoriteFoodLabel")}:{" "}
+                  {greeting("groomFavoriteFoodValue")}
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* <img
-          alt="roses frame"
-          src="/images/floral-pink-top-left.webp"
-          className="w-[200px] md:w-[250px] absolute z-10 left-0 top-0 opacity-40"
-        />
-        <img
-          alt="roses frame"
-          src="/images/floral-pink-bottom-right.webp"
-          className="w-[200px] md:w-[250px] absolute z-10 right-0 bottom-0 opacity-40"
-        /> */}
-
-        <div className="translate-x-[calc(8%-10px)] translate-y-1/2 absolute z-10 bottom-0 right-0 ">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute z-10 top-0 left-0">
           <img
             alt="flower"
             src="/images/single-sakura.svg"
             className="h-[100px] md:h-[150px] animate-wiggle"
+          />
+        </div>
+
+        <div className="translate-x-[calc(8%-10px)] translate-y-1/2 absolute z-10 bottom-0 right-0 ">
+          <Image
+            alt="Globe"
+            src="/images/globe.svg"
+            width={150}
+            height={150}
+            className="animate-wiggle w-32 lg:w-40"
           />
         </div>
       </div>
