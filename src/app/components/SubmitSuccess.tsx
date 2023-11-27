@@ -32,10 +32,17 @@ const SubmitSuccess = ({ className }: Props) => {
         </p>
         <Image
           alt="Japanese"
-          src="/images/submit-success.webp"
+          src="/images/submit-success-desktop.webp"
           width={400}
           height={100}
-          className="rounded-lg mt-4 w-full lg:w-[600px]"
+          className="rounded-lg mt-4 hidden lg:block lg:w-[600px]"
+        />
+        <Image
+          alt="Japanese"
+          src="/images/submit-success-mobile.webp"
+          width={400}
+          height={100}
+          className="rounded-lg mt-4 w-full lg:hidden"
         />
       </div>
     </div>

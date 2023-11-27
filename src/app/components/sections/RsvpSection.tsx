@@ -22,7 +22,7 @@ const RsvpSection = ({ className }: Props) => {
   return (
     <div
       className={clsx(
-        "md:min-h-[80vh] mt-12 w-full flex flex-col items-center justify-center relative bg-primary-50 overflow-hidden", // overflow hidden for the castle
+        "min-h-screen md:min-h-[80vh] mt-12 w-full flex flex-col items-center justify-center relative bg-primary-50 overflow-hidden", // overflow hidden for the castle
         className
       )}
     >
