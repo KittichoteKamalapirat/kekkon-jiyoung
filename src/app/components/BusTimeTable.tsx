@@ -7,7 +7,7 @@ const BusTimeTable = () => {
   const location = useTranslations("location");
   const date = useTranslations("date");
   return (
-    <div className="mt-8 w-fit p-4 mx-auto rounded-lg bg-primary-50">
+    <div className="w-fit p-4 mx-auto rounded-lg bg-primary-50">
       <p className="font-[Montserrat] text-center font-bold">
         🚌 {location("shuttleBusTimePickupTimeAndPlaceLabel")}
       </p>

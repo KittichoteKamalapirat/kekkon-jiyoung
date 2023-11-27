@@ -9,16 +9,16 @@ import AnimateText from "../AnimateText";
 const HeaderSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const chevronColor = [0].includes(currentImageIndex)
+  const chevronColor = [0, 3].includes(currentImageIndex)
     ? "text-black"
     : "text-white";
-  const heroTextColor = [0].includes(currentImageIndex)
+  const heroTextColor = [0, 3].includes(currentImageIndex)
     ? "text-black"
     : "text-white";
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((index) => (index + 1 > 2 ? 0 : index + 1));
-    }, 3000);
+      setCurrentImageIndex((index) => (index + 1 > 4 ? 0 : index + 1));
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -31,7 +31,7 @@ const HeaderSection = () => {
         src={`/images/logo-jf.svg`}
         className={clsx(
           "absolute w-10 h-10 z-30 top-10 left-10",
-          "transition-opacity duration-[3000ms]"
+          "transition-opacity duration-[4000ms]"
         )}
       /> */}
 
@@ -52,7 +52,7 @@ const HeaderSection = () => {
           src={`/images/hero-1.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
-            "transition-opacity duration-[3000ms]",
+            "transition-opacity duration-[4000ms]",
             currentImageIndex === 0 ? "opacity-100" : "opacity-0"
           )}
         />
@@ -61,7 +61,7 @@ const HeaderSection = () => {
           src={`/images/hero-2.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
-            "transition-opacity duration-[3000ms]",
+            "transition-opacity duration-[4000ms]",
             currentImageIndex === 1 ? "opacity-100" : "opacity-0"
           )}
         />
@@ -70,8 +70,26 @@ const HeaderSection = () => {
           src={`/images/hero-3.webp`}
           className={clsx(
             "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
-            "transition-opacity duration-[3000ms]",
+            "transition-opacity duration-[4000ms]",
             currentImageIndex === 2 ? "opacity-100" : "opacity-0"
+          )}
+        />
+        <img
+          alt="Header Background 4"
+          src={`/images/hero-4.webp`}
+          className={clsx(
+            "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
+            "transition-opacity duration-[4000ms]",
+            currentImageIndex === 3 ? "opacity-100" : "opacity-0"
+          )}
+        />
+        <img
+          alt="Header Background 5"
+          src={`/images/hero-5.webp`}
+          className={clsx(
+            "min-w-full min-h-full h-full absolute z-0 top-0 right-0 object-cover blur-lg",
+            "transition-opacity duration-[4000ms]",
+            currentImageIndex === 4 ? "opacity-100" : "opacity-0"
           )}
         />
 
@@ -82,7 +100,7 @@ const HeaderSection = () => {
           src={`/images/hero-1.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-            "transition-opacity duration-[3000ms] ",
+            "transition-opacity duration-[4000ms] ",
             currentImageIndex === 0 ? "opacity-100" : "opacity-0"
           )}
         />
@@ -93,7 +111,7 @@ const HeaderSection = () => {
           src={`/images/hero-2.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-            "transition-opacity duration-[3000ms] ",
+            "transition-opacity duration-[4000ms] ",
             currentImageIndex === 1 ? "opacity-100" : "opacity-0"
           )}
         />
@@ -104,8 +122,28 @@ const HeaderSection = () => {
           src={`/images/hero-3.webp`}
           className={cn(
             "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
-            "transition-opacity duration-[3000ms] ",
+            "transition-opacity duration-[4000ms] ",
             currentImageIndex === 2 ? "opacity-100" : "opacity-0"
+          )}
+        />
+        <img
+          key={`hero-image-4`}
+          alt="Header"
+          src={`/images/hero-4.webp`}
+          className={cn(
+            "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+            "transition-opacity duration-[4000ms] ",
+            currentImageIndex === 3 ? "opacity-100" : "opacity-0"
+          )}
+        />
+        <img
+          key={`hero-image-5`}
+          alt="Header"
+          src={`/images/hero-5.webp`}
+          className={cn(
+            "w-[800px] absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",
+            "transition-opacity duration-[4000ms] ",
+            currentImageIndex === 4 ? "opacity-100" : "opacity-0"
           )}
         />
       </div>

@@ -125,12 +125,21 @@ const CeremonyMap = () => {
               <h2 className="heading2 text-center font-[Montserrat]">
                 {location("ceremonyLabel")}
               </h2>
+
               <h3 className="font-bold text-center font-[Montserrat]">
                 ⏱️ {date("ceremonyTime")}
               </h3>
               <h3 className="text-md text-center font-[Montserrat]">
                 🏯 {location("ceremonyLocation")}
               </h3>
+
+              <Image
+                alt="creremony location"
+                src="/images/temple.webp"
+                width={1000}
+                height={1000}
+                className="w-3/4 sm:w-40 lg:h-40 mx-auto rounded-lg my-4"
+              />
 
               <p className="text-sm font-[Montserrat] mt-2 text-left">
                 * {location("shuttleBusSection")}

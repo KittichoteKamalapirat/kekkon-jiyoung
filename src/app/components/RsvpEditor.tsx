@@ -1,12 +1,11 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import {
+  Form,
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
-  Form,
 } from "@/components/ui/form";
 import {
   Select,
@@ -25,14 +24,15 @@ import { isDirty, z } from "zod";
 
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SubmitErrorCode, postToGoogleSheets } from "../../actions";
 import { cn } from "../../lib/utils";
 import HelpText from "./HelpText/HelpText";
 import { Input } from "./Input";
 import MyText from "./MyText";
+import SubmitSuccess from "./SubmitSuccess";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
+import { Transition } from "@headlessui/react";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -129,7 +129,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
   const [runConfetti, setRunConfetti] = useState<boolean>(false);
   const successErrorMessage = t("successfullySubmitted");
   const unknownErrorMessage = t("unknownError");
-  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [isSuccess, setIsSuccess] = useState<boolean>(true);
 
   const alreadySubmittedErrorMessage = t("alreadySubmittedError");
   const [submitErrorCode, setSubmitErrorCode] = useState<
@@ -255,42 +255,15 @@ const RsvpEditor = ({ initialData, className }: Props) => {
     return () => clearTimeout(timeoutId);
   }, [isJoin]);
 
-  if (isSuccess)
-    return (
-      <div
-        className={clsx(
-          "text-center container py-12 ",
-          isSuccess ? "opacity-100 translate-y-0" : "translate-y-1/4 opacity-0"
-        )}
-      >
-        <h1 className="text-lg font-bold">{t("afterSubmitTitle")}</h1>
-        <p className="mt-2">{t("afterSubmitDescription")}</p>
-        <div className="relative w-fit mx-auto">
-          <p
-            className={clsx(
-              "absolute animate-wiggle-heavy",
-              "top-[-20px] left-[-20px] text-[40px]",
-              "lg:top-[-40px] lg:left-[-30px]  lg:text-[60px] "
-            )}
-          >
-            👋
-          </p>
-          <Image
-            alt="Japanese"
-            src="/images/looking-forward.webp"
-            width={400}
-            height={100}
-            className="rounded-lg mt-4 w-full lg:w-[600px]"
-          />
-        </div>
-      </div>
-    );
-
   return (
     <Form {...form}>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={clsx("container md:max-w-[600px] mb-12", className)}
+        className={clsx(
+          "container md:max-w-[600px] mb-12",
+          isSuccess && "hidden",
+          className
+        )}
       >
         {/* need relative on higher component */}
         {runConfetti && (
@@ -542,6 +515,15 @@ const RsvpEditor = ({ initialData, className }: Props) => {
           </div>
         </div>
       </form>
+
+      <Transition
+        show={isSuccess}
+        leave="duration-200 ease-out"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <SubmitSuccess />;
+      </Transition>
     </Form>
   );
 };
