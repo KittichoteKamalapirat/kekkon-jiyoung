@@ -13,14 +13,26 @@ export const metadata: Metadata = {
     description: "Jiyoung & Rodrigo Wedding Invitation",
     url: "https://parkandrotela.com",
     type: "website",
-    images: "/images/opengraph.webp",
+    images: [
+      {
+        url: "https://parkandrotela.com/images/opengraph.webp",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jiyoung & Rodrigo",
     description: "Jiyoung & Rodrigo Wedding Invitation",
     creator: "@Shaneinsane6",
-    images: "/images/opengraph.webp",
+    images: [
+      {
+        url: "https://parkandrotela.com/images/opengraph.webp",
+        width: 1200,
+        height: 630,
+      },
+    ],
   },
 };
 
