@@ -43,6 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta property="og:image" content="/images/opengraph.webp" />
       <body className={inter.className}>{children}</body>
     </html>
   );
