@@ -32,6 +32,7 @@ import { Input } from "./Input";
 import MyText from "./MyText";
 import SubmitSuccess from "./SubmitSuccess";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
+import LoaderIcon from "./Loader/LoaderIcon";
 
 interface Props {
   initialData: RsvpFormValues;
@@ -639,8 +640,11 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                 variant="default"
                 type="submit"
                 disabled={!isDirty || isSubmitting}
+                className="gap-2 items-center"
               >
+                <LoaderIcon className={isSubmitting ? "block" : "invisible"} />
                 {!isSubmitting ? t("ctaLabel") : t("ctaLabelLoading")}
+                <LoaderIcon className="invisible" />
               </Button>
             </div>
           </div>
