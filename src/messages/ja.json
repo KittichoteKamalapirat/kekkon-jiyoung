@@ -126,7 +126,8 @@
     "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 10時 30分迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます",
 
     "afterSubmitTitle": "登録が完了しました",
-    "afterSubmitDescription": "あなたにお会いできるように楽しみにしております！"
+    "afterSubmitDescriptionJoin": "あなたにお会いできるように楽しみにしております！",
+    "afterSubmitDescriptionNotJpoin": "ご参加できず残念だが、また次の機会にお会いしましょう！"
   },
   "gimcheon": {
     "title": "キムチョンに関する情報",

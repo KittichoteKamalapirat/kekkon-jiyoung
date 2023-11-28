@@ -125,7 +125,8 @@
     "arrivalTime": "Please arrive to Gimcheon Samyeongdaesa Park by 10:30AM. We are looking forward to seeing you in our special day",
 
     "afterSubmitTitle": "We have received your response.",
-    "afterSubmitDescription": "We look forward to seeing you on our special day!"
+    "afterSubmitDescriptionJoin": "We look forward to seeing you on our special day!",
+    "afterSubmitDescriptionNotJoin": "We are sorry you cannot join, but let's meet again at the next opportunity."
   },
   "gimcheon": {
     "title": "About Gimcheon",

@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 interface Props {
   className?: string;
 }
-const SubmitSuccess = ({ className }: Props) => {
+const SubmitSuccessJoin = ({ className }: Props) => {
   const t = useTranslations("rsvp");
   return (
     <div
@@ -19,7 +19,7 @@ const SubmitSuccess = ({ className }: Props) => {
       )}
     >
       <h1 className="text-lg font-bold">{t("afterSubmitTitle")}</h1>
-      <p className="mt-2">{t("afterSubmitDescription")}</p>
+      <p className="mt-2">{t("afterSubmitDescriptionJoin")}</p>
       <div className="relative w-fit mx-auto">
         <p
           className={clsx(
@@ -48,4 +48,4 @@ const SubmitSuccess = ({ className }: Props) => {
     </div>
   );
 };
-export default SubmitSuccess;
+export default SubmitSuccessJoin;

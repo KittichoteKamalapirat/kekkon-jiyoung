@@ -30,7 +30,8 @@ import { cn, isJapaneseLocale } from "../../lib/utils";
 import HelpText from "./HelpText/HelpText";
 import { Input } from "./Input";
 import MyText from "./MyText";
-import SubmitSuccess from "./SubmitSuccess";
+import SubmitSuccessJoin from "./SubmitSuccessJoin";
+import SubmitSuccessNotJoin from "./SubmitSuccessNotJoin";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
 import LoaderIcon from "./Loader/LoaderIcon";
 
@@ -657,7 +658,7 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
         enterFrom="translate-y-full opacity-0"
         enterTo="translate-y-0 opacity-100"
       >
-        <SubmitSuccess />
+        {isJoin ? <SubmitSuccessJoin /> : <SubmitSuccessNotJoin />}
       </Transition>
     </Form>
   );

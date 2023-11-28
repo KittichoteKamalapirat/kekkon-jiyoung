@@ -30,7 +30,7 @@ import { cn } from "../../lib/utils";
 import HelpText from "./HelpText/HelpText";
 import { Input } from "./Input";
 import MyText from "./MyText";
-import SubmitSuccess from "./SubmitSuccess";
+import SubmitSuccess from "./SubmitSuccessJoin";
 import SuperRadio, { SuperRadioItemProps } from "./SuperRadio/SuperRadio";
 import { Transition } from "@headlessui/react";
 
