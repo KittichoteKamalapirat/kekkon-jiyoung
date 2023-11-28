@@ -8,7 +8,7 @@ export const useAnimateOnSroll = () => {
     /* Optional options */
     triggerOnce: true,
     threshold: 0,
-    // rootMargin: "-100px",
+    rootMargin: "200px",
   });
 
   return {

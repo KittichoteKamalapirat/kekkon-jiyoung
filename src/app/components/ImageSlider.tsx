@@ -1,15 +1,14 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import "swiper/css/autoplay";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css/bundle";
-import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useCurrentBreakpoint } from "../hooks/useCurrentBreakpoint";
 
 interface Props {}
@@ -59,7 +58,17 @@ const ImageSlider = ({}: Props) => {
             alt="Header"
             src={`/images/slider-${i + 1}.webp`}
             className="w-[800px] rounded-lg"
+            // threshold={1000}
           />
+          {/* <Image
+            alt="Header"
+            src={`/images/slider-${i + 1}.webp`}
+            className="w-[800px] rounded-lg"
+            // threshold={1000}
+            loading="lazy"
+            width={400}
+            height={600}
+          /> */}
         </SwiperSlide>
       ))}
     </Swiper>
