@@ -451,7 +451,8 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                         valueAsNumber: true,
                         shouldUnregister: true,
                       })}
-                      placeholder="1"
+                      className="placeholder:text-gray-400"
+                      placeholder="1,2,3"
                       // defaultValue={undefined}
                       min={1}
                     />
@@ -470,7 +471,7 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
 
                   <div
                     className={cn(
-                      fields.length ? "flex flex-col gap-4 mt-4" : "hidden"
+                      fields.length > 1 ? "flex flex-col gap-4 mt-4" : "hidden"
                     )}
                   >
                     {fields.map((field, index) => (

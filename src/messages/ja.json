@@ -60,7 +60,7 @@
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
     "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
-    "shuttleBusDeparturePointValue": "10:00",
+    "shuttleBusDeparturePointValue": "10:10",
 
     "shuttleBusFirstStopLabel": "Park Hotel Lobby",
     "shuttleBusFirstStopValue": "10:50",
@@ -75,8 +75,9 @@
     "sightseeingLabel": "TBD"
   },
   "lineInvite": {
-    "title": "以下QRコードのご登録をお願い致します。",
-    "description": "イベントに関する情報をラインで共有させていただきます"
+    "title": "以下QRコードのご登録をお願い致します",
+    "description": "イベントに関する情報をラインで共有させていただきます",
+    "cta": "友達に追加"
   },
   "rsvp": {
     "title": "ゲスト様入力項目",
@@ -89,7 +90,7 @@
     "lastNamePlaceholder": "姓",
     "emailLabel": "メール",
 
-    "relationshipLabel": "関係",
+    "relationshipLabel": "ご関係",
 
     "brideRelativeLabel": "新婦の親戚",
     "brideFriendLabel": "新婦の友達",

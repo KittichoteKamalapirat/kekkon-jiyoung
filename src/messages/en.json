@@ -60,7 +60,7 @@
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
     "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
-    "shuttleBusDeparturePointValue": "10:00",
+    "shuttleBusDeparturePointValue": "10:10",
 
     "shuttleBusFirstStopLabel": "Park Hotel Lobby",
     "shuttleBusFirstStopValue": "10:50",
@@ -76,7 +76,8 @@
   },
   "lineInvite": {
     "title": "Scan the QR Code",
-    "description": "Please scan the QR Code to receive the latest updates of the event."
+    "description": "Please scan the QR Code to receive the latest updates of the event.",
+    "cta": "Add Friend"
   },
   "rsvp": {
     "title": "Guest Registration",

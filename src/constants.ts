@@ -11,3 +11,6 @@ export const PARK_HOTEL_LOBBY_MAP_LINK =
   "https://maps.app.goo.gl/6t93Ypb9zMC5PaJV6";
 export const GIMCHEON_SAMYEONGDAESA_PARK_MAP_LINK =
   "https://maps.app.goo.gl/WhrqGmtCBAERJbMj9";
+
+export const LINE_LINK =
+  "https://liff.line.me/1645278921-kWRPP32q/?accountId=885ofuaa";

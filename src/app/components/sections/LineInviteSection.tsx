@@ -4,7 +4,9 @@ import Image from "next/image";
 import SectionWrapper from "../wrappers/SectionWrapper";
 import { useTranslations } from "next-intl";
 import { useAnimateOnSroll } from "../../hooks/useAnimateOnScroll";
-
+import { Button } from "../../../components/ui/button";
+import { ICON_SIZE, LINE_LINK } from "../../../constants";
+import { IoMdAdd } from "react-icons/io";
 interface Props {}
 
 const LineInviteSection = ({}: Props) => {
@@ -23,6 +25,17 @@ const LineInviteSection = ({}: Props) => {
           <p className="text-center font-[Montserrat]">
             {lineInvite("description")}
           </p>
+
+          <a
+            href={LINE_LINK}
+            className="hover:bg-primary-hover flex justify-center mt-4"
+            target="_blank"
+          >
+            <Button variant="secondary" type="submit" className="gap-2">
+              <IoMdAdd size={ICON_SIZE - 4} />
+              {lineInvite("cta")}
+            </Button>
+          </a>
 
           <Image
             alt="line invite qr code"
