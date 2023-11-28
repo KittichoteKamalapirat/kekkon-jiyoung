@@ -5,12 +5,11 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Jiyoung & Rodrigo",
-  description: "Jiyoung & Rodrigo Wedding Invitation",
-
+  title: "Jiyoung & Rodrigo Wedding Invitation",
+  description: "Join our wedding on Apr 27, 2024, at Gimcheon 🇰🇷",
   openGraph: {
-    title: "Jiyoung & Rodrigo",
-    description: "Jiyoung & Rodrigo Wedding Invitation",
+    title: "Jiyoung & Rodrigo Wedding Invitation",
+    description: "Join our wedding on Apr 27, 2024, at Gimcheon 🇰🇷",
     url: "https://parkandrotela.com",
     type: "website",
     images: [
@@ -23,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jiyoung & Rodrigo",
-    description: "Jiyoung & Rodrigo Wedding Invitation",
+    title: "Jiyoung & Rodrigo Wedding Invitation",
+    description: "Join our wedding on Apr 27, 2024, at Gimcheon 🇰🇷",
     creator: "@Shaneinsane6",
     images: [
       {
