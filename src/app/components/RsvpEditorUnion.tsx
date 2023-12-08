@@ -41,6 +41,11 @@ interface Props {
   className?: string;
 }
 
+const enum ErrorMessages {
+  InvalidEmail = "Please enter a valid email.",
+  MaxCharacters = "Should not be longer than 64 characters.",
+}
+
 const attendantSchema = z.object({
   firstName: z
     .string()
@@ -55,6 +60,12 @@ const attendantSchema = z.object({
 });
 
 const noNeedBusSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: ErrorMessages.InvalidEmail })
+    .max(64, { message: ErrorMessages.MaxCharacters })
+    .email({ message: ErrorMessages.InvalidEmail }),
   firstName: z
     .string()
     .trim()
@@ -75,12 +86,18 @@ const noNeedBusSchema = z.object({
     .number()
     .int()
     .min(1, { message: "Has to be >= 1." })
-    .default(10),
+    .default(1),
   attendants: z.array(attendantSchema),
   needPickup: z.literal("no"),
 });
 
 const needBusSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: ErrorMessages.InvalidEmail })
+    .max(64, { message: ErrorMessages.MaxCharacters })
+    .email({ message: ErrorMessages.InvalidEmail }),
   firstName: z
     .string()
     .trim()
@@ -626,6 +643,23 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                       )}
                     </div>
                   )}
+
+                  <div className="mt-4">
+                    <label className="ml-1 font-bold">{t("emailLabel")}</label>
+                    <Input
+                      type="text"
+                      {...register("email")}
+                      placeholder={t("emailPlaceholder")}
+                    />
+                    {(errors as FieldErrorsImpl<NeedBusFormData>).email && (
+                      <HelpText
+                        message={
+                          (errors as FieldErrorsImpl<NeedBusFormData>).email
+                            ?.message
+                        }
+                      />
+                    )}
+                  </div>
                 </div>
               )}
 

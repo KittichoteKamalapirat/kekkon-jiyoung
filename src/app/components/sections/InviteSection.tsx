@@ -29,7 +29,7 @@ const InviteSection = ({}: Props) => {
       />
       <div
         className={cn(
-          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md lg:text-lg text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4"
+          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4"
         )}
       >
         <div className={animateClassName}>
@@ -41,6 +41,7 @@ const InviteSection = ({}: Props) => {
               {greeting("p3") && <p>{greeting("p3")}</p>}
               {greeting("p4") && <p>{greeting("p4")}</p>}
               {greeting("p5") && <p>{greeting("p5")}</p>}
+              {greeting("p6") && <p>{greeting("p6")}</p>}
             </div>
             <br />
             <p className="">{greeting("between")}</p>

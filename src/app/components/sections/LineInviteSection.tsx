@@ -13,7 +13,7 @@ const LineInviteSection = ({}: Props) => {
   const lineInvite = useTranslations("lineInvite");
   const { ref: sectionRef, animateClassName } = useAnimateOnSroll();
   return (
-    <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center bg-primary-50">
+    <SectionWrapper className="mx-8 relative w-screen h-[80vh] md:h-[60vh] flex items-center justify-center">
       {/* dummy */}
       <div
         ref={sectionRef}

@@ -90,6 +90,7 @@
     "lastNamePlaceholder": "Last Name",
 
     "emailLabel": "Email",
+    "emailPlaceholder": "Email",
 
     "relationshipLabel": "Relationship",
     "relationshipPlaceholder": "Please select",
@@ -122,7 +123,7 @@
     "pickupAnswer2Label": "No Need",
     "pickupSpotGumiLabel": "10:10 🚏 Gimcheon Gumi Sta Parking Area",
     "pickupSpotParkLabel": "10:50 🏨 Park Hotel Lobby",
-    "arrivalTime": "Please arrive to Gimcheon Samyeongdaesa Park by 10:30AM. We are looking forward to seeing you in our special day",
+    "arrivalTime": "Please arrive to Gimcheon Samyeongdaesa Park by 11:00. We are looking forward to seeing you in our special day",
 
     "afterSubmitTitle": "We have received your response.",
     "afterSubmitDescriptionJoin": "We look forward to seeing you on our special day!",
