@@ -37,7 +37,7 @@ export async function postToGoogleSheets(
     const range =
       process.env.VERCEL_ENV === "production"
         ? "production"
-        : process.env.VERCEL_ENV
+        : process.env.VERCEL_ENV // not whether it's preview or development
         ? "development"
         : "localhost";
 
