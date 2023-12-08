@@ -1,7 +1,11 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK } from "../../constants";
+import {
+  GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK,
+  GIMCHEON_SAMYEONGDAESA_PARK_MAP_LINK,
+  PARK_HOTEL_LOBBY_MAP_LINK,
+} from "../../constants";
 
 const BusTimeTable = () => {
   const location = useTranslations("location");
@@ -33,7 +37,7 @@ const BusTimeTable = () => {
           {location("shuttleBusFirstStopValue")}{" "}
         </p>
         <a
-          href={GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK}
+          href={PARK_HOTEL_LOBBY_MAP_LINK}
           target="_blank"
           className="col-span-9"
         >
@@ -48,7 +52,7 @@ const BusTimeTable = () => {
           {location("shuttleBusLastStopValue")}{" "}
         </p>
         <a
-          href={GIMCHEON_GUMI_STA_PARKING_AREA_MAP_LINK}
+          href={GIMCHEON_SAMYEONGDAESA_PARK_MAP_LINK}
           target="_blank"
           className="col-span-9"
         >
