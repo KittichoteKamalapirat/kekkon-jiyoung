@@ -32,10 +32,9 @@ export default function Home() {
         {/* <VideoSection /> */}
 
         {/* <DateTimeSection /> */}
-
+        <LineInviteSection />
         <ImagesSection />
 
-        <LineInviteSection />
         {/* <SightSeeingSection /> */}
         {/* <SeatMapSection /> */}
         {/* <FormSection /> */}

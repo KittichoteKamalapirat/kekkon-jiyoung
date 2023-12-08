@@ -28,10 +28,11 @@
 
     "between": "",
     "p1": "謹啓",
-    "p2": "皆様におかれましてはご清祥のこととお慶び申し上げます。",
-    "p3": "このたび私たちは結婚式を挙げることになりました。つきましては日頃お世話になっている皆様にお集まりいただき、小宴を催したいと存じます。",
-    "p4": "ご多用中 誠に恐縮ではございますが、ご来臨の栄を賜りたく、謹んでご案内申し上げます。",
-    "p5": "謹白"
+    "p2": "皆様におかれましてはご清祥のこととお慶び申し上げます",
+    "p3": "このたび私たちは結婚式を挙げることになりました",
+    "p4": "つきましては日頃お世話になっている皆様にお集まりいただき、小宴を催したいと存じます",
+    "p5": "ご多用中 誠に恐縮ではございますが、ご来臨の栄を賜りたく、謹んでご案内申し上げます",
+    "p6": "謹白"
   },
   "intro": {
     "sectionLabel": "Stare"
@@ -55,7 +56,7 @@
     "bothLabel": "両方",
     "openInGoogleMapLabel": "Googleマップで開く",
 
-    "shuttleBusSection": "当日シャトルバスをご用意させていただきます。（下記参照）",
+    "shuttleBusSection": "当日シャトルバスをご用意させていただきます（下記参照）",
 
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
@@ -81,14 +82,16 @@
   },
   "rsvp": {
     "title": "ゲスト様入力項目",
-    "description1": "お手数ですが以下お日にち迄に出欠情報のご連絡をお願い申し上げます。",
-    "description2": "２０２３年１月１４日（日）期日までのご連絡が難しい場合にはご一報いただけますと幸いです。",
+    "description1": "お手数ですが以下お日にち迄に出欠情報のご連絡をお願い申し上げます",
+    "description2": "２０２３年１月１４日（日）期日までのご連絡が難しい場合にはご一報いただけますと幸いです",
     "firstNameLabel": "名",
     "firstNamePlaceholder": "名",
 
     "lastNameLabel": "姓",
     "lastNamePlaceholder": "姓",
-    "emailLabel": "メール",
+
+    "emailLabel": "メールアドレス",
+    "emailPlaceholder": "メールアドレス",
 
     "relationshipLabel": "ご関係",
 
@@ -119,11 +122,11 @@
 
     "successfullySubmitted": "登録が完了しました",
     "alreadySubmittedError": "すでに登録されています",
-    "unknownError": "エラーが発生しました。もう一度お試しください。",
+    "unknownError": "エラーが発生しました、もう一度お試しください",
 
     "ctaLabel": "登録する",
     "ctaLabelLoading": "登録している",
-    "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 10時 30分迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます",
+    "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 11時迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます",
 
     "afterSubmitTitle": "登録が完了しました",
     "afterSubmitDescriptionJoin": "あなたにお会いできるように楽しみにしております！",

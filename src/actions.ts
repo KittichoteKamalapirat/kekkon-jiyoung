@@ -54,6 +54,8 @@ export async function postToGoogleSheets(
         data.needPickup === "yes" &&
         data.pickupSpot) ||
       "";
+    const email = data.joinCeremony === "yes" && data.email;
+
     // const header = [
     //   "firstName",
     //   "lastName",
@@ -106,11 +108,13 @@ export async function postToGoogleSheets(
         relationship,
         attendantNum,
         attendants.map(
-          (attendant) => `${attendant.firstName} ${attendant.lastName}`
+          (attendant, index) =>
+            `${index + 1}) ${attendant.firstName} ${attendant.lastName}`
         ).join(`
 `),
         needPickup,
         pickupSpot,
+        email,
         `"${date}"`,
       ],
     ]; // replace with your actual row data

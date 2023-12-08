@@ -6,7 +6,7 @@ interface Props {}
 
 const ImagesSection = ({}: Props) => {
   return (
-    <SectionWrapper className="py-20">
+    <SectionWrapper className="py-20 bg-primary-50 w-screen">
       <ImageSlider />
     </SectionWrapper>
   );
