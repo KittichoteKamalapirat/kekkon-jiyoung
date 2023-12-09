@@ -29,19 +29,24 @@ const InviteSection = ({}: Props) => {
       />
       <div
         className={cn(
-          "relative container rounded-md max-w-lg py-20 md:py-20 bg-white w-full text-md text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4"
+          "relative container rounded-md max-w-xl py-20 md:py-20 bg-white w-full text-md text-gray-800 shadow-[0_0_10px_0px_rgba(0,0,0,0.1)] mx-4"
         )}
       >
         <div className={animateClassName}>
           <div className="text-center">
-            <div className=" flex flex-col gap-6">
+            <div className=" flex flex-col gap-1">
               <p>{greeting("p1")}</p>
 
-              {greeting("p2") && <p>{greeting("p2")}</p>}
+              {greeting("p2") && <p className="mt-6">{greeting("p2")}</p>}
               {greeting("p3") && <p>{greeting("p3")}</p>}
               {greeting("p4") && <p>{greeting("p4")}</p>}
               {greeting("p5") && <p>{greeting("p5")}</p>}
-              {greeting("p6") && <p>{greeting("p6")}</p>}
+              {greeting("p6") && <p className="mt-6">{greeting("p6")}</p>}
+              {greeting("p7") && <p>{greeting("p7")}</p>}
+              {greeting("p8") && <p className="mt-6">{greeting("p8")}</p>}
+              {greeting("p9") && <p className="mt-6">{greeting("p9")}</p>}
+              {greeting("p10") && <p>{greeting("p10")}</p>}
+              {greeting("p11") && <p>{greeting("p11")}</p>}
             </div>
             <br />
             <p className="">{greeting("between")}</p>
@@ -77,18 +82,24 @@ const InviteSection = ({}: Props) => {
 
             <div className="flex justify-around items-start gap-4 mt-2">
               <div className="flex flex-1 flex-col items-center">
-                <p className=" font-semibold text-md md:text-lg flex-1">
+                <p className="font-semibold text-md md:text-lg flex-1">
                   {greeting("brideName")}
                 </p>
 
-                <p className="text-sm">{greeting("brideBirthday")}</p>
-                <p className="text-sm">{greeting("brideHometownCity")}</p>
+                <p className="text-sm mt-2">
+                  {greeting("birthdayLabel")}
+                  {greeting("brideBirthday")}
+                </p>
+                <p className="text-sm mt-2">
+                  {greeting("homeTownLabel")}
+                  {greeting("brideHometownCity")}
+                </p>
                 {greeting("brideHometownCountry") && (
                   <p className="text-sm">{greeting("brideHometownCountry")}</p>
                 )}
 
-                <p className="text-sm">
-                  {greeting("favoriteFoodLabel")}:{" "}
+                <p className="text-sm mt-2">
+                  {greeting("favoriteFoodLabel")}
                   {greeting("brideFavoriteFoodValue")}
                 </p>
               </div>
@@ -96,18 +107,23 @@ const InviteSection = ({}: Props) => {
               <p className="font-[Tangerine] font-semibold text-4xl md:text-6xl text-center opacity-0">
                 &
               </p>
-              <div className="flex  flex-1  flex-col items-center">
-                <p
-                  className=" font-semibold text-md md:text-lg flex-1"
-                  dangerouslySetInnerHTML={{ __html: greeting("groomName") }}
-                ></p>
-                <p className="text-sm">{greeting("groomBirthday")}</p>
-                <p className="text-sm">{greeting("groomHometownCity")}</p>
+              <div className="flex flex-1 flex-col items-center">
+                <p className=" font-semibold text-md md:text-lg flex-1">
+                  {greeting("groomName")}
+                </p>
+                <p className="text-sm mt-2">
+                  {greeting("birthdayLabel")}
+                  {greeting("groomBirthday")}
+                </p>
+                <p className="text-sm mt-2">
+                  {greeting("homeTownLabel")}
+                  {greeting("groomHometownCity")}
+                </p>
                 {greeting("brideHometownCountry") && (
-                  <p className="text-sm">{greeting("brideHometownCountry")}</p>
+                  <p className="text-sm">{greeting("groomHometownCountry")}</p>
                 )}
-                <p className="text-sm">
-                  {greeting("favoriteFoodLabel")}:{" "}
+                <p className="text-sm mt-2">
+                  {greeting("favoriteFoodLabel")}
                   {greeting("groomFavoriteFoodValue")}
                 </p>
               </div>

@@ -22,7 +22,9 @@
     "brideHometownCity": "Gimcheon, South Korea",
     "brideHometownCountry": "",
 
-    "favoriteFoodLabel": "Favorite food",
+    "birthdayLabel": "",
+    "homeTownLabel": "",
+    "favoriteFoodLabel": "Favorite food: ",
     "groomFavoriteFoodValue": "Melon-pan",
     "brideFavoriteFoodValue": "Sweet TAMAGOYAKI, Homemade SUNDUBU",
 

@@ -310,10 +310,10 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
               {t("title")}
             </MyText>
             {t("description1") && (
-              <MyText className="text-md mt-4">{t("description1")}</MyText>
+              <MyText className="mt-4">{t("description1")}</MyText>
             )}
             {t("description2") && (
-              <MyText className="text-md mt-2">{t("description2")}</MyText>
+              <MyText className="mt-2">{t("description2")}</MyText>
             )}
 
             <div className="mt-4 flex flex-col gap-4">
