@@ -223,8 +223,6 @@ const RsvpEditor = ({ initialData, className }: Props) => {
 
   const attendantNum = watch("attendantNum");
 
-  console.log("errors", errors);
-  console.log("enum", watch("pickupSpot"));
   // attendants list
   useEffect(() => {
     if (!attendantNum || attendantNum <= 0) return;
@@ -235,9 +233,7 @@ const RsvpEditor = ({ initialData, className }: Props) => {
     }
 
     // append
-
     const newItems = Array.from(Array(attendantNum).keys()).map((i) => {
-      console.log("i", i);
       return {
         firstName: i === 0 ? watch("firstName") : "",
         lastName: i === 0 ? watch("lastName") : "",

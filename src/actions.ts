@@ -151,8 +151,6 @@ export async function getFromGoogleSheets(data: RsvpFormValues) {
     const sheets = google.sheets({ version: "v4", auth });
 
     // Query
-
-    console.log("process.env.NODE_ENV", process.env.NODE_ENV);
     const range =
       process.env.VERCEL_ENV === "production"
         ? "prod"
