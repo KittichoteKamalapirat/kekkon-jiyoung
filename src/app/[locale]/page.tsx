@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <div>
       <main className="flex min-h-screen flex-col items-center justify-between">
-        {/* <Navbar /> */}
         <HamburgerNav />
         <HeaderSection />
         <InviteSection />
@@ -21,12 +20,7 @@ export default function Home() {
         {/* added below so overflow absolute don't cause scrollable */}
         {/* https://stackoverflow.com/questions/64344836/absolutely-positioned-elements-adding-scroll-on-mobile */}
         <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
-        {/* <a
-        href="#seat-map"
-        className="bg-white fixed bottom-2 right-2 z-50 ring-2 px-2 py-1 rounded-md text-lg ring-primary shadow-inner"
-      >
-        Find my seat 🪑
-      </a> */}
+
         {/* <HeaderSection /> */}
 
         {/* <VideoSection /> */}
