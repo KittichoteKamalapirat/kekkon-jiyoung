@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { ReactNode } from "react";
 
-import { Toaster, toast } from "sonner";
+import { Toaster } from "sonner";
 
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "es" }, { locale: "ja" }];
