@@ -129,8 +129,8 @@
     "pickupAnswer1Label": "ご希望",
     "pickupAnswer2Label": "不要",
 
-    "pickupSpotGumiLabel": "10:10 🚏 Gimcheon Gumi Sta Parking Area",
-    "pickupSpotParkLabel": "10:50 🏨 Park Hotel Lobby",
+    "pickupSpotGumiLabel": "9:15 🚏 Gimcheon Gumi Sta Parking Area",
+    "pickupSpotParkLabel": "10:00 🏨 Park Hotel Lobby",
 
     "successfullySubmitted": "登録が完了しました",
     "alreadySubmittedError": "すでに登録されています",
