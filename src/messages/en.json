@@ -68,13 +68,13 @@
     "shuttleBusTimePickupTimeAndPlaceLabel": "Shuttle Bus Pick Up Time & Place",
 
     "shuttleBusDeparturePointLabel": "Gimcheon Gumi Sta Parking Area",
-    "shuttleBusDeparturePointValue": "10:10",
+    "shuttleBusDeparturePointValue": "9:15",
 
     "shuttleBusFirstStopLabel": "Park Hotel Lobby",
-    "shuttleBusFirstStopValue": "10:50",
+    "shuttleBusFirstStopValue": "10:00",
 
     "shuttleBusLastStopLabel": "Gimcheon Samyeongdaesa Park",
-    "shuttleBusLastStopValue": "11:00"
+    "shuttleBusLastStopValue": "10:10"
   },
 
   "sightseeing": {
