@@ -94,7 +94,7 @@
   },
   "rsvp": {
     "title": "ゲスト様入力項目",
-    "description1": "お手数ですが２０２３年１月１４日（日）迄にご出欠のご連絡をお願い申し上げます",
+    "description1": "お手数ですが２０２４年１月３１日迄にご出欠のご連絡をお願い申し上げます",
     "description2": "期日までのご連絡が難しい場合にはご一報いただけますと幸いです",
     "firstNameLabel": "名",
     "firstNamePlaceholder": "名",
@@ -141,7 +141,7 @@
     "arrivalTime": "誠に恐れ入りますが挙式にもご参席賜りたく 当日 11時迄に 金泉サミョンデサ公園へ お越しくださいますよう お願い申し上げます",
 
     "afterSubmitTitle": "登録が完了しました",
-    "afterSubmitDescriptionJoin": "あなたにお会いできるように楽しみにしております！",
+    "afterSubmitDescriptionJoin": "あなたにお会いできるように楽しみにしておりまでます！",
     "afterSubmitDescriptionNotJpoin": "ご参加できず残念だが、また次の機会にお会いしましょう！"
   },
   "gimcheon": {

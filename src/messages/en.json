@@ -89,8 +89,8 @@
   },
   "rsvp": {
     "title": "Guest Registration",
-    "description1": "",
-    "description2": "",
+    "description1": "Please complete the form by Jan 31, 2024",
+    "description2": "If you are unable to complete it by the deadline, please let us know.",
     "firstNameLabel": "First Name",
     "firstNamePlaceholder": "First Name",
 
