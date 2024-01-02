@@ -463,7 +463,17 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                   <div className="mt-4">
                     <label className="ml-1 font-bold">
                       {t("attendantNumQuestion")}
+                      <span
+                        className={cn(
+                          "text-sm font-normal",
+                          "transition-opacity"
+                        )}
+                      >
+                        {" "}
+                        &#40;{t("attendantNumDescription")}&#41;
+                      </span>
                     </label>
+
                     <Input
                       type="number"
                       {...register("attendantNum", {

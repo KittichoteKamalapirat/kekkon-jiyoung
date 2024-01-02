@@ -124,6 +124,7 @@
     "ctaLabelLoading": "Submitting",
 
     "attendantNumQuestion": "Number of attendants",
+    "attendantNumDescription": "Including yourself",
 
     "pickupQuestion": "Do you need the pick up service?",
     "pickupSpotQuestion": "Please choose your pick-up place",

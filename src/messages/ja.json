@@ -123,6 +123,7 @@
     "ceremonyParticipationAnswer2Label": "ご欠席",
 
     "attendantNumQuestion": "参列者数",
+    "attendantNumDescription": "ご本人さまのみご参加の場合は「1」",
 
     "pickupQuestion": "ピックアップサービス",
     "pickupSpotQuestion": "ピックアップをご希望される場所をお選びください",
