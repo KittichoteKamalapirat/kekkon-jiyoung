@@ -81,7 +81,9 @@ const noNeedBusSchema = z.object({
     .trim()
     .min(1, { message: "Please enter your relationship." })
     .max(64, { message: "Should not be longer than 64 characters." }),
-  joinCeremony: z.literal("yes"),
+  joinCeremony: z.literal("yes", {
+    errorMap: () => ({ message: "This field is required" }),
+  }),
   attendantNum: z
     .number()
     .int()
@@ -113,7 +115,9 @@ const needBusSchema = z.object({
     .trim()
     .min(1, { message: "Please enter your relationship." })
     .max(64, { message: "Should not be longer than 64 characters." }),
-  joinCeremony: z.literal("yes"),
+  joinCeremony: z.literal("yes", {
+    errorMap: () => ({ message: "This field is required" }),
+  }),
   attendantNum: z.number().int().min(1, { message: "Has to be >= 1." }),
   attendants: z.array(attendantSchema),
   needPickup: z.literal("yes"),
@@ -136,7 +140,9 @@ const notAttendSchema = z.object({
     .min(1, { message: "Please enter your last name." })
     .max(64, { message: "Should not be longer than 64 characters." }),
 
-  joinCeremony: z.literal("no"),
+  joinCeremony: z.literal("no", {
+    errorMap: () => ({ message: "This field is required" }),
+  }),
 });
 
 const schema = z.union([noNeedBusSchema, needBusSchema, notAttendSchema]);
@@ -403,6 +409,9 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                 >
                   * {t("arrivalTime")}
                 </p>
+                {errors.joinCeremony && (
+                  <HelpText message={errors.joinCeremony.message} />
+                )}
               </div>
 
               {/* for those who join */}

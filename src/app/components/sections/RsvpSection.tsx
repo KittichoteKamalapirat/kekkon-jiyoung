@@ -37,7 +37,7 @@ const RsvpSection = ({ className }: Props) => {
           initialData={{
             firstName: "",
             lastName: "",
-            joinCeremony: "no",
+            joinCeremony: "" as any,
             // needPickup: "no",
             // relationship: "",
             // attendantNum: 1,
