@@ -90,7 +90,9 @@ const noNeedBusSchema = z.object({
     .min(1, { message: "Has to be >= 1." })
     .default(1),
   attendants: z.array(attendantSchema),
-  needPickup: z.literal("no"),
+  needPickup: z.literal("no", {
+    errorMap: () => ({ message: "This field is required" }),
+  }),
 });
 
 const needBusSchema = z.object({
@@ -120,7 +122,9 @@ const needBusSchema = z.object({
   }),
   attendantNum: z.number().int().min(1, { message: "Has to be >= 1." }),
   attendants: z.array(attendantSchema),
-  needPickup: z.literal("yes"),
+  needPickup: z.literal("yes", {
+    errorMap: () => ({ message: "This field is required" }),
+  }),
   pickupSpot: z.enum(["Gimcheon_Gumi", "Park_Hotel"] as const, {
     errorMap: (issue, ctx) => {
       return { message: "Please select your pickup spot" };
@@ -636,6 +640,12 @@ const RsvpEditorUnion = ({ initialData, setRunConfetti, className }: Props) => {
                       className="flex flex-col md:flex-row w-full gap-2"
                       items={pickupServiceOptions}
                       {...register("needPickup", { shouldUnregister: true })}
+                    />
+                    <HelpText
+                      message={
+                        (errors as FieldErrorsImpl<AttendFormData>).needPickup
+                          ?.message
+                      }
                     />
                   </div>
 
